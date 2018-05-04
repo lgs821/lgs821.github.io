@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.40.2" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>First &middot; My New Hugo Site</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://lgs821.github.io/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://lgs821.github.io/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://lgs821.github.io/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://lgs821.github.io/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="My New Hugo Site" />
+
+  
+</head>
+
+  <body class="theme-base-08 ">
+  <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://lgs821.github.io/"><h1>My New Hugo Site</h1></a>
+      <p class="lead">
+       这里是Tony Bai的个人博客 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="https://lgs821.github.io/">Home</a> </li>
+      
+    </ul>
+
+    <p>&copy; 2018. All rights reserved. </p>
+  </div>
+</div>
+
+    <div class="content container">
+    <div class="post">
+  <h1>First</h1>
+  <span class="post-date">Fri, May 4, 2018</span>
+  
+
+<h2 id="小程序没有授权时的处理方法">小程序没有授权时的处理方法</h2>
+
+<p>在做小程序开发的时候，我们经常会需要获取用户的一些权限。比如获取用户信息用于直接登录，获取地理位置用于定位等。但要是用户拒绝授权了，该怎么处理呢？</p>
+
+<h2 id="问题分析">问题分析</h2>
+
+<p>在小程序里面，获取到用户权限是进行某些操作的必要前提。比如在进入小程序的时候，获取到用户信息，拿到 unionId 对应到自己平台的账号进行登录，免去用户自己输入账号密码，这就是一个不错的体验。</p>
+
+<p>当我们调用 wx.getUserInfo 或者 wx.getLocation 这种需要用户授权的 API 时，小程序会弹框让用户选择授权：</p>
+
+<p><img src="https://user-gold-cdn.xitu.io/2017/6/24/180a990b3e31f2cffdd7e60feea421c5" alt="img" /></p>
+
+<p>当用户选择允许后，下次再进入小程序就不会再询问了，直接获得用户授权（除非将小程序删了再进入）。这里的问题在于，当用户点了拒绝之后，就拿不到相关授权了，并且在一段时间内，进入小程序都不会再出现这个弹框。</p>
+
+<p>从用户体验及保护隐私的角度考虑，小程序最好是不用授权也可以使用（或者体验）。但有些类型的小程序确实是需要拿到用户信息才能使用的。这里提供一个简单的解决方案。</p>
+
+<h2 id="解决方案">解决方案</h2>
+
+<p>以获取用户信息直接登录为例。增加一个授权页面，作为进入小程序的第一个页面，在这里获取用户数据和登录。默认可以什么都不显示，也可以当做引导页来使用。</p>
+
+<p>获取用户信息需要用到 wx.login 和 wx.getUserInfo 两个 API，关于这两个 API 的具体信息大家可以到官方文档去查看。</p>
+
+<p>增加一个登陆方法，代码如下：</p>
+
+<pre><code>//登录
+login: function () {
+  var that = this
+  if (typeof success == &quot;function&quot;) {
+    this.data.getUserInfoSuccess = success
+  }
+  wx.login({
+    success: function (res) {
+      var code = res.code;
+      wx.getUserInfo({
+        success: function (res) {
+          //平台登录
+        },
+        fail: function (res) {
+          that.setData({
+            getUserInfoFail: true
+          })
+        }
+      })
+    }
+  })
+}
+</code></pre>
+
+<p>当上面代码走到了 fail 里面，就可以认为在获取授权的时候，用户点了拒绝。当 getUserInfoFail 为 true 的时候，可以展示一个获取授权的按钮，比如像这样：</p>
+
+<p><img src="https://user-gold-cdn.xitu.io/2017/6/24/d7d3653098eba2768ae59da91132e58b" alt="img" /></p>
+
+<p>接下来介绍另一个 API : wx.openSetting，使用 wx.openSetting 可以跳转到小程序的授权设置界面，在安卓里面它长这样：</p>
+
+<p><img src="https://user-gold-cdn.xitu.io/2017/6/24/b80251da121cd4f9efa8ded7d0859b95" alt="img" /></p>
+
+<p>在点击授权按钮后跳转到这里，让用户授权了才给进入首页，否则就停留在授权页面。</p>
+
+<p>但还有个小问题，这个 API 是基础库 1.1.0 才有的，所以需要做兼容处理：</p>
+
+<p><img src="https://user-gold-cdn.xitu.io/2017/6/24/629a036d3b8248103a2e88b00da8c8dc" alt="img" /></p>
+
+<p>所以，最终跳转授权的代码如下：</p>
+
+<pre><code>//跳转设置页面授权
+openSetting: function () {
+  var that = this
+  if (wx.openSetting) {
+    wx.openSetting({
+      success: function (res) {
+        //尝试再次登录
+        that.login()
+      }
+    })
+  } else {
+    wx.showModal({
+      title: '授权提示',
+      content: '小程序需要您的微信授权才能使用哦~ 错过授权页面的处理方法：删除小程序-&gt;重新搜索进入-&gt;点击授权按钮'
+    })
+  }
+}
+</code></pre>
+
+<p>还好 1.1.0 已结算是比较早的版本了，现在都出到 1.3.0 了。</p>
+
+<p>最终效果如下：</p>
+
+<p><img src="https://user-gold-cdn.xitu.io/2017/6/24/84bf3345e15800cf40aae5164e32214e" alt="img" /></p>
+
+<p>同样的处理方式也可以用在获取别的权限上，妥妥的。</p>
+
+</div>
+
+
+    </div>
+
+    
+  </body>
+</html>
