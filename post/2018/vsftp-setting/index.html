@@ -197,8 +197,6 @@ warning: /etc/vsftpd/user_list saved as /etc/vsftpd/user_list.rpmsave
 
 <pre><code>-----------------/etc/vsftpd/vsftpd.conf START---------------------------------------
 
- 
-
 anonymous_enable=NO
 
 local_enable=YES
@@ -256,7 +254,6 @@ listen=YES
 \#listen_ipv6=YES
 
  
-
 pam_service_name=vsftpd
 
 userlist_enable=YES
@@ -649,7 +646,7 @@ all:all:deny
 
 <p>本地用户使用的最大传输速度，单位为B/s，0表示不限制速度。预设值为0。</p>
 
-<p>####10.超时时间设置</p>
+<h4 id="10-超时时间设置">10.超时时间设置</h4>
 
 <pre><code>accept\_timeout=60
 </code></pre>
