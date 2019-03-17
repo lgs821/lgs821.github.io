@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gin on 幸存者IMxcz.Com</title>
+    <link>http://www.imxcz.com/tags/gin/</link>
+    <description>Recent content in Gin on 幸存者IMxcz.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 01 Mar 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.imxcz.com/tags/gin/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Gin实战:Gin&#43;Mysql简单的Restful风格API简介</title>
+      <link>http://www.imxcz.com/post/2018/gin-shizhan-restful/</link>
+      <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.imxcz.com/post/2018/gin-shizhan-restful/</guid>
+      <description>Gin实战：Gin+Mysql简单的Restful风格的API 我们已经了解了Golang的Gin框架。对于Webservice服务，restful风格几乎一统天下。Gin也天然的支持restful。下</description>
+    </item>
+    
+  </channel>
+</rss>

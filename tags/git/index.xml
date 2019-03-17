@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on 幸存者IMxcz.Com</title>
+    <link>http://www.imxcz.com/tags/git/</link>
+    <description>Recent content in Git on 幸存者IMxcz.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 02 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.imxcz.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git 代理设置</title>
+      <link>http://www.imxcz.com/post/2018/git-proxy-setting/</link>
+      <pubDate>Mon, 02 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.imxcz.com/post/2018/git-proxy-setting/</guid>
+      <description>本地开启代理后，GIt也需要设置代理，才能正常通过代理网络 设置如下（可复制）： git config --global http.proxy http://127.0.0.1:1087 git config --global https.proxy https://127.0.0.1:1080 git config --global http.proxy &amp;#39;socks5://127.0.0.1:1080&amp;#39; git config --global https.proxy &amp;#39;socks5://127.0.0.1:1080&amp;#39; 取消 git config --global --unset http.proxy git config --global --unset https.proxy</description>
+    </item>
+    
+    <item>
+      <title>TortoiseGit&#43;MsysGit详细安装教程-代码托管工具不二之选</title>
+      <link>http://www.imxcz.com/wordpress/tortoisegit-msysgit.html</link>
+      <pubDate>Thu, 25 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.imxcz.com/wordpress/tortoisegit-msysgit.html</guid>
+      <description>说到代码托管，熟悉的朋友首先就会想到Github这货了吧，全世界的程序员都了解的东西，当然Svn也是不错的选择。使用代码托管当然需要好用的管理工具，无疑TortoiseGit + MsysGit是很方便的</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>码农 on 幸存者IMxcz.Com</title>
+    <link>http://www.imxcz.com/tags/%E7%A0%81%E5%86%9C/</link>
+    <description>Recent content in 码农 on 幸存者IMxcz.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 05 May 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.imxcz.com/tags/%E7%A0%81%E5%86%9C/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>为什么你说“就差一个码农了”，我们通常都是拒绝的</title>
+      <link>http://www.imxcz.com/wordpress/yousay-manong-i-refuse.html</link>
+      <pubDate>Tue, 05 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.imxcz.com/wordpress/yousay-manong-i-refuse.html</guid>
+      <description>为什么你说“就差一个码农了”，我们通常都是拒绝的，根本原因是90%这么说的人不懂技术，不了解行业，把技术实现想太简单，以为编程就是打字。分开来说包括以下4个方面：不尊重程序员、不只缺一个、大大低估投入</description>
+    </item>
+    
+  </channel>
+</rss>
