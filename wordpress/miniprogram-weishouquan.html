@@ -161,7 +161,7 @@
 
 <p>当我们调用 <code>wx.getUserInfo</code> 或者 <code>wx.getLocation</code> 这种需要用户授权的 API 时，小程序会弹框让用户选择授权：</p>
 
-<p><img src="https://www.imxcz.com/Users/lishuai/Code/blog/content/post/wordpress/assets/180a990b3e31f2cffdd7e60feea421c5.png" alt="img" /></p>
+<p><img src="http://imgs.liguangshuai.cn/markdown/2019-03-17-153238.jpg" alt="img" /></p>
 
 <p>当用户选择允许后，下次再进入小程序就不会再询问了，直接获得用户授权（除非将小程序删了再进入）。这里的问题在于，当用户点了拒绝之后，就拿不到相关授权了，并且在一段时间内，进入小程序都不会再出现这个弹框。</p>
 
@@ -199,42 +199,44 @@
 </code></pre></div>
 <p>当上面代码走到了 fail 里面，就可以认为在获取授权的时候，用户点了拒绝。当 getUserInfoFail 为 true 的时候，可以展示一个获取授权的按钮，比如像这样：</p>
 
-<p><img src="https://www.imxcz.com/Users/lishuai/Code/blog/content/post/wordpress/assets/d7d3653098eba2768ae59da91132e58b.png" alt="img" /></p>
+<p><img src="http://imgs.liguangshuai.cn/markdown/2019-03-17-153237.jpg" alt="img" /></p>
 
 <p>接下来介绍另一个 API : wx.openSetting，使用 wx.openSetting 可以跳转到小程序的授权设置界面，在安卓里面它长这样：</p>
 
-<p><img src="https://www.imxcz.com/Users/lishuai/Code/blog/content/post/wordpress/assets/b80251da121cd4f9efa8ded7d0859b95.png" alt="img" /></p>
+<p><img src="http://imgs.liguangshuai.cn/markdown/2019-03-17-153239.jpg" alt="img" /></p>
 
 <p>在点击授权按钮后跳转到这里，让用户授权了才给进入首页，否则就停留在授权页面。</p>
 
 <p>但还有个小问题，这个 API 是基础库 1.1.0 才有的，所以需要做兼容处理：</p>
 
-<p><img src="https://www.imxcz.com/Users/lishuai/Code/blog/content/post/wordpress/assets/629a036d3b8248103a2e88b00da8c8dc.png" alt="img" /></p>
+<p><img src="http://imgs.liguangshuai.cn/markdown/2019-03-17-153241.jpg" alt="img" /></p>
 
 <p>所以，最终跳转授权的代码如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//跳转设置页面授权
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">openSetting</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> () {
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">that</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>
-  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">wx</span>.<span style="color:#a6e22e">openSetting</span>) {
-    <span style="color:#a6e22e">wx</span>.<span style="color:#a6e22e">openSetting</span>({
-      <span style="color:#a6e22e">success</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">res</span>) {
-        <span style="color:#75715e">//尝试再次登录
-</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">that</span>.<span style="color:#a6e22e">login</span>()
+
+<pre><code>//跳转设置页面授权
+openSetting: function () {
+  var that = this
+  if (wx.openSetting) {
+    wx.openSetting({
+      success: function (res) {
+        //尝试再次登录
+        that.login()
       }
     })
-  } <span style="color:#66d9ef">else</span> {
-    <span style="color:#a6e22e">wx</span>.<span style="color:#a6e22e">showModal</span>({
-      <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;授权提示&#39;</span>,
-      <span style="color:#a6e22e">content</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;小程序需要您的微信授权才能使用哦~ 错过授权页面的处理方法：删除小程序-&gt;重新搜索进入-&gt;点击授权按钮&#39;</span>
+  } else {
+    wx.showModal({
+      title: '授权提示',
+      content: '小程序需要您的微信授权才能使用哦~ 错过授权页面的处理方法：删除小程序-&gt;重新搜索进入-&gt;点击授权按钮'
     })
   }
 }
-</code></pre></div>
+</code></pre>
+
 <p>还好 1.1.0 已结算是比较早的版本了，现在都出到 1.3.0 了。</p>
 
 <p>最终效果如下：</p>
 
-<p><img src="https://www.imxcz.com/Users/lishuai/Code/blog/content/post/wordpress/assets/84bf3345e15800cf40aae5164e32214e.gif" alt="img" /></p>
+<p><img src="http://imgs.liguangshuai.cn/markdown/2019-03-17-153240.jpg" alt="img" /></p>
 
 <p>同样的处理方式也可以用在获取别的权限上，妥妥的。</p>
 </article>
