@@ -17,7 +17,7 @@
       <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>http://www.imxcz.com/post/2018/css-mianshiti/</guid>
-      <description>CSS面试题 1、position的值， relative和absolute分别是相对于谁进行定位的？ absolute :生成绝对定位的元素， 相对于最近一级的 定位不是 static 的父元素来进行定位。 fixed （老IE不支持）生成绝对定位的</description>
+      <description>CSS面试题 1、position的值， relative和absolute分别是相对于谁进行定位的？ absolute :生成绝对定位的元素， 相对于最近一级的 定位不是 static 的父元素来进行定位。 fixed （老IE不</description>
     </item>
     
   </channel>

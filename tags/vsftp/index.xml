@@ -17,7 +17,7 @@
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
       
       <guid>http://www.imxcz.com/post/2018/vsftp-setting/</guid>
-      <description>VsFtp 详细设置 1-卸载 查看当前服务器中的vsftpd rpm -qa|grep vsftpd 例如结果为：vsftpd-2.2.2-13.el6_6.1.x86_64 执行卸载 rpm -e vsftpd-2.2.2-13.el6_6.1.x86_64 返回：卸载时自动备份vsftp的用户列表文件 warning: /etc/vsftpd/vsftpd.conf saved as /etc/vsftpd/vsftpd.conf.rpmsave warning: /etc/vsftpd/user_list saved</description>
+      <description>VsFtp 详细设置 1-卸载 查看当前服务器中的vsftpd rpm -qa|grep vsftpd 例如结果为：vsftpd-2.2.2-13.el6_6.1.x86_64 执行卸载 rpm -e vsftpd-2.2.2-13.el6_6.1.x86_64 返回：卸载时自动备份vsftp的用户列表</description>
     </item>
     
   </channel>

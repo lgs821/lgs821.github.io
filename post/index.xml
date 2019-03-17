@@ -17,7 +17,7 @@
       <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>http://www.imxcz.com/post/2018/css-mianshiti/</guid>
-      <description>CSS面试题 1、position的值， relative和absolute分别是相对于谁进行定位的？ absolute :生成绝对定位的元素， 相对于最近一级的 定位不是 static 的父元素来进行定位。 fixed （老IE不支持）生成绝对定位的</description>
+      <description>CSS面试题 1、position的值， relative和absolute分别是相对于谁进行定位的？ absolute :生成绝对定位的元素， 相对于最近一级的 定位不是 static 的父元素来进行定位。 fixed （老IE不</description>
     </item>
     
     <item>
@@ -44,7 +44,7 @@
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
       
       <guid>http://www.imxcz.com/post/2018/vsftp-setting/</guid>
-      <description>VsFtp 详细设置 1-卸载 查看当前服务器中的vsftpd rpm -qa|grep vsftpd 例如结果为：vsftpd-2.2.2-13.el6_6.1.x86_64 执行卸载 rpm -e vsftpd-2.2.2-13.el6_6.1.x86_64 返回：卸载时自动备份vsftp的用户列表文件 warning: /etc/vsftpd/vsftpd.conf saved as /etc/vsftpd/vsftpd.conf.rpmsave warning: /etc/vsftpd/user_list saved</description>
+      <description>VsFtp 详细设置 1-卸载 查看当前服务器中的vsftpd rpm -qa|grep vsftpd 例如结果为：vsftpd-2.2.2-13.el6_6.1.x86_64 执行卸载 rpm -e vsftpd-2.2.2-13.el6_6.1.x86_64 返回：卸载时自动备份vsftp的用户列表</description>
     </item>
     
     <item>
@@ -53,7 +53,7 @@
       <pubDate>Mon, 05 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>http://www.imxcz.com/post/2018/golang-jiaochabianyi/</guid>
-      <description>Golang在Mac、linux、windows系统下交叉编译 Golang 支持交叉编译，在一个平台上生成另一个平台的可执行程序，最近使用了一下，非常好用，这里备忘一下。 Mac 下编译 Linux 和 Windows 64位可执行程序 CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build main.go</description>
+      <description>Golang在Mac、linux、windows系统下交叉编译 Golang 支持交叉编译，在一个平台上生成另一个平台的可执行程序，最近使用了一下，非常好用，这里备忘一下。 Mac 下编译 Linux 和 Windows 64位可</description>
     </item>
     
     <item>
@@ -62,7 +62,7 @@
       <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>http://www.imxcz.com/post/2018/gin-shizhan-restful/</guid>
-      <description>Gin实战：Gin+Mysql简单的Restful风格的API 我们已经了解了Golang的Gin框架。对于Webservice服务，restful风格几乎一统天下。Gin也天然的支持restful。下</description>
+      <description>Gin实战：Gin+Mysql简单的Restful风格的API 我们已经了解了Golang的Gin框架。对于Webservice服务，restful风格几乎一统天下。Gin也天然的支</description>
     </item>
     
   </channel>

@@ -17,7 +17,7 @@
       <pubDate>Wed, 22 Aug 2012 00:00:00 +0000</pubDate>
       
       <guid>http://www.imxcz.com/wordpress/ecshop-2-7-3-qubanquan.html</guid>
-      <description>前台部分： 1:去掉头部TITLE部分的ECSHOP演示站 Powered by ecshop 前者在后台商店设置 – 商店标题修改 后者打开includes/lib_main.php $page_title = $GLOBALS[&amp;#39;_CFG&amp;#39;][&amp;#39;shop_title&amp;#39;] . &amp;#39; – &amp;#39; . &amp;#39;Powered by ECShop&amp;#39;; 修改这里的Powered by ECSh</description>
+      <description>前台部分： 1:去掉头部TITLE部分的ECSHOP演示站 Powered by ecshop 前者在后台商店设置 – 商店标题修改 后者打开includes/lib_main.php $page_title = $GLOBALS[&amp;#39;_CFG&amp;#39;][&amp;#39;shop_title&amp;#39;] . &amp;#39; – &amp;#39; . &amp;#39;Powered by ECShop&amp;#39;; 修改这里的Po</description>
     </item>
     
   </channel>

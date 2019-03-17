@@ -17,7 +17,7 @@
       <pubDate>Thu, 19 Mar 2015 00:00:00 +0000</pubDate>
       
       <guid>http://www.imxcz.com/wordpress/htaccess-proxy.html</guid>
-      <description>现在绝大多数的空间都支持.htaccess文件,可以用它来更换域名后重定向、自定义错误页面、防盗链、伪静态等。之前的文章用htaccess实现301重定向,避免权重分散介绍了实现301重定向的功能，今</description>
+      <description>现在绝大多数的空间都支持.htaccess文件,可以用它来更换域名后重定向、自定义错误页面、防盗链、伪静态等。之前的文章用htaccess实现301重定向,避免权重分散介绍了实现3</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Sat, 28 Feb 2015 00:00:00 +0000</pubDate>
       
       <guid>http://www.imxcz.com/wordpress/edit-htaccess-301.html</guid>
-      <description>很多时候，我们需要对网站进行301永久重定向或302临时重定向。 例如网站整个更换了域名，网站结构或目录发生了变化，或者需要将某个域名上的文件迁移到另外的域上等等。 都需要对域名进行重定向，重定向有很多办</description>
+      <description>很多时候，我们需要对网站进行301永久重定向或302临时重定向。 例如网站整个更换了域名，网站结构或目录发生了变化，或者需要将某个域名上的文件迁移到另外的域上等等。 都需要对域名进行重</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@
       <pubDate>Thu, 18 Dec 2014 00:00:00 +0000</pubDate>
       
       <guid>http://www.imxcz.com/wordpress/windows-apache-nginx-kangle-php-upupw.html</guid>
-      <description>作为Web开发者，在本地方便快捷搭建web服务平台环境是必须的事，在代码修改，测试阶段，本地环境是再好不过的选择，当然在Windwos平台有很多环境套件可供选择，找到一个适合自己并且方便的就好，如果想</description>
+      <description>作为Web开发者，在本地方便快捷搭建web服务平台环境是必须的事，在代码修改，测试阶段，本地环境是再好不过的选择，当然在Windwos平台有很多环境套件可供选择，找到一个适合自己并</description>
     </item>
     
   </channel>
