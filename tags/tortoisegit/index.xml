@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tortoisegit on 幸存者IMxcz.Com</title>
-    <link>http://www.imxcz.com/tags/tortoisegit/</link>
+    <link>https://www.imxcz.com/tags/tortoisegit/</link>
     <description>Recent content in Tortoisegit on 幸存者IMxcz.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 25 Dec 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.imxcz.com/tags/tortoisegit/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.imxcz.com/tags/tortoisegit/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>TortoiseGit&#43;MsysGit详细安装教程-代码托管工具不二之选</title>
-      <link>http://www.imxcz.com/wordpress/tortoisegit-msysgit.html</link>
+      <link>https://www.imxcz.com/wordpress/tortoisegit-msysgit.html</link>
       <pubDate>Thu, 25 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://www.imxcz.com/wordpress/tortoisegit-msysgit.html</guid>
+      <guid>https://www.imxcz.com/wordpress/tortoisegit-msysgit.html</guid>
       <description>说到代码托管，熟悉的朋友首先就会想到Github这货了吧，全世界的程序员都了解的东西，当然Svn也是不错的选择。使用代码托管当然需要好用的管理工具，无疑TortoiseGit + Ms</description>
     </item>
     

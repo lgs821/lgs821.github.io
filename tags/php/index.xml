@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Php on 幸存者IMxcz.Com</title>
-    <link>http://www.imxcz.com/tags/php/</link>
+    <link>https://www.imxcz.com/tags/php/</link>
     <description>Recent content in Php on 幸存者IMxcz.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 18 Dec 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.imxcz.com/tags/php/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.imxcz.com/tags/php/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Windows平台优秀的PHP/Mysql/Apache绿色web服务套件-UPUPW</title>
-      <link>http://www.imxcz.com/wordpress/windows-apache-nginx-kangle-php-upupw.html</link>
+      <link>https://www.imxcz.com/wordpress/windows-apache-nginx-kangle-php-upupw.html</link>
       <pubDate>Thu, 18 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://www.imxcz.com/wordpress/windows-apache-nginx-kangle-php-upupw.html</guid>
+      <guid>https://www.imxcz.com/wordpress/windows-apache-nginx-kangle-php-upupw.html</guid>
       <description>作为Web开发者，在本地方便快捷搭建web服务平台环境是必须的事，在代码修改，测试阶段，本地环境是再好不过的选择，当然在Windwos平台有很多环境套件可供选择，找到一个适合自己并</description>
     </item>
     
     <item>
       <title>win8.1系统安装iis&#43;php5.3&#43;mysql&#43;ZendGuardLoader说明</title>
-      <link>http://www.imxcz.com/wordpress/win8-1-iis-php5-3-mysql-zendguardloader.html</link>
+      <link>https://www.imxcz.com/wordpress/win8-1-iis-php5-3-mysql-zendguardloader.html</link>
       <pubDate>Fri, 23 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://www.imxcz.com/wordpress/win8-1-iis-php5-3-mysql-zendguardloader.html</guid>
+      <guid>https://www.imxcz.com/wordpress/win8-1-iis-php5-3-mysql-zendguardloader.html</guid>
       <description>很多时候，我们需要本地的web环境，当然，已经有很多的继承套件可以使用，也经常会在虚拟机里安装个centos 做调试用，相对于linux的稍显复杂化，windows自带的iis+ph</description>
     </item>
     
     <item>
       <title>php中curl详细用法</title>
-      <link>http://www.imxcz.com/wordpress/php-curl-use.html</link>
+      <link>https://www.imxcz.com/wordpress/php-curl-use.html</link>
       <pubDate>Wed, 30 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://www.imxcz.com/wordpress/php-curl-use.html</guid>
+      <guid>https://www.imxcz.com/wordpress/php-curl-use.html</guid>
       <description>目前为目最全的CURL中文说明了,学PHP的要好好掌握.有很多的参数.大部份都很有用.真正掌握了它和正则,一定就是个采集高手了. PHP中的CURL函数库（Client URL Library Funct</description>
     </item>
     
     <item>
       <title>php用手机关计算机（电脑）服务器</title>
-      <link>http://www.imxcz.com/wordpress/php-shutdown-computer.html</link>
+      <link>https://www.imxcz.com/wordpress/php-shutdown-computer.html</link>
       <pubDate>Fri, 02 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://www.imxcz.com/wordpress/php-shutdown-computer.html</guid>
+      <guid>https://www.imxcz.com/wordpress/php-shutdown-computer.html</guid>
       <description>适合有手机和电脑，用wifi的php web开发。方便关闭你的电脑（尤其在你想睡觉时 ），适合局域网 用法：放在你的web项目文件夹，可以新建立个目录 对了，把你的apache的httpd</description>
     </item>
     

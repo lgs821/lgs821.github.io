@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>博客文章 on 幸存者IMxcz.Com</title>
-    <link>http://www.imxcz.com/post/</link>
+    <link>https://www.imxcz.com/post/</link>
     <description>Recent content in 博客文章 on 幸存者IMxcz.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 01 Aug 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.imxcz.com/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.imxcz.com/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CSS面试题[分享知识]</title>
-      <link>http://www.imxcz.com/post/2018/css-mianshiti/</link>
+      <link>https://www.imxcz.com/post/2018/css-mianshiti/</link>
       <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.imxcz.com/post/2018/css-mianshiti/</guid>
+      <guid>https://www.imxcz.com/post/2018/css-mianshiti/</guid>
       <description>CSS面试题 1、position的值， relative和absolute分别是相对于谁进行定位的？ absolute :生成绝对定位的元素， 相对于最近一级的 定位不是 static 的父元素来进行定位。 fixed （老IE不</description>
     </item>
     
     <item>
       <title>Git 代理设置</title>
-      <link>http://www.imxcz.com/post/2018/git-proxy-setting/</link>
+      <link>https://www.imxcz.com/post/2018/git-proxy-setting/</link>
       <pubDate>Mon, 02 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.imxcz.com/post/2018/git-proxy-setting/</guid>
+      <guid>https://www.imxcz.com/post/2018/git-proxy-setting/</guid>
       <description>本地开启代理后，GIt也需要设置代理，才能正常通过代理网络 设置如下（可复制）： git config --global http.proxy http://127.0.0.1:1087 git config --global https.proxy https://127.0.0.1:1080 git config --global http.proxy &amp;#39;socks5://127.0.0.1:1080&amp;#39; git config --global https.proxy &amp;#39;socks5://127.0.0.1:1080&amp;#39; 取消 git config --global --unset http.proxy git config --global --unset https.proxy</description>
     </item>
     
     <item>
       <title>MySql 常用查询语句整理中</title>
-      <link>http://www.imxcz.com/post/2018/mysql-chaxun-yuju/</link>
+      <link>https://www.imxcz.com/post/2018/mysql-chaxun-yuju/</link>
       <pubDate>Sat, 02 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.imxcz.com/post/2018/mysql-chaxun-yuju/</guid>
+      <guid>https://www.imxcz.com/post/2018/mysql-chaxun-yuju/</guid>
       <description>MySql 常用查询语句整理中 Group by 前排序 select * from (select * from ls_list order by id desc) ls_list1 group by gid order by id</description>
     </item>
     
     <item>
       <title>VsFtp 详细设置记录</title>
-      <link>http://www.imxcz.com/post/2018/vsftp-setting/</link>
+      <link>https://www.imxcz.com/post/2018/vsftp-setting/</link>
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.imxcz.com/post/2018/vsftp-setting/</guid>
+      <guid>https://www.imxcz.com/post/2018/vsftp-setting/</guid>
       <description>VsFtp 详细设置 1-卸载 查看当前服务器中的vsftpd rpm -qa|grep vsftpd 例如结果为：vsftpd-2.2.2-13.el6_6.1.x86_64 执行卸载 rpm -e vsftpd-2.2.2-13.el6_6.1.x86_64 返回：卸载时自动备份vsftp的用户列表</description>
     </item>
     
     <item>
       <title>Golang在Mac、linux、windows系统下交叉编译</title>
-      <link>http://www.imxcz.com/post/2018/golang-jiaochabianyi/</link>
+      <link>https://www.imxcz.com/post/2018/golang-jiaochabianyi/</link>
       <pubDate>Mon, 05 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.imxcz.com/post/2018/golang-jiaochabianyi/</guid>
+      <guid>https://www.imxcz.com/post/2018/golang-jiaochabianyi/</guid>
       <description>Golang在Mac、linux、windows系统下交叉编译 Golang 支持交叉编译，在一个平台上生成另一个平台的可执行程序，最近使用了一下，非常好用，这里备忘一下。 Mac 下编译 Linux 和 Windows 64位可</description>
     </item>
     
     <item>
       <title>Gin实战:Gin&#43;Mysql简单的Restful风格API简介</title>
-      <link>http://www.imxcz.com/post/2018/gin-shizhan-restful/</link>
+      <link>https://www.imxcz.com/post/2018/gin-shizhan-restful/</link>
       <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.imxcz.com/post/2018/gin-shizhan-restful/</guid>
+      <guid>https://www.imxcz.com/post/2018/gin-shizhan-restful/</guid>
       <description>Gin实战：Gin+Mysql简单的Restful风格的API 我们已经了解了Golang的Gin框架。对于Webservice服务，restful风格几乎一统天下。Gin也天然的支</description>
     </item>
     

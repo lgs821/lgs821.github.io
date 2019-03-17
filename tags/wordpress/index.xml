@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wordpress on 幸存者IMxcz.Com</title>
-    <link>http://www.imxcz.com/tags/wordpress/</link>
+    <link>https://www.imxcz.com/tags/wordpress/</link>
     <description>Recent content in Wordpress on 幸存者IMxcz.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 26 Nov 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.imxcz.com/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.imxcz.com/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>WordPress程序完整搬家，包括更换域名，更改主机</title>
-      <link>http://www.imxcz.com/wordpress/wordpress-banjia-huanyuming.html</link>
+      <link>https://www.imxcz.com/wordpress/wordpress-banjia-huanyuming.html</link>
       <pubDate>Wed, 26 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://www.imxcz.com/wordpress/wordpress-banjia-huanyuming.html</guid>
+      <guid>https://www.imxcz.com/wordpress/wordpress-banjia-huanyuming.html</guid>
       <description>由于本人博客空间8月份已到期，便新购一个虚拟主机想进行WordPress搬家，于是特意在网上查了些WordPress搬家教程，进行了综合总结，并结合这次实操经验，制作了这个算是比较</description>
     </item>
     
     <item>
       <title>WordPress添加自定义字段面板</title>
-      <link>http://www.imxcz.com/wordpress/wordpress-tianjia-zidingyi-mianban.html</link>
+      <link>https://www.imxcz.com/wordpress/wordpress-tianjia-zidingyi-mianban.html</link>
       <pubDate>Tue, 09 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://www.imxcz.com/wordpress/wordpress-tianjia-zidingyi-mianban.html</guid>
+      <guid>https://www.imxcz.com/wordpress/wordpress-tianjia-zidingyi-mianban.html</guid>
       <description>我们在WordPress中编写文章的时候，经常会用到一些自定义字段，如网页描述description和关键词keywords这两个meta标签，通常在添加自定义字段和其值的时候，我</description>
     </item>
     

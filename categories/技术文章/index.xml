@@ -2,174 +2,174 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>技术文章 on 幸存者IMxcz.Com</title>
-    <link>http://www.imxcz.com/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/</link>
+    <link>https://www.imxcz.com/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/</link>
     <description>Recent content in 技术文章 on 幸存者IMxcz.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 01 Aug 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.imxcz.com/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.imxcz.com/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CSS面试题[分享知识]</title>
-      <link>http://www.imxcz.com/post/2018/css-mianshiti/</link>
+      <link>https://www.imxcz.com/post/2018/css-mianshiti/</link>
       <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.imxcz.com/post/2018/css-mianshiti/</guid>
+      <guid>https://www.imxcz.com/post/2018/css-mianshiti/</guid>
       <description>CSS面试题 1、position的值， relative和absolute分别是相对于谁进行定位的？ absolute :生成绝对定位的元素， 相对于最近一级的 定位不是 static 的父元素来进行定位。 fixed （老IE不</description>
     </item>
     
     <item>
       <title>VsFtp 详细设置记录</title>
-      <link>http://www.imxcz.com/post/2018/vsftp-setting/</link>
+      <link>https://www.imxcz.com/post/2018/vsftp-setting/</link>
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.imxcz.com/post/2018/vsftp-setting/</guid>
+      <guid>https://www.imxcz.com/post/2018/vsftp-setting/</guid>
       <description>VsFtp 详细设置 1-卸载 查看当前服务器中的vsftpd rpm -qa|grep vsftpd 例如结果为：vsftpd-2.2.2-13.el6_6.1.x86_64 执行卸载 rpm -e vsftpd-2.2.2-13.el6_6.1.x86_64 返回：卸载时自动备份vsftp的用户列表</description>
     </item>
     
     <item>
       <title>Golang在Mac、linux、windows系统下交叉编译</title>
-      <link>http://www.imxcz.com/post/2018/golang-jiaochabianyi/</link>
+      <link>https://www.imxcz.com/post/2018/golang-jiaochabianyi/</link>
       <pubDate>Mon, 05 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.imxcz.com/post/2018/golang-jiaochabianyi/</guid>
+      <guid>https://www.imxcz.com/post/2018/golang-jiaochabianyi/</guid>
       <description>Golang在Mac、linux、windows系统下交叉编译 Golang 支持交叉编译，在一个平台上生成另一个平台的可执行程序，最近使用了一下，非常好用，这里备忘一下。 Mac 下编译 Linux 和 Windows 64位可</description>
     </item>
     
     <item>
       <title>Gin实战:Gin&#43;Mysql简单的Restful风格API简介</title>
-      <link>http://www.imxcz.com/post/2018/gin-shizhan-restful/</link>
+      <link>https://www.imxcz.com/post/2018/gin-shizhan-restful/</link>
       <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.imxcz.com/post/2018/gin-shizhan-restful/</guid>
+      <guid>https://www.imxcz.com/post/2018/gin-shizhan-restful/</guid>
       <description>Gin实战：Gin+Mysql简单的Restful风格的API 我们已经了解了Golang的Gin框架。对于Webservice服务，restful风格几乎一统天下。Gin也天然的支</description>
     </item>
     
     <item>
       <title>小程序没有授权时的处理方法</title>
-      <link>http://www.imxcz.com/wordpress/miniprogram-weishouquan.html</link>
+      <link>https://www.imxcz.com/wordpress/miniprogram-weishouquan.html</link>
       <pubDate>Sat, 09 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.imxcz.com/wordpress/miniprogram-weishouquan.html</guid>
+      <guid>https://www.imxcz.com/wordpress/miniprogram-weishouquan.html</guid>
       <description>在做小程序开发的时候，我们经常会需要获取用户的一些权限。比如获取用户信息用于直接登录，获取地理位置用于定位等。但要是用户拒绝授权了，该怎么处理呢？ 问题分析 在小程序里面，获取到用户权</description>
     </item>
     
     <item>
       <title>Mac OS下Golang环境配置详细说明</title>
-      <link>http://www.imxcz.com/wordpress/mac-os-golang-set.html</link>
+      <link>https://www.imxcz.com/wordpress/mac-os-golang-set.html</link>
       <pubDate>Fri, 17 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.imxcz.com/wordpress/mac-os-golang-set.html</guid>
+      <guid>https://www.imxcz.com/wordpress/mac-os-golang-set.html</guid>
       <description>golang是什么语言，相信大多数人都有一个概念了，实在不知道，自行百度吧，go语言还是比较新的语言，发布短短几年，使用者也是相当可观，非常适合服务端程序的开发。golang是可以</description>
     </item>
     
     <item>
       <title>利用.htaccess的反向透明代理，在不能绑米空间上绑定自己的域名！</title>
-      <link>http://www.imxcz.com/wordpress/htaccess-proxy.html</link>
+      <link>https://www.imxcz.com/wordpress/htaccess-proxy.html</link>
       <pubDate>Thu, 19 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://www.imxcz.com/wordpress/htaccess-proxy.html</guid>
+      <guid>https://www.imxcz.com/wordpress/htaccess-proxy.html</guid>
       <description>现在绝大多数的空间都支持.htaccess文件,可以用它来更换域名后重定向、自定义错误页面、防盗链、伪静态等。之前的文章用htaccess实现301重定向,避免权重分散介绍了实现3</description>
     </item>
     
     <item>
       <title>用htaccess实现301重定向,避免权重分散</title>
-      <link>http://www.imxcz.com/wordpress/edit-htaccess-301.html</link>
+      <link>https://www.imxcz.com/wordpress/edit-htaccess-301.html</link>
       <pubDate>Sat, 28 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://www.imxcz.com/wordpress/edit-htaccess-301.html</guid>
+      <guid>https://www.imxcz.com/wordpress/edit-htaccess-301.html</guid>
       <description>很多时候，我们需要对网站进行301永久重定向或302临时重定向。 例如网站整个更换了域名，网站结构或目录发生了变化，或者需要将某个域名上的文件迁移到另外的域上等等。 都需要对域名进行重</description>
     </item>
     
     <item>
       <title>WordPress程序完整搬家，包括更换域名，更改主机</title>
-      <link>http://www.imxcz.com/wordpress/wordpress-banjia-huanyuming.html</link>
+      <link>https://www.imxcz.com/wordpress/wordpress-banjia-huanyuming.html</link>
       <pubDate>Wed, 26 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://www.imxcz.com/wordpress/wordpress-banjia-huanyuming.html</guid>
+      <guid>https://www.imxcz.com/wordpress/wordpress-banjia-huanyuming.html</guid>
       <description>由于本人博客空间8月份已到期，便新购一个虚拟主机想进行WordPress搬家，于是特意在网上查了些WordPress搬家教程，进行了综合总结，并结合这次实操经验，制作了这个算是比较</description>
     </item>
     
     <item>
       <title>Centos系统安装，配置Ftp服务</title>
-      <link>http://www.imxcz.com/wordpress/centos-ftp/</link>
+      <link>https://www.imxcz.com/wordpress/centos-ftp/</link>
       <pubDate>Sat, 11 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://www.imxcz.com/wordpress/centos-ftp/</guid>
+      <guid>https://www.imxcz.com/wordpress/centos-ftp/</guid>
       <description>1.安装vsftpd yum install vsftpd 2.启动/重启/关闭vsftpd服务器 [root@localhost ftp]# /sbin/service vsftpd restart Shutting down vsftpd: [ OK ] Starting vsftpd for vsftpd: [ OK ] OK表示重启成功了. 启动和关闭分别把restart改为start/stop即可.</description>
     </item>
     
     <item>
       <title>win8.1系统安装iis&#43;php5.3&#43;mysql&#43;ZendGuardLoader说明</title>
-      <link>http://www.imxcz.com/wordpress/win8-1-iis-php5-3-mysql-zendguardloader.html</link>
+      <link>https://www.imxcz.com/wordpress/win8-1-iis-php5-3-mysql-zendguardloader.html</link>
       <pubDate>Fri, 23 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://www.imxcz.com/wordpress/win8-1-iis-php5-3-mysql-zendguardloader.html</guid>
+      <guid>https://www.imxcz.com/wordpress/win8-1-iis-php5-3-mysql-zendguardloader.html</guid>
       <description>很多时候，我们需要本地的web环境，当然，已经有很多的继承套件可以使用，也经常会在虚拟机里安装个centos 做调试用，相对于linux的稍显复杂化，windows自带的iis+ph</description>
     </item>
     
     <item>
       <title>正则表达式快速入门教程</title>
-      <link>http://www.imxcz.com/wordpress/zhengze_kuaisurumen.html</link>
+      <link>https://www.imxcz.com/wordpress/zhengze_kuaisurumen.html</link>
       <pubDate>Sun, 04 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://www.imxcz.com/wordpress/zhengze_kuaisurumen.html</guid>
+      <guid>https://www.imxcz.com/wordpress/zhengze_kuaisurumen.html</guid>
       <description>本文目标 30分钟内让你明白正则表达式是什么，并对它有一些基本的了解，让你可以在自己的程序或网页里使用它。 如何使用本教程 最重要的是——请给我30分钟， 如果你没有使用正则表达式的经验，</description>
     </item>
     
     <item>
       <title>php中curl详细用法</title>
-      <link>http://www.imxcz.com/wordpress/php-curl-use.html</link>
+      <link>https://www.imxcz.com/wordpress/php-curl-use.html</link>
       <pubDate>Wed, 30 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://www.imxcz.com/wordpress/php-curl-use.html</guid>
+      <guid>https://www.imxcz.com/wordpress/php-curl-use.html</guid>
       <description>目前为目最全的CURL中文说明了,学PHP的要好好掌握.有很多的参数.大部份都很有用.真正掌握了它和正则,一定就是个采集高手了. PHP中的CURL函数库（Client URL Library Funct</description>
     </item>
     
     <item>
       <title>php用手机关计算机（电脑）服务器</title>
-      <link>http://www.imxcz.com/wordpress/php-shutdown-computer.html</link>
+      <link>https://www.imxcz.com/wordpress/php-shutdown-computer.html</link>
       <pubDate>Fri, 02 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://www.imxcz.com/wordpress/php-shutdown-computer.html</guid>
+      <guid>https://www.imxcz.com/wordpress/php-shutdown-computer.html</guid>
       <description>适合有手机和电脑，用wifi的php web开发。方便关闭你的电脑（尤其在你想睡觉时 ），适合局域网 用法：放在你的web项目文件夹，可以新建立个目录 对了，把你的apache的httpd</description>
     </item>
     
     <item>
       <title>WordPress添加自定义字段面板</title>
-      <link>http://www.imxcz.com/wordpress/wordpress-tianjia-zidingyi-mianban.html</link>
+      <link>https://www.imxcz.com/wordpress/wordpress-tianjia-zidingyi-mianban.html</link>
       <pubDate>Tue, 09 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://www.imxcz.com/wordpress/wordpress-tianjia-zidingyi-mianban.html</guid>
+      <guid>https://www.imxcz.com/wordpress/wordpress-tianjia-zidingyi-mianban.html</guid>
       <description>我们在WordPress中编写文章的时候，经常会用到一些自定义字段，如网页描述description和关键词keywords这两个meta标签，通常在添加自定义字段和其值的时候，我</description>
     </item>
     
     <item>
       <title>div图片垂直居中显示</title>
-      <link>http://www.imxcz.com/wordpress/div-img-chuizhi-juzhong.html</link>
+      <link>https://www.imxcz.com/wordpress/div-img-chuizhi-juzhong.html</link>
       <pubDate>Wed, 22 Aug 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://www.imxcz.com/wordpress/div-img-chuizhi-juzhong.html</guid>
+      <guid>https://www.imxcz.com/wordpress/div-img-chuizhi-juzhong.html</guid>
       <description>css方法一 &amp;lt;style type=”text/css”&amp;gt; &amp;lt;!– * {margin:0;padding:0} div { width:500px; height:500px; border:1px solid #666; overflow:hidden; position:relative; display:table-cell; text-align:center; vertical-align:middle } div p { position:static; +position:absolute; top:50% } img { position:static; +position:relative; top:-50%;left:-50%; } –&amp;gt; &amp;lt;/style&amp;gt; &amp;lt;div&amp;gt;&amp;lt;p&amp;gt;&amp;lt;img src=”http://www.google.</description>
     </item>
     
     <item>
       <title>jQuery实现简单而且很酷的返回顶部链接效果</title>
-      <link>http://www.imxcz.com/wordpress/jquery-fanhuidingbu-xiaoguo.html</link>
+      <link>https://www.imxcz.com/wordpress/jquery-fanhuidingbu-xiaoguo.html</link>
       <pubDate>Wed, 22 Aug 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://www.imxcz.com/wordpress/jquery-fanhuidingbu-xiaoguo.html</guid>
+      <guid>https://www.imxcz.com/wordpress/jquery-fanhuidingbu-xiaoguo.html</guid>
       <description>之前写过关于创建人性化的返回顶部链接的文章，讨论了返回顶部链接需要具备哪些特点才能称得上人性化。一直以来我都觉得停留在视觉区域内的返回顶部连接更为完美一些，但由于对javascri</description>
     </item>
     
     <item>
       <title>手把手教你ECSHOP-2.7.3去版权与标志方法</title>
-      <link>http://www.imxcz.com/wordpress/ecshop-2-7-3-qubanquan.html</link>
+      <link>https://www.imxcz.com/wordpress/ecshop-2-7-3-qubanquan.html</link>
       <pubDate>Wed, 22 Aug 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://www.imxcz.com/wordpress/ecshop-2-7-3-qubanquan.html</guid>
+      <guid>https://www.imxcz.com/wordpress/ecshop-2-7-3-qubanquan.html</guid>
       <description>前台部分： 1:去掉头部TITLE部分的ECSHOP演示站 Powered by ecshop 前者在后台商店设置 – 商店标题修改 后者打开includes/lib_main.php $page_title = $GLOBALS[&amp;#39;_CFG&amp;#39;][&amp;#39;shop_title&amp;#39;] . &amp;#39; – &amp;#39; . &amp;#39;Powered by ECShop&amp;#39;; 修改这里的Po</description>
     </item>
     
