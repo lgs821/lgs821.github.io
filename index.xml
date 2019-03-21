@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>Golang操作笔记</title>
+      <link>https://www.imxcz.com/post/2019/golang-caozuo-biji/</link>
+      <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.imxcz.com/post/2019/golang-caozuo-biji/</guid>
+      <description>Golang 判断字符串中是否包含其他某字符 import ( &amp;#34;fmt&amp;#34; &amp;#34;strings&amp;#34; ) func main() { fmt.Println(strings.Contains(&amp;#34;widuu&amp;#34;, &amp;#34;wi&amp;#34;)) //true fmt.Println(strings.Contains(&amp;#34;wi&amp;#34;, &amp;#34;widuu&amp;#34;)) //false } Golang 判断字符串中是否包含 chars 中的任何一个字符 func main() { b := strings.ContainsAny(&amp;#34;Hello,世界!</description>
+    </item>
+    
+    <item>
       <title>CSS面试题[分享知识]</title>
       <link>https://www.imxcz.com/post/2018/css-mianshiti/</link>
       <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
@@ -44,7 +53,7 @@
       <pubDate>Sat, 02 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.imxcz.com/post/2018/mysql-chaxun-yuju/</guid>
-      <description>MySql 常用查询语句整理中 Group by 前排序 select * from (select * from ls_list order by id desc) ls_list1 group by gid order by id</description>
+      <description>MySql 常用查询语句整理中 Group by 前排序、查询数据库中哪些表包含某个字段 Group by 前排序 select * from (select * from ls_list order by id desc) ls_list1 group by gid order by id 查询数据库中哪些表包含某个字段 已知一个字段中含有字符lan，想知道数据库</description>
     </item>
     
     <item>

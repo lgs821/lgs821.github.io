@@ -6,10 +6,19 @@
     <description>Recent content in Golang on 幸存者IMxcz.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 05 Mar 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.imxcz.com/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Golang操作笔记</title>
+      <link>https://www.imxcz.com/post/2019/golang-caozuo-biji/</link>
+      <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.imxcz.com/post/2019/golang-caozuo-biji/</guid>
+      <description>Golang 判断字符串中是否包含其他某字符 import ( &amp;#34;fmt&amp;#34; &amp;#34;strings&amp;#34; ) func main() { fmt.Println(strings.Contains(&amp;#34;widuu&amp;#34;, &amp;#34;wi&amp;#34;)) //true fmt.Println(strings.Contains(&amp;#34;wi&amp;#34;, &amp;#34;widuu&amp;#34;)) //false } Golang 判断字符串中是否包含 chars 中的任何一个字符 func main() { b := strings.ContainsAny(&amp;#34;Hello,世界!</description>
+    </item>
     
     <item>
       <title>Golang在Mac、linux、windows系统下交叉编译</title>

@@ -17,7 +17,7 @@
       <pubDate>Sat, 02 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.imxcz.com/post/2018/mysql-chaxun-yuju/</guid>
-      <description>MySql 常用查询语句整理中 Group by 前排序 select * from (select * from ls_list order by id desc) ls_list1 group by gid order by id</description>
+      <description>MySql 常用查询语句整理中 Group by 前排序、查询数据库中哪些表包含某个字段 Group by 前排序 select * from (select * from ls_list order by id desc) ls_list1 group by gid order by id 查询数据库中哪些表包含某个字段 已知一个字段中含有字符lan，想知道数据库</description>
     </item>
     
     <item>
