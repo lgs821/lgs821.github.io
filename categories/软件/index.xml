@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>软件 on 幸存者IMxcz.Com</title>
-    <link>https://www.imxcz.com/categories/%E8%BD%AF%E4%BB%B6/</link>
+    <link>https://imxcz.com/categories/%E8%BD%AF%E4%BB%B6/</link>
     <description>Recent content in 软件 on 幸存者IMxcz.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 25 Dec 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://www.imxcz.com/categories/%E8%BD%AF%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://imxcz.com/categories/%E8%BD%AF%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>TortoiseGit&#43;MsysGit详细安装教程-代码托管工具不二之选</title>
-      <link>https://www.imxcz.com/wordpress/tortoisegit-msysgit.html</link>
+      <link>https://imxcz.com/wordpress/tortoisegit-msysgit.html</link>
       <pubDate>Thu, 25 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://www.imxcz.com/wordpress/tortoisegit-msysgit.html</guid>
+      <guid>https://imxcz.com/wordpress/tortoisegit-msysgit.html</guid>
       <description>说到代码托管，熟悉的朋友首先就会想到Github这货了吧，全世界的程序员都了解的东西，当然Svn也是不错的选择。使用代码托管当然需要好用的管理工具，无疑TortoiseGit + Ms</description>
     </item>
     
     <item>
       <title>Windows平台优秀的PHP/Mysql/Apache绿色web服务套件-UPUPW</title>
-      <link>https://www.imxcz.com/wordpress/windows-apache-nginx-kangle-php-upupw.html</link>
+      <link>https://imxcz.com/wordpress/windows-apache-nginx-kangle-php-upupw.html</link>
       <pubDate>Thu, 18 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://www.imxcz.com/wordpress/windows-apache-nginx-kangle-php-upupw.html</guid>
+      <guid>https://imxcz.com/wordpress/windows-apache-nginx-kangle-php-upupw.html</guid>
       <description>作为Web开发者，在本地方便快捷搭建web服务平台环境是必须的事，在代码修改，测试阶段，本地环境是再好不过的选择，当然在Windwos平台有很多环境套件可供选择，找到一个适合自己并</description>
     </item>
     
     <item>
       <title>网易UU网游加速器，小巧免费，居家旅行打小怪兽必备神器</title>
-      <link>https://www.imxcz.com/wordpress/wangyi-uu-jiasuqi.html</link>
+      <link>https://imxcz.com/wordpress/wangyi-uu-jiasuqi.html</link>
       <pubDate>Thu, 11 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://www.imxcz.com/wordpress/wangyi-uu-jiasuqi.html</guid>
+      <guid>https://imxcz.com/wordpress/wangyi-uu-jiasuqi.html</guid>
       <description>亲，你还在为玩游戏卡掉线，打副本看幻灯片，团战的瞬间倒下而烦恼么，想跟远方的朋友一块儿玩游戏，无奈南电信，北联通，总有几个卡要命的，那就来试试这个网易UU加速器吧，这货说是永久免费</description>
     </item>
     

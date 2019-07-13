@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ftp on 幸存者IMxcz.Com</title>
-    <link>https://www.imxcz.com/tags/ftp/</link>
+    <link>https://imxcz.com/tags/ftp/</link>
     <description>Recent content in Ftp on 幸存者IMxcz.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 02 May 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://www.imxcz.com/tags/ftp/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://imxcz.com/tags/ftp/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>VsFtp 详细设置记录</title>
-      <link>https://www.imxcz.com/post/2018/vsftp-setting/</link>
+      <link>https://imxcz.com/post/2018/vsftp-setting/</link>
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.imxcz.com/post/2018/vsftp-setting/</guid>
+      <guid>https://imxcz.com/post/2018/vsftp-setting/</guid>
       <description>VsFtp 详细设置 1-卸载 查看当前服务器中的vsftpd rpm -qa|grep vsftpd 例如结果为：vsftpd-2.2.2-13.el6_6.1.x86_64 执行卸载 rpm -e vsftpd-2.2.2-13.el6_6.1.x86_64 返回：卸载时自动备份vsftp的用户列表</description>
     </item>
     
     <item>
       <title>Centos系统安装，配置Ftp服务</title>
-      <link>https://www.imxcz.com/wordpress/centos-ftp/</link>
+      <link>https://imxcz.com/wordpress/centos-ftp.html</link>
       <pubDate>Sat, 11 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://www.imxcz.com/wordpress/centos-ftp/</guid>
+      <guid>https://imxcz.com/wordpress/centos-ftp.html</guid>
       <description>1.安装vsftpd yum install vsftpd 2.启动/重启/关闭vsftpd服务器 [root@localhost ftp]# /sbin/service vsftpd restart Shutting down vsftpd: [ OK ] Starting vsftpd for vsftpd: [ OK ] OK表示重启成功了. 启动和关闭分别把restart改为start/stop即可.</description>
     </item>
     

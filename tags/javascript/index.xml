@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascript on 幸存者IMxcz.Com</title>
+    <link>https://imxcz.com/tags/javascript/</link>
+    <description>Recent content in Javascript on 幸存者IMxcz.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 19 Apr 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://imxcz.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>javascript中date详细介绍</title>
+      <link>https://imxcz.com/post/2019/javascript-date/</link>
+      <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://imxcz.com/post/2019/javascript-date/</guid>
+      <description>1、var myDate = new Date(); Date() 返回当日的日期和时间。 getDate() 从 Date 对象返回一个月中的某一天 (1 ~ 31)。 getDay() 从 Date 对象返回一周中的某一天 (0 ~ 6)。 getMonth() 从 Date 对象返回月份 (0 ~ 11)。 getFullYear() 从 Date 对象以四位数字返回年份</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Curl on 幸存者IMxcz.Com</title>
-    <link>https://www.imxcz.com/tags/curl/</link>
+    <link>https://imxcz.com/tags/curl/</link>
     <description>Recent content in Curl on 幸存者IMxcz.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 30 Apr 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://www.imxcz.com/tags/curl/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://imxcz.com/tags/curl/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>php中curl详细用法</title>
-      <link>https://www.imxcz.com/wordpress/php-curl-use.html</link>
+      <link>https://imxcz.com/wordpress/php-curl-use.html</link>
       <pubDate>Wed, 30 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://www.imxcz.com/wordpress/php-curl-use.html</guid>
+      <guid>https://imxcz.com/wordpress/php-curl-use.html</guid>
       <description>目前为目最全的CURL中文说明了,学PHP的要好好掌握.有很多的参数.大部份都很有用.真正掌握了它和正则,一定就是个采集高手了. PHP中的CURL函数库（Client URL Library Funct</description>
     </item>
     

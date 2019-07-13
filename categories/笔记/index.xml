@@ -2,22 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>笔记 on 幸存者IMxcz.Com</title>
-    <link>https://www.imxcz.com/categories/%E7%AC%94%E8%AE%B0/</link>
+    <link>https://imxcz.com/categories/%E7%AC%94%E8%AE%B0/</link>
     <description>Recent content in 笔记 on 幸存者IMxcz.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 20 Mar 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://www.imxcz.com/categories/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://imxcz.com/categories/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Golang操作笔记</title>
-      <link>https://www.imxcz.com/post/2019/golang-caozuo-biji/</link>
+      <link>https://imxcz.com/post/2019/golang-caozuo-biji/</link>
       <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://www.imxcz.com/post/2019/golang-caozuo-biji/</guid>
+      <guid>https://imxcz.com/post/2019/golang-caozuo-biji/</guid>
       <description>Golang 判断字符串中是否包含其他某字符 import ( &amp;#34;fmt&amp;#34; &amp;#34;strings&amp;#34; ) func main() { fmt.Println(strings.Contains(&amp;#34;widuu&amp;#34;, &amp;#34;wi&amp;#34;)) //true fmt.Println(strings.Contains(&amp;#34;wi&amp;#34;, &amp;#34;widuu&amp;#34;)) //false } Golang 判断字符串中是否包含 chars 中的任何一个字符 func main() { b := strings.ContainsAny(&amp;#34;Hello,世界!</description>
+    </item>
+    
+    <item>
+      <title>Golang正则查找与替换</title>
+      <link>https://imxcz.com/post/2019/golang-zhengze-find-replace/</link>
+      <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://imxcz.com/post/2019/golang-zhengze-find-replace/</guid>
+      <description>Golang正则查找与替换 package main; import ( &amp;#34;regexp&amp;#34; &amp;#34;fmt&amp;#34; &amp;#34;strings&amp;#34; ) func main() { //1、过正则来判断字符串是否匹配 if ok, _ := regexp.Match(&amp;#34;^[0-9a-zA-Z_]+$&amp;#34;, []byte(&amp;#34;hello&amp;#34;)); ok { fmt.Println(&amp;#34;ok&amp;#34;); } //上面的例子也可以通过MatchString实现 if ok, _ := regexp.MatchString(&amp;#34;^[0-9a-zA-Z_]+$&amp;#34;, &amp;#34;hello&amp;#34;); ok { fmt.Println(&amp;#34;ok&amp;#34;); } //2、</description>
+    </item>
+    
+    <item>
+      <title>Git 代理设置</title>
+      <link>https://imxcz.com/post/2018/git-proxy-setting/</link>
+      <pubDate>Mon, 02 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://imxcz.com/post/2018/git-proxy-setting/</guid>
+      <description>本地开启代理后，GIt也需要设置代理，才能正常通过代理网络 设置如下（可复制）： git config --global http.proxy http://127.0.0.1:1087 git config --global https.proxy https://127.0.0.1:1080 git config --global http.proxy &amp;#39;socks5://127.0.0.1:1080&amp;#39; git config --global https.proxy &amp;#39;socks5://127.0.0.1:1080&amp;#39; 取消 git config --global --unset http.proxy git config --global --unset https.proxy</description>
     </item>
     
   </channel>

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>自定义 on 幸存者IMxcz.Com</title>
-    <link>https://www.imxcz.com/tags/%E8%87%AA%E5%AE%9A%E4%B9%89/</link>
+    <link>https://imxcz.com/tags/%E8%87%AA%E5%AE%9A%E4%B9%89/</link>
     <description>Recent content in 自定义 on 幸存者IMxcz.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 09 Apr 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://www.imxcz.com/tags/%E8%87%AA%E5%AE%9A%E4%B9%89/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://imxcz.com/tags/%E8%87%AA%E5%AE%9A%E4%B9%89/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>WordPress添加自定义字段面板</title>
-      <link>https://www.imxcz.com/wordpress/wordpress-tianjia-zidingyi-mianban.html</link>
+      <link>https://imxcz.com/wordpress/wordpress-tianjia-zidingyi-mianban.html</link>
       <pubDate>Tue, 09 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://www.imxcz.com/wordpress/wordpress-tianjia-zidingyi-mianban.html</guid>
+      <guid>https://imxcz.com/wordpress/wordpress-tianjia-zidingyi-mianban.html</guid>
       <description>我们在WordPress中编写文章的时候，经常会用到一些自定义字段，如网页描述description和关键词keywords这两个meta标签，通常在添加自定义字段和其值的时候，我</description>
     </item>
     

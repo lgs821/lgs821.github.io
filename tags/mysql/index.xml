@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mysql on 幸存者IMxcz.Com</title>
-    <link>https://www.imxcz.com/tags/mysql/</link>
+    <link>https://imxcz.com/tags/mysql/</link>
     <description>Recent content in Mysql on 幸存者IMxcz.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 02 Jun 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://www.imxcz.com/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://imxcz.com/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>MySql 常用查询语句整理中</title>
-      <link>https://www.imxcz.com/post/2018/mysql-chaxun-yuju/</link>
+      <link>https://imxcz.com/post/2018/mysql-chaxun-yuju/</link>
       <pubDate>Sat, 02 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.imxcz.com/post/2018/mysql-chaxun-yuju/</guid>
+      <guid>https://imxcz.com/post/2018/mysql-chaxun-yuju/</guid>
       <description>MySql 常用查询语句整理中 Group by 前排序、查询数据库中哪些表包含某个字段 Group by 前排序 select * from (select * from ls_list order by id desc) ls_list1 group by gid order by id 查询数据库中哪些表包含某个字段 已知一个字段中含有字符lan，想知道数据库</description>
     </item>
     
     <item>
       <title>Windows平台优秀的PHP/Mysql/Apache绿色web服务套件-UPUPW</title>
-      <link>https://www.imxcz.com/wordpress/windows-apache-nginx-kangle-php-upupw.html</link>
+      <link>https://imxcz.com/wordpress/windows-apache-nginx-kangle-php-upupw.html</link>
       <pubDate>Thu, 18 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://www.imxcz.com/wordpress/windows-apache-nginx-kangle-php-upupw.html</guid>
+      <guid>https://imxcz.com/wordpress/windows-apache-nginx-kangle-php-upupw.html</guid>
       <description>作为Web开发者，在本地方便快捷搭建web服务平台环境是必须的事，在代码修改，测试阶段，本地环境是再好不过的选择，当然在Windwos平台有很多环境套件可供选择，找到一个适合自己并</description>
     </item>
     
     <item>
       <title>win8.1系统安装iis&#43;php5.3&#43;mysql&#43;ZendGuardLoader说明</title>
-      <link>https://www.imxcz.com/wordpress/win8-1-iis-php5-3-mysql-zendguardloader.html</link>
+      <link>https://imxcz.com/wordpress/win8-1-iis-php5-3-mysql-zendguardloader.html</link>
       <pubDate>Fri, 23 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://www.imxcz.com/wordpress/win8-1-iis-php5-3-mysql-zendguardloader.html</guid>
+      <guid>https://imxcz.com/wordpress/win8-1-iis-php5-3-mysql-zendguardloader.html</guid>
       <description>很多时候，我们需要本地的web环境，当然，已经有很多的继承套件可以使用，也经常会在虚拟机里安装个centos 做调试用，相对于linux的稍显复杂化，windows自带的iis+ph</description>
     </item>
     
