@@ -19,7 +19,7 @@
 <meta name="description" content="之前写过关于创建人性化的返回顶部链接的文章，讨论了返回顶部链接需要具备哪些特点才能称得上人性化。一直以来我都觉得停留在视觉区域内的返回顶部连接更为完美一些，但由于对javascri"> 
 
 
-<meta name="generator" content="Hugo 0.54.0">
+<meta name="generator" content="Hugo 0.80.0">
 
 
 <link rel="canonical" href="https://imxcz.com/wordpress/jquery-fanhuidingbu-xiaoguo.html"> 
@@ -155,17 +155,13 @@
     </header>
     <article class="post-content"><p>之前写过关于创建人性化的返回顶部链接的文章，讨论了返回顶部链接需要具备哪些特点才能称得上人性化。一直以来我都觉得停留在视觉区域内的返回顶部连接更为完美一些，但由于对javascript不熟悉，所以一直不知道如何在技术上实现，只能使用别人做好的javascript代码。最近一段时间学习了jQuery，发现其实用jQuery来写的话很简单，所以在这片文章里我会介绍一下如何自己动手创建简单而且很酷的返回顶部链接效果，让我们开始。
 jQuery返回顶部（查看示例）</p>
-
 <p>一、HTML（基本结构）</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">body</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;top&#34;</span>&gt;
 &lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;back-to-top&#34;</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#top&#34;</span>&gt;&lt;<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;返回顶部&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt;
-&lt;/<span style="color:#f92672">body</span>&gt;</code></pre></div>
-<p>有了上面的html后，当我们点击”返回顶部”这个链接时，就会自动跳转到body标签的位置，也就是页面的顶部。</p>
-
+&lt;/<span style="color:#f92672">body</span>&gt;
+</code></pre></div><p>有了上面的html后，当我们点击”返回顶部”这个链接时，就会自动跳转到body标签的位置，也就是页面的顶部。</p>
 <p>二、CSS（样式化）</p>
-
 <p>之所以在上面html代码的&lt; a&gt;标签中添加一个空的&lt; span&gt;标签，目的是为了创建我们预想的返回顶部链接样式，如下图：</p>
-
 <p>接下来我们需要使用position ： fixed;属性将跳转链接固定到页面上，这样它就可以随时停留在视线范围内。以下是全部CSS代码：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">p</span>#back-to-top{
 <span style="color:#66d9ef">position</span>:<span style="color:#66d9ef">fixed</span>;
@@ -200,8 +196,8 @@ jQuery返回顶部（查看示例）</p>
 }
 #back-to-top <span style="color:#f92672">a</span>:<span style="color:#a6e22e">hover</span> <span style="color:#f92672">span</span>{
 <span style="color:#66d9ef">background</span>:<span style="color:#ae81ff">#979797</span> url(<span style="color:#e6db74">images/arrow-up.png</span>) <span style="color:#66d9ef">no-repeat</span> <span style="color:#66d9ef">center</span> <span style="color:#66d9ef">center</span>;
-}</code></pre></div>
-<p>三、jQuery（动态效果）
+}
+</code></pre></div><p>三、jQuery（动态效果）
 使用jQuery要实现的效果是：当页面初次载入，浏览器滚动条处于最顶部的时候，跳转链接处于隐藏状态。当滚动条向下滚动后，跳转链接逐渐显出，当点击跳转链接后，页面逐渐滚动至顶部，跳转链接逐渐消失。以下是jQuery代码：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js&#34;</span><span style="color:#f92672">&gt;</span>
 <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span><span style="color:#f92672">&gt;</span>
@@ -227,8 +223,7 @@ jQuery返回顶部（查看示例）</p>
 });
 });
 <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
-</code></pre></div>
-<p>四、兼容性
+</code></pre></div><p>四、兼容性
 这里我们给body标签添加了id=”#top”，目的是当浏览器不支持javascript的时候，也可实现返回顶部的效果。实际上jQuery可以让滚动条定位于任何位置，所以这里我们保留了对浏览器的兼容性。</p>
 </article>
     <footer class="post-footer">
@@ -243,7 +238,7 @@ jQuery返回顶部（查看示例）</p>
       
       <p class="post-copyright">
         Link:<a rel='license' href='https://imxcz.com/wordpress/jquery-fanhuidingbu-xiaoguo.html'>https://imxcz.com/wordpress/jquery-fanhuidingbu-xiaoguo.html </a><br>
-          © 本文采用 <a rel='license' href='http://creativecommons.org/licenses/by-nc/4.0/' target=''>知识共享署名-非商业性使用 4.0 国际许可协议</a> 进行许可。文章发表于 <strong>2516</strong> 天前, 文章内容可能不准确，请酌情参考。
+          © 本文采用 <a rel='license' href='http://creativecommons.org/licenses/by-nc/4.0/' target=''>知识共享署名-非商业性使用 4.0 国际许可协议</a> 进行许可。文章发表于 <strong>3107</strong> 天前, 文章内容可能不准确，请酌情参考。
       </p>
       <div class="post-nav">
           
@@ -281,7 +276,7 @@ jQuery返回顶部（查看示例）</p>
             </li>
             
             <li>
-                <a href="https://imxcz.com/categories/%E6%8A%80%E6%9C%AF/">技术(18)</a>
+                <a href="https://imxcz.com/categories/%E6%8A%80%E6%9C%AF/">技术(19)</a>
             </li>
             
             <li>
@@ -289,7 +284,7 @@ jQuery返回顶部（查看示例）</p>
             </li>
             
             <li>
-                <a href="https://imxcz.com/categories/%E7%AC%94%E8%AE%B0/">笔记(3)</a>
+                <a href="https://imxcz.com/categories/%E7%AC%94%E8%AE%B0/">笔记(5)</a>
             </li>
             
             <li>
@@ -340,6 +335,8 @@ jQuery返回顶部（查看示例）</p>
             
             <a href="https://imxcz.com/tags/htaccess/">htaccess</a>
             
+            <a href="https://imxcz.com/tags/hugo/">hugo</a>
+            
             <a href="https://imxcz.com/tags/iis/">iis</a>
             
             <a href="https://imxcz.com/tags/javascript/">javascript</a>
@@ -350,11 +347,17 @@ jQuery返回顶部（查看示例）</p>
             
             <a href="https://imxcz.com/tags/mac/">mac</a>
             
+            <a href="https://imxcz.com/tags/macos/">macos</a>
+            
+            <a href="https://imxcz.com/tags/markdown/">markdown</a>
+            
             <a href="https://imxcz.com/tags/msysgit/">msysgit</a>
             
             <a href="https://imxcz.com/tags/mysql/">mysql</a>
             
             <a href="https://imxcz.com/tags/php/">php</a>
+            
+            <a href="https://imxcz.com/tags/timemachine/">timemachine</a>
             
             <a href="https://imxcz.com/tags/tortoisegit/">tortoisegit</a>
             
@@ -382,11 +385,15 @@ jQuery返回顶部（查看示例）</p>
             
             <a href="https://imxcz.com/tags/%E6%8B%8D%E7%85%A7/">拍照</a>
             
+            <a href="https://imxcz.com/tags/%E6%97%B6%E5%85%89%E6%9C%BA%E5%99%A8/">时光机器</a>
+            
             <a href="https://imxcz.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
             
             <a href="https://imxcz.com/tags/%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C/">用户体验</a>
             
             <a href="https://imxcz.com/tags/%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1/">界面设计</a>
+            
+            <a href="https://imxcz.com/tags/%E7%9B%91%E5%90%AC%E6%96%87%E4%BB%B6/">监听文件</a>
             
             <a href="https://imxcz.com/tags/%E7%A0%81%E5%86%9C/">码农</a>
             
@@ -417,11 +424,11 @@ jQuery返回顶部（查看示例）</p>
     </section>
     
     <section class="widget-box">
-            <h3 class="widget-title">其他</h3>
-            <ul class="widget-links">
-                    <li><a href="https://imxcz.com/index.xml">文章 RSS</a></li>
-                </ul>
-        </section>
+        <h3 class="widget-title">其他</h3>
+        <ul class="widget-links">
+            <li><a href="https://imxcz.com/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
 </div>
       </sidebar>
   </section>
@@ -429,10 +436,10 @@ jQuery返回顶部（查看示例）</p>
 
 
 <footer class="site-footer">
-  <p>© 2012-2019 幸存者IMxcz.Com</p>
+  <p>© 2012-2021 幸存者IMxcz.Com</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="http://www.imxcz.com" target="_blank" rel="noopener">Imxcz</a>.</p>
   
-    <p><a href="http://www.miitbeian.gov.cn" title="Check ICP info" target="_blank" rel="noopener">豫ICP备12022851号-2</a></p>
+    <p><a href="http://beian.miit.gov.cn/" title="Check ICP info" target="_blank" rel="noopener">豫ICP备12022851号-2</a></p>
   
 </footer>
 

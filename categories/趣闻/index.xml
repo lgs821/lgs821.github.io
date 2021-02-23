@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>趣闻 on 幸存者IMxcz.Com</title>
@@ -6,11 +6,7 @@
     <description>Recent content in 趣闻 on 幸存者IMxcz.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 05 May 2015 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://imxcz.com/categories/%E8%B6%A3%E9%97%BB/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 05 May 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://imxcz.com/categories/%E8%B6%A3%E9%97%BB/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>为什么你说“就差一个码农了”，我们通常都是拒绝的</title>
       <link>https://imxcz.com/wordpress/yousay-manong-i-refuse.html</link>

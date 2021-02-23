@@ -19,7 +19,7 @@
 <meta name="description" content="说到代码托管，熟悉的朋友首先就会想到Github这货了吧，全世界的程序员都了解的东西，当然Svn也是不错的选择。使用代码托管当然需要好用的管理工具，无疑TortoiseGit &#43; Ms"> 
 
 
-<meta name="generator" content="Hugo 0.54.0">
+<meta name="generator" content="Hugo 0.80.0">
 
 
 <link rel="canonical" href="https://imxcz.com/wordpress/tortoisegit-msysgit.html"> 
@@ -153,66 +153,35 @@
               
           </p>
     </header>
-    <article class="post-content">
-
-<p>说到代码托管，熟悉的朋友首先就会想到Github这货了吧，全世界的程序员都了解的东西，当然Svn也是不错的选择。使用代码托管当然需要好用的管理工具，无疑TortoiseGit + MsysGit是很方便的Windows平台下再方便不过的Git客户端工具了，在Mac下推荐使用Sourcetree，当然由于小屌丝一枚，没有苹果这么高大上的电脑，只要就说说Windows下的安装使用说明吧。0.0</p>
-
+    <article class="post-content"><p>说到代码托管，熟悉的朋友首先就会想到Github这货了吧，全世界的程序员都了解的东西，当然Svn也是不错的选择。使用代码托管当然需要好用的管理工具，无疑TortoiseGit + MsysGit是很方便的Windows平台下再方便不过的Git客户端工具了，在Mac下推荐使用Sourcetree，当然由于小屌丝一枚，没有苹果这么高大上的电脑，只要就说说Windows下的安装使用说明吧。0.0</p>
 <h4 id="首先当然是需要下载软件了">首先当然是需要下载软件了</h4>
-
 <p>TortoiseGit下载地址：<a href="https://code.google.com/p/tortoisegit">https://code.google.com/p/tortoisegit</a></p>
-
 <p>MsysGit下载地址：<a href="http://msysgit.github.com/">http://msysgit.github.com/</a> ( Git for Windows )</p>
-
 <p>当然国外的服务器下载速度是很让人郁闷的，不想受这煎熬的同学可以在这里下载</p>
-
 <p><a href="http://pan.baidu.com/s/1gdy5psR">http://pan.baidu.com/s/1gdy5psR</a>解压密码：www.imxcz.com</p>
-
 <p>版本分别是TortoiseGit1.8.12  32位和64位 包含中英文语言包    MsysGit1.9.5   都是2014年圣诞节前后的最新版本，如果想使用更新版本可以随时关注它们官方网站自行下载即可。</p>
-
-<h4 id="准备工作完成-接下来一步步安装">准备工作完成，接下来一步步安装</h4>
-
+<h4 id="准备工作完成接下来一步步安装">准备工作完成，接下来一步步安装</h4>
 <p>首先安装MsysGit-Git for Windows,安装到您需要的位置即可</p>
-
-<p><img src="http://imgs.liguangshuai.cn/markdown/2019-03-17-095644.jpg" alt="TortoiseGit+MsysGit" /></p>
-
+<p><img src="http://imgs.liguangshuai.cn/markdown/2019-03-17-095644.jpg" alt="TortoiseGit+MsysGit"></p>
 <p>接着安装TortoiseGit根据提示直接下一步到安装结束。安装完成后点击右键可以看到图标了，点击Setting，如图所示：</p>
-
-<p><img src="http://imgs.liguangshuai.cn/markdown/2019-03-17-095649.jpg" alt="TortoiseGit+MsysGit1" /></p>
-
-<p><img src="http://imgs.liguangshuai.cn/markdown/2019-03-17-095657.jpg" alt="TortoiseGit+MsysGit2" /></p>
-
+<p><img src="http://imgs.liguangshuai.cn/markdown/2019-03-17-095649.jpg" alt="TortoiseGit+MsysGit1"></p>
+<p><img src="http://imgs.liguangshuai.cn/markdown/2019-03-17-095657.jpg" alt="TortoiseGit+MsysGit2"></p>
 <p>打开后在General页面点击Check now左边会显示Git的版本号，说明安装已经成功了。那接下来呢，接下来当然是安装语言包了，对于英文不好的童鞋，当然还是简体中文的有木有！找到下载的压缩包里对应系统类型的语言包直接双击安装，很快就安装好，然后点开设置，还是如上图Language那里选择 <strong>中文-简体(中华人民共和国)</strong> 点击之后有木有感觉界面一下子很亲切了呢。o(^▽^)o</p>
-
 <h4 id="接下来创建版本库">接下来创建版本库</h4>
-
 <p>在项目中空白处点击鼠标右键，安装过语言包的同学会看到 Git 在这里创建版本库 的选项点击，然后点击弹出框的“确定”，项目中会出现一个隐藏的 .gif文件夹，说明创建成功。</p>
-
 <p>接下来设置版本库，项目中点击右键-&gt;TortoiseGit-&gt;设置  然后点击Git,填写名字，Email，接着点击 远端-&gt;填写远端名称，Url那里填写Git的https地址或者SSH地址都可，然后点击添加保存，就完事儿了。</p>
-
-<p><img src="http://imgs.liguangshuai.cn/markdown/2019-03-17-095709.jpg" alt="TortoiseGit+MsysGit3" /></p>
-
-<p><img src="http://imgs.liguangshuai.cn/markdown/2019-03-17-095717.jpg" alt="TortoiseGit+MsysGit4" /></p>
-
+<p><img src="http://imgs.liguangshuai.cn/markdown/2019-03-17-095709.jpg" alt="TortoiseGit+MsysGit3"></p>
+<p><img src="http://imgs.liguangshuai.cn/markdown/2019-03-17-095717.jpg" alt="TortoiseGit+MsysGit4"></p>
 <h4 id="接下来就是软件的使用了">接下来就是软件的使用了</h4>
-
 <p>使用很简单的，大致说一下，就不详细说了，自己慢慢摸索就会了。</p>
-
 <p>项目代码写好了，或者修改了功能之后在项目目录右键-&gt;Git提交</p>
-
-<p><img src="http://imgs.liguangshuai.cn/markdown/2019-03-17-095722.jpg" alt="TortoiseGit+MsysGit5" /></p>
-
+<p><img src="http://imgs.liguangshuai.cn/markdown/2019-03-17-095722.jpg" alt="TortoiseGit+MsysGit5"></p>
 <p>在日志信息那里填写修改或者新增的功能之类的说明，下面选择需要提交的文件，点级确定。进度完成显示成功后，点击 推送。</p>
-
-<p><img src="http://imgs.liguangshuai.cn/markdown/2019-03-17-095730.jpg" alt="TortoiseGit+MsysGit6" /></p>
-
-<p><img src="http://imgs.liguangshuai.cn/markdown/2019-03-17-095737.jpg" alt="TortoiseGit+MsysGit7" /></p>
-
+<p><img src="http://imgs.liguangshuai.cn/markdown/2019-03-17-095730.jpg" alt="TortoiseGit+MsysGit6"></p>
+<p><img src="http://imgs.liguangshuai.cn/markdown/2019-03-17-095737.jpg" alt="TortoiseGit+MsysGit7"></p>
 <p>选择本地和远端的地址，确定。弹出框输入Git的账号，密码等待成功即可。。</p>
-
 <p>到此结束。其他功能不熟悉的自己摸索哦。。。。</p>
-
 <h4 id="相关文件地址">相关文件地址</h4>
-
 <p><a href="http://pan.baidu.com/s/1gdy5psR">下载地址</a> | 来自幸存者IMxcz.com | <a href="https://imxcz.com/tags/git">更多Git相关</a></p>
 </article>
     <footer class="post-footer">
@@ -229,7 +198,7 @@
       
       <p class="post-copyright">
         Link:<a rel='license' href='https://imxcz.com/wordpress/tortoisegit-msysgit.html'>https://imxcz.com/wordpress/tortoisegit-msysgit.html </a><br>
-          © 本文采用 <a rel='license' href='http://creativecommons.org/licenses/by-nc/4.0/' target=''>知识共享署名-非商业性使用 4.0 国际许可协议</a> 进行许可。文章发表于 <strong>1661</strong> 天前, 文章内容可能不准确，请酌情参考。
+          © 本文采用 <a rel='license' href='http://creativecommons.org/licenses/by-nc/4.0/' target=''>知识共享署名-非商业性使用 4.0 国际许可协议</a> 进行许可。文章发表于 <strong>2252</strong> 天前, 文章内容可能不准确，请酌情参考。
       </p>
       <div class="post-nav">
           
@@ -267,7 +236,7 @@
             </li>
             
             <li>
-                <a href="https://imxcz.com/categories/%E6%8A%80%E6%9C%AF/">技术(18)</a>
+                <a href="https://imxcz.com/categories/%E6%8A%80%E6%9C%AF/">技术(19)</a>
             </li>
             
             <li>
@@ -275,7 +244,7 @@
             </li>
             
             <li>
-                <a href="https://imxcz.com/categories/%E7%AC%94%E8%AE%B0/">笔记(3)</a>
+                <a href="https://imxcz.com/categories/%E7%AC%94%E8%AE%B0/">笔记(5)</a>
             </li>
             
             <li>
@@ -326,6 +295,8 @@
             
             <a href="https://imxcz.com/tags/htaccess/">htaccess</a>
             
+            <a href="https://imxcz.com/tags/hugo/">hugo</a>
+            
             <a href="https://imxcz.com/tags/iis/">iis</a>
             
             <a href="https://imxcz.com/tags/javascript/">javascript</a>
@@ -336,11 +307,17 @@
             
             <a href="https://imxcz.com/tags/mac/">mac</a>
             
+            <a href="https://imxcz.com/tags/macos/">macos</a>
+            
+            <a href="https://imxcz.com/tags/markdown/">markdown</a>
+            
             <a href="https://imxcz.com/tags/msysgit/">msysgit</a>
             
             <a href="https://imxcz.com/tags/mysql/">mysql</a>
             
             <a href="https://imxcz.com/tags/php/">php</a>
+            
+            <a href="https://imxcz.com/tags/timemachine/">timemachine</a>
             
             <a href="https://imxcz.com/tags/tortoisegit/">tortoisegit</a>
             
@@ -368,11 +345,15 @@
             
             <a href="https://imxcz.com/tags/%E6%8B%8D%E7%85%A7/">拍照</a>
             
+            <a href="https://imxcz.com/tags/%E6%97%B6%E5%85%89%E6%9C%BA%E5%99%A8/">时光机器</a>
+            
             <a href="https://imxcz.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
             
             <a href="https://imxcz.com/tags/%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C/">用户体验</a>
             
             <a href="https://imxcz.com/tags/%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1/">界面设计</a>
+            
+            <a href="https://imxcz.com/tags/%E7%9B%91%E5%90%AC%E6%96%87%E4%BB%B6/">监听文件</a>
             
             <a href="https://imxcz.com/tags/%E7%A0%81%E5%86%9C/">码农</a>
             
@@ -403,11 +384,11 @@
     </section>
     
     <section class="widget-box">
-            <h3 class="widget-title">其他</h3>
-            <ul class="widget-links">
-                    <li><a href="https://imxcz.com/index.xml">文章 RSS</a></li>
-                </ul>
-        </section>
+        <h3 class="widget-title">其他</h3>
+        <ul class="widget-links">
+            <li><a href="https://imxcz.com/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
 </div>
       </sidebar>
   </section>
@@ -415,10 +396,10 @@
 
 
 <footer class="site-footer">
-  <p>© 2012-2019 幸存者IMxcz.Com</p>
+  <p>© 2012-2021 幸存者IMxcz.Com</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="http://www.imxcz.com" target="_blank" rel="noopener">Imxcz</a>.</p>
   
-    <p><a href="http://www.miitbeian.gov.cn" title="Check ICP info" target="_blank" rel="noopener">豫ICP备12022851号-2</a></p>
+    <p><a href="http://beian.miit.gov.cn/" title="Check ICP info" target="_blank" rel="noopener">豫ICP备12022851号-2</a></p>
   
 </footer>
 

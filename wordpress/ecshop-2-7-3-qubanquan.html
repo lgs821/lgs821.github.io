@@ -19,7 +19,7 @@
 <meta name="description" content="前台部分： 1:去掉头部TITLE部分的ECSHOP演示站 Powered by ecshop 前者在后台商店设置 – 商店标题修改 后者打开includes/lib_main.php $page_title = $GLOBALS[&amp;#39;_CFG&amp;#39;][&amp;#39;shop_title&amp;#39;] . &amp;#39; – &amp;#39; . &amp;#39;Powered by ECShop&amp;#39;; 修改这里的Po"> 
 
 
-<meta name="generator" content="Hugo 0.54.0">
+<meta name="generator" content="Hugo 0.80.0">
 
 
 <link rel="canonical" href="https://imxcz.com/wordpress/ecshop-2-7-3-qubanquan.html"> 
@@ -153,67 +153,40 @@
               
           </p>
     </header>
-    <article class="post-content">
-
-<h4 id="前台部分">前台部分：</h4>
-
-<h5 id="1-去掉头部title部分的ecshop演示站-powered-by-ecshop">1:去掉头部TITLE部分的ECSHOP演示站 Powered by ecshop</h5>
-
-<p><img src="https://www.imxcz.com/wp-content/uploads/2012/08/a11.jpg" alt="a1(1)" /></p>
-
+    <article class="post-content"><h4 id="前台部分">前台部分：</h4>
+<h5 id="1去掉头部title部分的ecshop演示站-powered-by-ecshop">1:去掉头部TITLE部分的ECSHOP演示站 Powered by ecshop</h5>
+<p><img src="https://www.imxcz.com/wp-content/uploads/2012/08/a11.jpg" alt="a1(1)"></p>
 <p>前者在后台商店设置 – 商店标题修改</p>
-
 <p>后者打开<code>includes/lib_main.php</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$page_title = $GLOBALS[&#39;_CFG&#39;][&#39;shop_title&#39;] . &#39; – &#39; . &#39;Powered by ECShop&#39;;</code></pre></div>
-<p>修改这里的<code>Powered by ECShop</code>可为自己的标识。
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$page_title <span style="color:#f92672">=</span> $GLOBALS[<span style="color:#e6db74">&#39;_CFG&#39;</span>][<span style="color:#e6db74">&#39;shop_title&#39;</span>] <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39; – &#39;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;Powered by ECShop&#39;</span>;
+</code></pre></div><p>修改这里的<code>Powered by ECShop</code>可为自己的标识。
 或修改为：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$page_title = $GLOBALS[&#39;_CFG&#39;][&#39;shop_title&#39;];</code></pre></div>
-<p>即为去掉这个显示</p>
-
-<h5 id="2-去掉友情链接部分">2.去掉友情链接部分</h5>
-
-<p><img src="https://www.imxcz.com/wp-content/uploads/2012/08/a2.gif" alt="a2" /></p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$page_title <span style="color:#f92672">=</span> $GLOBALS[<span style="color:#e6db74">&#39;_CFG&#39;</span>][<span style="color:#e6db74">&#39;shop_title&#39;</span>];
+</code></pre></div><p>即为去掉这个显示</p>
+<h5 id="2去掉友情链接部分">2.去掉友情链接部分</h5>
+<p><img src="https://www.imxcz.com/wp-content/uploads/2012/08/a2.gif" alt="a2"></p>
 <p>在后台的友情链接管理里修改</p>
-
-<h5 id="3-去掉底部的-powered-by-ecshop-272">3.去掉底部的<code>Powered by ecshop 272</code></h5>
-
+<h5 id="3去掉底部的powered-by-ecshop-272">3.去掉底部的<code>Powered by ecshop 272</code></h5>
 <p>打开 <code>js/common.js</code></p>
-
 <p>删除大约在：第262行:<code>onload = function()</code></p>
-
 <p>再打开模板文件夹的 <code>library/page_footer.lbi</code></p>
-
 <p>删除 <code>{foreach from=$lang.p_y item=pv}{​$pv}{/foreach}{$licensed}</code></p>
-
 <h4 id="后台部分">后台部分：</h4>
-
-<h5 id="1-去除两张图片">1.去除两张图片</h5>
-
-<p><img src="https://www.imxcz.com/wp-content/uploads/2012/08/a4.gif" alt="a4" /><img src="https://www.imxcz.com/wp-content/uploads/2012/08/a5.gif" alt="a5" /></p>
-
+<h5 id="1去除两张图片">1.去除两张图片</h5>
+<p><img src="https://www.imxcz.com/wp-content/uploads/2012/08/a4.gif" alt="a4"><img src="https://www.imxcz.com/wp-content/uploads/2012/08/a5.gif" alt="a5"></p>
 <p><code>admin/images/ecshop_logo.gif</code></p>
-
 <p><code>admin/images/login.png</code></p>
-
-<h5 id="2-右上角的-关于ecshop">2.右上角的“关于ECSHOP”</h5>
-
-<p><img src="https://www.imxcz.com/wp-content/uploads/2012/08/a6.gif" alt="a6" /></p>
-
+<h5 id="2右上角的关于ecshop">2.右上角的“关于ECSHOP”</h5>
+<p><img src="https://www.imxcz.com/wp-content/uploads/2012/08/a6.gif" alt="a6"></p>
 <p>打开<code>admin/templates/top.htm</code></p>
-
 <p>删除：</p>
-
 <p><code>&lt;ul&gt;  &lt;li&gt;&lt;a href=”index.php?act=about_us” target=”main-frame”&gt;{$lang.about}&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt;</code></p>
-
-<h5 id="3-中部-ecshop-管理中心-和底部的版权所有">3.中部 ECSHOP 管理中心， 和底部的版权所有</h5>
-
-<p><img src="https://www.imxcz.com/wp-content/uploads/2012/08/a7.gif" alt="a7" /><img src="https://www.imxcz.com/wp-content/uploads/2012/08/a8-300x16.gif" alt="a8" /></p>
-
+<h5 id="3中部-ecshop-管理中心-和底部的版权所有">3.中部 ECSHOP 管理中心， 和底部的版权所有</h5>
+<p><img src="https://www.imxcz.com/wp-content/uploads/2012/08/a7.gif" alt="a7"><img src="https://www.imxcz.com/wp-content/uploads/2012/08/a8-300x16.gif" alt="a8"></p>
 <p>打开<code>language/zh_cn/admin/common.php</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$LANG[&#39;cp_home&#39;] = &#39;ECSHOP 管理中心&#39;;
-​$LANG[&#39;copyright&#39;] = &#39;版权所有 © 2005-2009 上海商派网络科技有限公司，并保留所有权利。&#39;;</code></pre></div>
-<p>+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$LANG[<span style="color:#e6db74">&#39;cp_home&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ECSHOP 管理中心&#39;</span>;
+<span style="color:#a6e22e">​</span>$LANG[<span style="color:#e6db74">&#39;copyright&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;版权所有 © 2005-2009 上海商派网络科技有限公司，并保留所有权利。&#39;</span>;
+</code></pre></div><p>+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</p>
 </article>
     <footer class="post-footer">
       
@@ -225,7 +198,7 @@
       
       <p class="post-copyright">
         Link:<a rel='license' href='https://imxcz.com/wordpress/ecshop-2-7-3-qubanquan.html'>https://imxcz.com/wordpress/ecshop-2-7-3-qubanquan.html </a><br>
-          © 本文采用 <a rel='license' href='http://creativecommons.org/licenses/by-nc/4.0/' target=''>知识共享署名-非商业性使用 4.0 国际许可协议</a> 进行许可。文章发表于 <strong>2516</strong> 天前, 文章内容可能不准确，请酌情参考。
+          © 本文采用 <a rel='license' href='http://creativecommons.org/licenses/by-nc/4.0/' target=''>知识共享署名-非商业性使用 4.0 国际许可协议</a> 进行许可。文章发表于 <strong>3107</strong> 天前, 文章内容可能不准确，请酌情参考。
       </p>
       <div class="post-nav">
            
@@ -261,7 +234,7 @@
             </li>
             
             <li>
-                <a href="https://imxcz.com/categories/%E6%8A%80%E6%9C%AF/">技术(18)</a>
+                <a href="https://imxcz.com/categories/%E6%8A%80%E6%9C%AF/">技术(19)</a>
             </li>
             
             <li>
@@ -269,7 +242,7 @@
             </li>
             
             <li>
-                <a href="https://imxcz.com/categories/%E7%AC%94%E8%AE%B0/">笔记(3)</a>
+                <a href="https://imxcz.com/categories/%E7%AC%94%E8%AE%B0/">笔记(5)</a>
             </li>
             
             <li>
@@ -320,6 +293,8 @@
             
             <a href="https://imxcz.com/tags/htaccess/">htaccess</a>
             
+            <a href="https://imxcz.com/tags/hugo/">hugo</a>
+            
             <a href="https://imxcz.com/tags/iis/">iis</a>
             
             <a href="https://imxcz.com/tags/javascript/">javascript</a>
@@ -330,11 +305,17 @@
             
             <a href="https://imxcz.com/tags/mac/">mac</a>
             
+            <a href="https://imxcz.com/tags/macos/">macos</a>
+            
+            <a href="https://imxcz.com/tags/markdown/">markdown</a>
+            
             <a href="https://imxcz.com/tags/msysgit/">msysgit</a>
             
             <a href="https://imxcz.com/tags/mysql/">mysql</a>
             
             <a href="https://imxcz.com/tags/php/">php</a>
+            
+            <a href="https://imxcz.com/tags/timemachine/">timemachine</a>
             
             <a href="https://imxcz.com/tags/tortoisegit/">tortoisegit</a>
             
@@ -362,11 +343,15 @@
             
             <a href="https://imxcz.com/tags/%E6%8B%8D%E7%85%A7/">拍照</a>
             
+            <a href="https://imxcz.com/tags/%E6%97%B6%E5%85%89%E6%9C%BA%E5%99%A8/">时光机器</a>
+            
             <a href="https://imxcz.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
             
             <a href="https://imxcz.com/tags/%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C/">用户体验</a>
             
             <a href="https://imxcz.com/tags/%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1/">界面设计</a>
+            
+            <a href="https://imxcz.com/tags/%E7%9B%91%E5%90%AC%E6%96%87%E4%BB%B6/">监听文件</a>
             
             <a href="https://imxcz.com/tags/%E7%A0%81%E5%86%9C/">码农</a>
             
@@ -397,11 +382,11 @@
     </section>
     
     <section class="widget-box">
-            <h3 class="widget-title">其他</h3>
-            <ul class="widget-links">
-                    <li><a href="https://imxcz.com/index.xml">文章 RSS</a></li>
-                </ul>
-        </section>
+        <h3 class="widget-title">其他</h3>
+        <ul class="widget-links">
+            <li><a href="https://imxcz.com/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
 </div>
       </sidebar>
   </section>
@@ -409,10 +394,10 @@
 
 
 <footer class="site-footer">
-  <p>© 2012-2019 幸存者IMxcz.Com</p>
+  <p>© 2012-2021 幸存者IMxcz.Com</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="http://www.imxcz.com" target="_blank" rel="noopener">Imxcz</a>.</p>
   
-    <p><a href="http://www.miitbeian.gov.cn" title="Check ICP info" target="_blank" rel="noopener">豫ICP备12022851号-2</a></p>
+    <p><a href="http://beian.miit.gov.cn/" title="Check ICP info" target="_blank" rel="noopener">豫ICP备12022851号-2</a></p>
   
 </footer>
 

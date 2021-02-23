@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>markdown on 幸存者IMxcz.Com</title>
+    <link>https://imxcz.com/tags/markdown/</link>
+    <description>Recent content in markdown on 幸存者IMxcz.Com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 22 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://imxcz.com/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hugo markdown文章新窗口打开超链接</title>
+      <link>https://imxcz.com/post/2021/hugo-markdown-target/</link>
+      <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://imxcz.com/post/2021/hugo-markdown-target/</guid>
+      <description>一、通过js修改链接a标签 target &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; function addaTarget(id) { var aTags = document.getElementById(id).getElementsByTagName(&amp;#34;a&amp;#34;); for (i = 0; i &amp;lt; aTags.length; i++) { var aTags_item = aTags[i]; aTags_item.target = &amp;#34;_blank&amp;#34;; } } addaTarget(&amp;#34;post-content-id&amp;#34;); &amp;lt;/script&amp;gt; 二、通过Hugo Markdown Render Hooks 可在超链接添加title标签 [Text](https://www.gohugo.io &amp;quot;Title&amp;quot;) 增加下面模板文件 layouts/_default/_markup/render-link.html &amp;lt;a href=&amp;#34;{{ .Destination | safeURL }}&amp;#34;{{ with .Title}} title=&amp;#34;{{ . }}&amp;#34;{{</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Php on 幸存者IMxcz.Com</title>
+    <title>php on 幸存者IMxcz.Com</title>
     <link>https://imxcz.com/tags/php/</link>
-    <description>Recent content in Php on 幸存者IMxcz.Com</description>
+    <description>Recent content in php on 幸存者IMxcz.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 18 Dec 2014 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://imxcz.com/tags/php/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 18 Dec 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://imxcz.com/tags/php/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Windows平台优秀的PHP/Mysql/Apache绿色web服务套件-UPUPW</title>
       <link>https://imxcz.com/wordpress/windows-apache-nginx-kangle-php-upupw.html</link>

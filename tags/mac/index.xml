@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mac on 幸存者IMxcz.Com</title>
+    <title>mac on 幸存者IMxcz.Com</title>
     <link>https://imxcz.com/tags/mac/</link>
-    <description>Recent content in Mac on 幸存者IMxcz.Com</description>
+    <description>Recent content in mac on 幸存者IMxcz.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 05 Mar 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://imxcz.com/tags/mac/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 05 Mar 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://imxcz.com/tags/mac/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Golang在Mac、linux、windows系统下交叉编译</title>
       <link>https://imxcz.com/post/2018/golang-jiaochabianyi/</link>

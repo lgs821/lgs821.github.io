@@ -19,7 +19,7 @@
 <meta name="description" content="MySql 常用查询语句整理中 Group by 前排序、查询数据库中哪些表包含某个字段 Group by 前排序 select * from (select * from ls_list order by id desc) ls_list1 group by gid order by id 查询数据库中哪些表包含某个字段 已知一个字段中含有字符lan，想知道数据库"> 
 
 
-<meta name="generator" content="Hugo 0.54.0">
+<meta name="generator" content="Hugo 0.80.0">
 
 
 <link rel="canonical" href="https://imxcz.com/post/2018/mysql-chaxun-yuju/"> 
@@ -153,21 +153,18 @@
               
           </p>
     </header>
-    <article class="post-content">
-
-<h3 id="mysql-常用查询语句整理中">MySql 常用查询语句整理中</h3>
-
+    <article class="post-content"><h3 id="mysql-常用查询语句整理中">MySql 常用查询语句整理中</h3>
 <p>Group by 前排序、查询数据库中哪些表包含某个字段</p>
-
 <ul>
 <li>Group by 前排序</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> (<span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> ls_list <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span> id <span style="color:#66d9ef">desc</span>) ls_list1  <span style="color:#66d9ef">group</span> <span style="color:#66d9ef">by</span> gid <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span> id</code></pre></div>
-<ul>
-<li>查询数据库中哪些表包含某个字段</li>
-</ul>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> (<span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> ls_list <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span> id <span style="color:#66d9ef">desc</span>) ls_list1  <span style="color:#66d9ef">group</span> <span style="color:#66d9ef">by</span> gid <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span> id
+</code></pre></div><ul>
+<li>
+<p>查询数据库中哪些表包含某个字段</p>
 <p>已知一个字段中含有字符lan，想知道数据库中哪表含有此字段</p>
+</li>
+</ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mysql&gt; <span style="color:#66d9ef">select</span> table_name,column_name from information_schema.columns where column_name like <span style="color:#e6db74">&#39;%lan%&#39;</span>;
 
 +-------------+-------------------+
@@ -178,13 +175,10 @@
 
 | device      | lanAddress        |
 
-+-------------+-------------------+</code></pre></div>
-<p>在MySQL中，把 information_schema 看作是一个数据库，确切说是信息数据库。</p>
-
++-------------+-------------------+
+</code></pre></div><p>在MySQL中，把 information_schema 看作是一个数据库，确切说是信息数据库。</p>
 <p>COLUMNS表：提供了表中的列信息。</p>
-
 <p>SCHEMATA表：提供了当前mysql实例中所有数据库的信息。</p>
-
 <p>TABLES表：提供了关于数据库中的表的信息（包括视图）。</p>
 </article>
     <footer class="post-footer">
@@ -197,7 +191,7 @@
       
       <p class="post-copyright">
         Link:<a rel='license' href='https://imxcz.com/post/2018/mysql-chaxun-yuju/'>https://imxcz.com/post/2018/mysql-chaxun-yuju/ </a><br>
-          © 本文采用 <a rel='license' href='http://creativecommons.org/licenses/by-nc/4.0/' target=''>知识共享署名-非商业性使用 4.0 国际许可协议</a> 进行许可。文章发表于 <strong>406</strong> 天前, 文章内容可能不准确，请酌情参考。
+          © 本文采用 <a rel='license' href='http://creativecommons.org/licenses/by-nc/4.0/' target=''>知识共享署名-非商业性使用 4.0 国际许可协议</a> 进行许可。文章发表于 <strong>997</strong> 天前, 文章内容可能不准确，请酌情参考。
       </p>
       <div class="post-nav">
           
@@ -235,7 +229,7 @@
             </li>
             
             <li>
-                <a href="https://imxcz.com/categories/%E6%8A%80%E6%9C%AF/">技术(18)</a>
+                <a href="https://imxcz.com/categories/%E6%8A%80%E6%9C%AF/">技术(19)</a>
             </li>
             
             <li>
@@ -243,7 +237,7 @@
             </li>
             
             <li>
-                <a href="https://imxcz.com/categories/%E7%AC%94%E8%AE%B0/">笔记(3)</a>
+                <a href="https://imxcz.com/categories/%E7%AC%94%E8%AE%B0/">笔记(5)</a>
             </li>
             
             <li>
@@ -294,6 +288,8 @@
             
             <a href="https://imxcz.com/tags/htaccess/">htaccess</a>
             
+            <a href="https://imxcz.com/tags/hugo/">hugo</a>
+            
             <a href="https://imxcz.com/tags/iis/">iis</a>
             
             <a href="https://imxcz.com/tags/javascript/">javascript</a>
@@ -304,11 +300,17 @@
             
             <a href="https://imxcz.com/tags/mac/">mac</a>
             
+            <a href="https://imxcz.com/tags/macos/">macos</a>
+            
+            <a href="https://imxcz.com/tags/markdown/">markdown</a>
+            
             <a href="https://imxcz.com/tags/msysgit/">msysgit</a>
             
             <a href="https://imxcz.com/tags/mysql/">mysql</a>
             
             <a href="https://imxcz.com/tags/php/">php</a>
+            
+            <a href="https://imxcz.com/tags/timemachine/">timemachine</a>
             
             <a href="https://imxcz.com/tags/tortoisegit/">tortoisegit</a>
             
@@ -336,11 +338,15 @@
             
             <a href="https://imxcz.com/tags/%E6%8B%8D%E7%85%A7/">拍照</a>
             
+            <a href="https://imxcz.com/tags/%E6%97%B6%E5%85%89%E6%9C%BA%E5%99%A8/">时光机器</a>
+            
             <a href="https://imxcz.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
             
             <a href="https://imxcz.com/tags/%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C/">用户体验</a>
             
             <a href="https://imxcz.com/tags/%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1/">界面设计</a>
+            
+            <a href="https://imxcz.com/tags/%E7%9B%91%E5%90%AC%E6%96%87%E4%BB%B6/">监听文件</a>
             
             <a href="https://imxcz.com/tags/%E7%A0%81%E5%86%9C/">码农</a>
             
@@ -371,11 +377,11 @@
     </section>
     
     <section class="widget-box">
-            <h3 class="widget-title">其他</h3>
-            <ul class="widget-links">
-                    <li><a href="https://imxcz.com/index.xml">文章 RSS</a></li>
-                </ul>
-        </section>
+        <h3 class="widget-title">其他</h3>
+        <ul class="widget-links">
+            <li><a href="https://imxcz.com/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
 </div>
       </sidebar>
   </section>
@@ -383,10 +389,10 @@
 
 
 <footer class="site-footer">
-  <p>© 2012-2019 幸存者IMxcz.Com</p>
+  <p>© 2012-2021 幸存者IMxcz.Com</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="http://www.imxcz.com" target="_blank" rel="noopener">Imxcz</a>.</p>
   
-    <p><a href="http://www.miitbeian.gov.cn" title="Check ICP info" target="_blank" rel="noopener">豫ICP备12022851号-2</a></p>
+    <p><a href="http://beian.miit.gov.cn/" title="Check ICP info" target="_blank" rel="noopener">豫ICP备12022851号-2</a></p>
   
 </footer>
 

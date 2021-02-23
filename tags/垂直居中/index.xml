@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>垂直居中 on 幸存者IMxcz.Com</title>
@@ -6,11 +6,7 @@
     <description>Recent content in 垂直居中 on 幸存者IMxcz.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 22 Aug 2012 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://imxcz.com/tags/%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 22 Aug 2012 00:00:00 +0000</lastBuildDate><atom:link href="https://imxcz.com/tags/%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>div图片垂直居中显示</title>
       <link>https://imxcz.com/wordpress/div-img-chuizhi-juzhong.html</link>

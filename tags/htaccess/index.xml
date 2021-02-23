@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Htaccess on 幸存者IMxcz.Com</title>
+    <title>htaccess on 幸存者IMxcz.Com</title>
     <link>https://imxcz.com/tags/htaccess/</link>
-    <description>Recent content in Htaccess on 幸存者IMxcz.Com</description>
+    <description>Recent content in htaccess on 幸存者IMxcz.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 19 Mar 2015 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://imxcz.com/tags/htaccess/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 19 Mar 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://imxcz.com/tags/htaccess/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>利用.htaccess的反向透明代理，在不能绑米空间上绑定自己的域名！</title>
       <link>https://imxcz.com/wordpress/htaccess-proxy.html</link>

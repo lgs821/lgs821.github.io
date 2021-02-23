@@ -19,7 +19,7 @@
 <meta name="description" content="1、var myDate = new Date(); Date() 返回当日的日期和时间。 getDate() 从 Date 对象返回一个月中的某一天 (1 ~ 31)。 getDay() 从 Date 对象返回一周中的某一天 (0 ~ 6)。 getMonth() 从 Date 对象返回月份 (0 ~ 11)。 getFullYear() 从 Date 对象以四位数字返回年份"> 
 
 
-<meta name="generator" content="Hugo 0.54.0">
+<meta name="generator" content="Hugo 0.80.0">
 
 
 <link rel="canonical" href="https://imxcz.com/post/2019/javascript-date/"> 
@@ -203,11 +203,8 @@ toLocaleDateString() 根据本地时间格式，把 Date 对象的日期部分�
 UTC() 根据世界时返回 1997 年 1 月 1 日 到指定日期的毫秒数。
 valueOf() 返回 Date 对象的原始值。
 var objDate=new Date([arguments list]);</p>
-
 <p>==========================================================================</p>
-
 <p>JS获取当前时间戳的方法-JavaScript获取当前毫秒时间戳有以下三种方法：</p>
-
 <pre><code>**var timestamp =Date.parse(new Date());    结果：1280977330000       //不推荐; 毫秒改成了000显示,因为parse只能精确到秒**
 
 **var timestamp =(new Date()).valueOf();       结果：1280977330748       //推荐; 也可以写成new Date().valeOf()**
@@ -215,101 +212,60 @@ var objDate=new Date([arguments list]);</p>
 **var timestamp=new Date().getTime();         结果：1280977330748        //推荐;** 
 
 **var timestamp=+new Date();            结果：1280977330748        //推荐;** 
-</code></pre>
-
-<p>js中单独调用new Date();  显示这种格式  Mar 31 10:10:43 UTC+0800 2012</p>
-
+</code></pre><p>js中单独调用new Date();  显示这种格式  Mar 31 10:10:43 UTC+0800 2012</p>
 <p>但是用new Date() 参与计算会自动转换为从1970.1.1开始的毫秒数</p>
-
 <p>-&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-</p>
-
 <p><strong>将字符串形式的日期转换成日期对象</strong></p>
-
 <pre><code>var strTime=&quot;2011-04-16&quot;;    //字符串日期格式           
 var date= new Date(Date.parse(strTime.replace(/-/g,  &quot;/&quot;)));      //转换成Data();
-</code></pre>
-
-<p>-&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-</p>
-
+</code></pre><p>-&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-</p>
 <pre><code>new Date() ;     //参数可以为整数; 也可以为字符串; 但格式必须正确
 new Date(2009,1,1);       //正确
 new Date(&quot;2009/1/1&quot;);    //正确
 new Date(&quot;2009-1-1&quot;);    //错误
-</code></pre>
-
-<p>2、new Date( year, month, date, hrs, min, sec)  按给定的参数创建一日期对象
+</code></pre><p>2、new Date( year, month, date, hrs, min, sec)  按给定的参数创建一日期对象
 　　参数说明：
-　　year的值为：如果年份<2000年,则需设定的年份减去1900。例如需设定的年份是1997则year的值应为97，即1997-1900的结果。所以Date中可设     定的年份最小为1900；如果年份>2000年，则year就是该年份表示。
+　　year的值为：如果年份&lt;2000年,则需设定的年份减去1900。例如需设定的年份是1997则year的值应为97，即1997-1900的结果。所以Date中可设     定的年份最小为1900；如果年份&gt;2000年，则year就是该年份表示。
 　　<strong>month的值域为0～11，0代表1月，11表代表12月；</strong>
 　　date的值域在1～31之间；
 　　hrs的值域在0～23之间。从午夜到次日凌晨1点间hrs=0，从中午到下午1点间hrs=12；
 　　min和sec的值域在0～59之间。
 　　例 Date day=new Date(11,3,4);
 　　//day中的时间为：04-Apr-11 12:00:00 AM</p>
-
 <p>​       另外，还可以给出不正确的参数。
 　　例　设定时间为1910年2月30日，它将被解释成3月2日。
 　　Date day=new Date(10,1,30,10,12,34);
-　　System.out.println(&ldquo;Day&rsquo;s date is:&ldquo;+day);
+　　System.out.println(&ldquo;Day&rsquo;s date is:&quot;+day);
 　　//打印结果为：Day&rsquo;s date is:Web Mar 02 10:13:34 GMT+08:00 1910</p>
-
 <p>-&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-</p>
-
 <p>1、当前系统区域设置格式(toLocaleDateString和toLocaleTimeString)</p>
-
 <pre><code> 例子:(new Date()).toLocaleDateString() + &quot; &quot; + (new Date()).toLocaleTimeString()
      结果: 2008年1月29日 16:13:11
-</code></pre>
-
-<p>2.普通字符串(toDateString和toTimeString)</p>
-
+</code></pre><p>2.普通字符串(toDateString和toTimeString)</p>
 <pre><code>例子: (new Date()).toDateString() + &quot; &quot; + (new Date()).toTimeString()
      结果:Tue Jan 29 2008 16:13:11 UTC+0800
-</code></pre>
-
-<p>3.格林威治标准时间(toGMTString)</p>
-
+</code></pre><p>3.格林威治标准时间(toGMTString)</p>
 <pre><code>例子: (new Date()).toGMTString()
      结果:Tue, 29 Jan 2008 08:13:11 UTC
-</code></pre>
-
-<p>4.全球标准时间(toUTCString)</p>
-
+</code></pre><p>4.全球标准时间(toUTCString)</p>
 <pre><code>例子: (new Date()).toUTCString()
      结果:Tue, 29 Jan 2008 08:13:11 UTC
-</code></pre>
-
-<p>5.Date对象字符串(toString)</p>
-
+</code></pre><p>5.Date对象字符串(toString)</p>
 <pre><code> 例子: (new Date()).toString()
  结果:Tue Jan 29 16:13:11 UTC+0800 2008
-</code></pre>
-
-<p>-&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-</p>
-
+</code></pre><p>-&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-</p>
 <p>日期对象也可用于比较两个日期。</p>
-
 <pre><code> var today = new Date();
      if (myDate&gt;today){
          ......;
      }
-</code></pre>
-
-<p>js:Date对象的getTime()与parse()方法有什么不同？</p>
-
+</code></pre><p>js:Date对象的getTime()与parse()方法有什么不同？</p>
 <pre><code>Date.parse(dateVal)虽然声称是返回日期与 1970 年 1 月 1 日午夜之间所间隔的毫秒数，但是实际上返回的是精确到秒的毫秒数，而并非实际的毫秒。并且这个数字是非四舍五入的，也就是即使是1秒999毫秒，也按照1000毫秒来输出。
 而getTime()则返回实际毫秒数。
-</code></pre>
-
-<pre><code>
-</code></pre>
-
-<pre><code>4、判断某个时间点前的写法：
-</code></pre>
-
-<pre><code>例如：2016/04/13/10:00:00前输出&quot;时间好慢&quot;
-</code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">if</span>(<span style="color:#f92672">+</span><span style="color:#66d9ef">new</span> Date() <span style="color:#f92672">&lt;=</span> Date.<span style="color:#a6e22e">parse</span>(<span style="color:#e6db74">&#39;2016/04/13 10:00:00&#39;</span>)){			<span style="color:#75715e">// +new Date()等价于new Date().valueOf(),或者new Date().getTime
+</code></pre><pre><code>
+</code></pre><pre><code>4、判断某个时间点前的写法：
+</code></pre><pre><code>例如：2016/04/13/10:00:00前输出&quot;时间好慢&quot;
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">if</span>(<span style="color:#f92672">+</span><span style="color:#66d9ef">new</span> Date() <span style="color:#f92672">&lt;=</span> Date.<span style="color:#a6e22e">parse</span>(<span style="color:#e6db74">&#39;2016/04/13 10:00:00&#39;</span>)){			<span style="color:#75715e">// +new Date()等价于new Date().valueOf(),或者new Date().getTime
 </span><span style="color:#75715e"></span>	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;时间好慢&#39;</span>);
 }
 <span style="color:#66d9ef">if</span>(<span style="color:#66d9ef">new</span> Date() <span style="color:#f92672">&lt;=</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#ae81ff">2016</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">13</span>,<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">00</span>,<span style="color:#ae81ff">00</span>)){			
@@ -328,12 +284,14 @@ new Date(&quot;2009-1-1&quot;);    //错误
       
       <p class="post-copyright">
         Link:<a rel='license' href='https://imxcz.com/post/2019/javascript-date/'>https://imxcz.com/post/2019/javascript-date/ </a><br>
-          © 本文采用 <a rel='license' href='http://creativecommons.org/licenses/by-nc/4.0/' target=''>知识共享署名-非商业性使用 4.0 国际许可协议</a> 进行许可。
+          © 本文采用 <a rel='license' href='http://creativecommons.org/licenses/by-nc/4.0/' target=''>知识共享署名-非商业性使用 4.0 国际许可协议</a> 进行许可。文章发表于 <strong>676</strong> 天前, 文章内容可能不准确，请酌情参考。
       </p>
       <div class="post-nav">
           
           <a href="https://imxcz.com/post/2019/golang-caozuo-biji/" class="prev" rel="prev" title="Golang操作笔记"> ← &nbsp;Golang操作笔记</a>
            
+          
+          <a href="https://imxcz.com/post/2019/macos-mingling/" class="next" rel="next" title="MacOS 系统实用命令记录">MacOS 系统实用命令记录&nbsp; → </a>
           
       </div>
     </footer>
@@ -364,7 +322,7 @@ new Date(&quot;2009-1-1&quot;);    //错误
             </li>
             
             <li>
-                <a href="https://imxcz.com/categories/%E6%8A%80%E6%9C%AF/">技术(18)</a>
+                <a href="https://imxcz.com/categories/%E6%8A%80%E6%9C%AF/">技术(19)</a>
             </li>
             
             <li>
@@ -372,7 +330,7 @@ new Date(&quot;2009-1-1&quot;);    //错误
             </li>
             
             <li>
-                <a href="https://imxcz.com/categories/%E7%AC%94%E8%AE%B0/">笔记(3)</a>
+                <a href="https://imxcz.com/categories/%E7%AC%94%E8%AE%B0/">笔记(5)</a>
             </li>
             
             <li>
@@ -423,6 +381,8 @@ new Date(&quot;2009-1-1&quot;);    //错误
             
             <a href="https://imxcz.com/tags/htaccess/">htaccess</a>
             
+            <a href="https://imxcz.com/tags/hugo/">hugo</a>
+            
             <a href="https://imxcz.com/tags/iis/">iis</a>
             
             <a href="https://imxcz.com/tags/javascript/">javascript</a>
@@ -433,11 +393,17 @@ new Date(&quot;2009-1-1&quot;);    //错误
             
             <a href="https://imxcz.com/tags/mac/">mac</a>
             
+            <a href="https://imxcz.com/tags/macos/">macos</a>
+            
+            <a href="https://imxcz.com/tags/markdown/">markdown</a>
+            
             <a href="https://imxcz.com/tags/msysgit/">msysgit</a>
             
             <a href="https://imxcz.com/tags/mysql/">mysql</a>
             
             <a href="https://imxcz.com/tags/php/">php</a>
+            
+            <a href="https://imxcz.com/tags/timemachine/">timemachine</a>
             
             <a href="https://imxcz.com/tags/tortoisegit/">tortoisegit</a>
             
@@ -465,11 +431,15 @@ new Date(&quot;2009-1-1&quot;);    //错误
             
             <a href="https://imxcz.com/tags/%E6%8B%8D%E7%85%A7/">拍照</a>
             
+            <a href="https://imxcz.com/tags/%E6%97%B6%E5%85%89%E6%9C%BA%E5%99%A8/">时光机器</a>
+            
             <a href="https://imxcz.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
             
             <a href="https://imxcz.com/tags/%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C/">用户体验</a>
             
             <a href="https://imxcz.com/tags/%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1/">界面设计</a>
+            
+            <a href="https://imxcz.com/tags/%E7%9B%91%E5%90%AC%E6%96%87%E4%BB%B6/">监听文件</a>
             
             <a href="https://imxcz.com/tags/%E7%A0%81%E5%86%9C/">码农</a>
             
@@ -500,11 +470,11 @@ new Date(&quot;2009-1-1&quot;);    //错误
     </section>
     
     <section class="widget-box">
-            <h3 class="widget-title">其他</h3>
-            <ul class="widget-links">
-                    <li><a href="https://imxcz.com/index.xml">文章 RSS</a></li>
-                </ul>
-        </section>
+        <h3 class="widget-title">其他</h3>
+        <ul class="widget-links">
+            <li><a href="https://imxcz.com/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
 </div>
       </sidebar>
   </section>
@@ -512,10 +482,10 @@ new Date(&quot;2009-1-1&quot;);    //错误
 
 
 <footer class="site-footer">
-  <p>© 2012-2019 幸存者IMxcz.Com</p>
+  <p>© 2012-2021 幸存者IMxcz.Com</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="http://www.imxcz.com" target="_blank" rel="noopener">Imxcz</a>.</p>
   
-    <p><a href="http://www.miitbeian.gov.cn" title="Check ICP info" target="_blank" rel="noopener">豫ICP备12022851号-2</a></p>
+    <p><a href="http://beian.miit.gov.cn/" title="Check ICP info" target="_blank" rel="noopener">豫ICP备12022851号-2</a></p>
   
 </footer>
 

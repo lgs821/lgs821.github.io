@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Golang on 幸存者IMxcz.Com</title>
@@ -6,10 +6,15 @@
     <description>Recent content in Golang on 幸存者IMxcz.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 20 Mar 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://imxcz.com/tags/golang/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Mon, 22 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://imxcz.com/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang 监听文件变化(非轮询)</title>
+      <link>https://imxcz.com/post/2021/golang-jiantingwenjian/</link>
+      <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://imxcz.com/post/2021/golang-jiantingwenjian/</guid>
+      <description>Golang 监听文件变化(非轮询) 最近研究openresty(nginx+lua)，由于这货热更有点麻烦，所以就写就用golang写了一个文件监听的程序，监听到配置文件或lua文件更改就重启</description>
+    </item>
     
     <item>
       <title>Golang操作笔记</title>

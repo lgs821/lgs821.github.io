@@ -19,7 +19,7 @@
 <meta name="description" content="Gin实战：Gin&#43;Mysql简单的Restful风格的API 我们已经了解了Golang的Gin框架。对于Webservice服务，restful风格几乎一统天下。Gin也天然的支"> 
 
 
-<meta name="generator" content="Hugo 0.54.0">
+<meta name="generator" content="Hugo 0.80.0">
 
 
 <link rel="canonical" href="https://imxcz.com/post/2018/gin-shizhan-restful/"> 
@@ -153,21 +153,16 @@
               
           </p>
     </header>
-    <article class="post-content">
-
-<h4 id="gin实战-gin-mysql简单的restful风格的api">Gin实战：Gin+Mysql简单的Restful风格的API</h4>
-
+    <article class="post-content"><h4 id="gin实战ginmysql简单的restful风格的api">Gin实战：Gin+Mysql简单的Restful风格的API</h4>
 <p>我们已经了解了Golang的Gin框架。对于Webservice服务，restful风格几乎一统天下。Gin也天然的支持restful。下面就使用gin写一个简单的服务，麻雀虽小，五脏俱全。我们先以一个单文件开始，然后再逐步分解模块成包，组织代码。</p>
-
 <h4 id="it-works">It works</h4>
-
 <p>使用Gin的前提是安装，我们需要安装gin和mysql的驱动，具体的安装方式就不在赘述。可以参考<a href="https://www.jianshu.com/p/a31e4ee25305">Golang 微框架Gin简介</a>和<a href="https://www.jianshu.com/p/015aca3e11ae">Golang持久化</a>。</p>
-
 <p>创建一个文件夹用来为项目，新建一个文件main.go：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">☁  newland  tree
 .
-└── main.go</code></pre></div>
-<p>main.go</p>
+└── main.go
+
+</code></pre></div><p>main.go</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 
 <span style="color:#f92672">import</span> (
@@ -183,27 +178,29 @@
  })
 
  <span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">Run</span>(<span style="color:#e6db74">&#34;:8000&#34;</span>)
-}</code></pre></div>
-<p>编译运行</p>
+}
+
+</code></pre></div><p>编译运行</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">☁  newland  go run main.go
 <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>WARNING<span style="color:#f92672">]</span> Running in <span style="color:#e6db74">&#34;debug&#34;</span> mode. Switch to <span style="color:#e6db74">&#34;release&#34;</span> mode in production.
  - using env: export GIN_MODE<span style="color:#f92672">=</span>release
  - using code: gin.SetMode<span style="color:#f92672">(</span>gin.ReleaseMode<span style="color:#f92672">)</span>
 
 <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /                         --&gt; main.main.func1 <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
-<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> Listening and serving HTTP on :8000</code></pre></div>
-<p>访问 <code>/</code>即可看见我们返回的字串<code>It works</code></p>
+<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> Listening and serving HTTP on :8000
 
+
+</code></pre></div><p>访问 <code>/</code>即可看见我们返回的字串<code>It works</code></p>
 <h4 id="数据库">数据库</h4>
-
 <p>安装完毕框架，完成一次请求响应之后。接下来就是安装数据库驱动和初始化数据相关的操作了。首先，我们需要新建数据表。一个及其简单的数据表：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mysql" data-lang="mysql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#f92672">`</span>person<span style="color:#f92672">`</span> (
   <span style="color:#f92672">`</span>id<span style="color:#f92672">`</span> <span style="color:#66d9ef">int</span>(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">AUTO_INCREMENT</span>,
   <span style="color:#f92672">`</span>first_name<span style="color:#f92672">`</span> <span style="color:#66d9ef">varchar</span>(<span style="color:#ae81ff">40</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">DEFAULT</span> <span style="color:#e6db74">&#39;&#39;</span>,
   <span style="color:#f92672">`</span>last_name<span style="color:#f92672">`</span> <span style="color:#66d9ef">varchar</span>(<span style="color:#ae81ff">40</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">DEFAULT</span> <span style="color:#e6db74">&#39;&#39;</span>,
   <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span> (<span style="color:#f92672">`</span>id<span style="color:#f92672">`</span>)
-) <span style="color:#66d9ef">ENGINE</span><span style="color:#f92672">=</span>InnoDB <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">CHARSET</span><span style="color:#f92672">=</span>utf8;</code></pre></div>
-<p>创建数据表之后，初始化数据库连接池：</p>
+) <span style="color:#66d9ef">ENGINE</span><span style="color:#f92672">=</span>InnoDB <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">CHARSET</span><span style="color:#f92672">=</span>utf8;
+
+</code></pre></div><p>创建数据表之后，初始化数据库连接池：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
 
  <span style="color:#a6e22e">db</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">sql</span>.<span style="color:#a6e22e">Open</span>(<span style="color:#e6db74">&#34;mysql&#34;</span>, <span style="color:#e6db74">&#34;root:@tcp(127.0.0.1:3306)/test?parseTime=true&#34;</span>)
@@ -226,17 +223,14 @@
  })
 
  <span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">Run</span>(<span style="color:#e6db74">&#34;:8000&#34;</span>)
-}</code></pre></div>
-<p>使用sql.Open方法会创建一个数据库连接池db。这个db不是数据库连接，它是一个连接池，只有当真正数据库通信的时候才创建连接。例如这里的<code>db.Ping</code>的操作。<code>db.SetMaxIdleConns(20)</code>和<code>db.SetMaxOpenConns(20)</code>分别设置数据库的空闲连接和最大打开连接，即向Mysql服务端发出的所有连接的最大数目。</p>
+}
 
+</code></pre></div><p>使用sql.Open方法会创建一个数据库连接池db。这个db不是数据库连接，它是一个连接池，只有当真正数据库通信的时候才创建连接。例如这里的<code>db.Ping</code>的操作。<code>db.SetMaxIdleConns(20)</code>和<code>db.SetMaxOpenConns(20)</code>分别设置数据库的空闲连接和最大打开连接，即向Mysql服务端发出的所有连接的最大数目。</p>
 <blockquote>
 <p>如果不设置，默认都是0，表示打开的连接没有限制。我在压测的时候，发现会存在大量的TIME_WAIT状态的连接，虽然mysql的连接数没有上升。设置了这两个参数之后，不在存在大量TIME_WAIT状态的连接了。而且qps也没有明显的变化，出于对数据库的保护，最好设置这连个参数。</p>
 </blockquote>
-
 <h4 id="curd-增删改查">CURD 增删改查</h4>
-
 <p>Restful的基本就是对资源的curd操作。下面开启我们的第一个api接口，增加一个资源。</p>
-
 <h5 id="增">增</h5>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
 
@@ -263,30 +257,30 @@
  })
  
  <span style="color:#f92672">...</span>
-}</code></pre></div>
-<p>执行非query操作，使用db的Exec方法，在mysql中使用<code>?</code>做占位符。最后我们把插入后的id返回给客户端。请求得到的结果如下：</p>
+}
+
+
+</code></pre></div><p>执行非query操作，使用db的Exec方法，在mysql中使用<code>?</code>做占位符。最后我们把插入后的id返回给客户端。请求得到的结果如下：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">☁  ~  curl -X POST http://127.0.0.1:8000/person -d <span style="color:#e6db74">&#34;first_name=hello&amp;last_name=world&#34;</span> | python -m json.tool
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 <span style="color:#ae81ff">100</span>    <span style="color:#ae81ff">62</span>  <span style="color:#ae81ff">100</span>    <span style="color:#ae81ff">30</span>  <span style="color:#ae81ff">100</span>    <span style="color:#ae81ff">32</span>   <span style="color:#ae81ff">5054</span>   <span style="color:#ae81ff">5391</span> --:--:-- --:--:-- --:--:--  <span style="color:#ae81ff">6400</span>
 <span style="color:#f92672">{</span>
     <span style="color:#e6db74">&#34;msg&#34;</span>: <span style="color:#e6db74">&#34;insert successful 1&#34;</span>
-<span style="color:#f92672">}</span></code></pre></div>
-<p>下面可以随意增加几条记录。</p>
+<span style="color:#f92672">}</span>
 
+</code></pre></div><p>下面可以随意增加几条记录。</p>
 <h5 id="查">查</h5>
-
 <p><strong>查询列表 Query</strong></p>
-
 <p>上面我们增加了一条记录，下面就获取这个记录，查一般有两个操作，一个是查询列表，其次就是查询具体的某一条记录。两种大同小异。</p>
-
 <p>为了给查询结果绑定到golang的变量或对象，我们需要先定义一个结构来绑定对象。在main函数的上方定义Person结构：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Person</span> <span style="color:#66d9ef">struct</span> {
  <span style="color:#a6e22e">Id</span>        <span style="color:#66d9ef">int</span>    <span style="color:#e6db74">`json:&#34;id&#34; form:&#34;id&#34;`</span>
  <span style="color:#a6e22e">FirstName</span> <span style="color:#66d9ef">string</span> <span style="color:#e6db74">`json:&#34;first_name&#34; form:&#34;first_name&#34;`</span>
  <span style="color:#a6e22e">LastName</span>  <span style="color:#66d9ef">string</span> <span style="color:#e6db74">`json:&#34;last_name&#34; form:&#34;last_name&#34;`</span>
-}</code></pre></div>
-<p>然后查询我们的数据列表</p>
+}
+
+</code></pre></div><p>然后查询我们的数据列表</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"> <span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">GET</span>(<span style="color:#e6db74">&#34;/persons&#34;</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">Context</span>) {
   <span style="color:#a6e22e">rows</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">Query</span>(<span style="color:#e6db74">&#34;SELECT id, first_name, last_name FROM person&#34;</span>)
   <span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">rows</span>.<span style="color:#a6e22e">Close</span>()
@@ -310,13 +304,12 @@
    <span style="color:#e6db74">&#34;persons&#34;</span>: <span style="color:#a6e22e">persons</span>,
   })
 
- })</code></pre></div>
-<p>读取mysql的数据需要有一个绑定的过程，db.Query方法返回一个rows对象，这个数据库连接随即也转移到这个对象，因此我们需要定义row.Close操作。然后创建一个<code>[]Person</code>的切片。</p>
+ })
 
+</code></pre></div><p>读取mysql的数据需要有一个绑定的过程，db.Query方法返回一个rows对象，这个数据库连接随即也转移到这个对象，因此我们需要定义row.Close操作。然后创建一个<code>[]Person</code>的切片。</p>
 <blockquote>
 <p>使用make，而不是直接使用<code>var persons []Person</code>的声明方式。还是有所差别的，使用make的方式，当数组切片没有元素的时候，Json会返回<code>[]</code>。如果直接声明，json会返回<code>null</code>。</p>
 </blockquote>
-
 <p>接下来就是使用rows对象的Next方法，遍历所查询的数据，一个个绑定到person对象上，最后append到persons切片。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">☁  ~  curl  http://127.0.0.1:8000/persons | python -m json.tool
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -326,18 +319,18 @@
     <span style="color:#e6db74">&#34;persons&#34;</span>: <span style="color:#f92672">[</span>
         <span style="color:#f92672">{</span>
             <span style="color:#e6db74">&#34;first_name&#34;</span>: <span style="color:#e6db74">&#34;hello&#34;</span>,
-            <span style="color:#e6db74">&#34;id&#34;</span>: <span style="color:#ae81ff">1</span>,
+            <span style="color:#e6db74">&#34;id&#34;</span>: 1,
             <span style="color:#e6db74">&#34;last_name&#34;</span>: <span style="color:#e6db74">&#34;world&#34;</span>
         <span style="color:#f92672">}</span>,
         <span style="color:#f92672">{</span>
             <span style="color:#e6db74">&#34;first_name&#34;</span>: <span style="color:#e6db74">&#34;vanyar&#34;</span>,
-            <span style="color:#e6db74">&#34;id&#34;</span>: <span style="color:#ae81ff">2</span>,
+            <span style="color:#e6db74">&#34;id&#34;</span>: 2,
             <span style="color:#e6db74">&#34;last_name&#34;</span>: <span style="color:#e6db74">&#34;elves&#34;</span>
         <span style="color:#f92672">}</span>
     <span style="color:#f92672">]</span>
-<span style="color:#f92672">}</span></code></pre></div>
-<h6 id="查询单条记录-queryrow">查询单条记录 QueryRow</h6>
+<span style="color:#f92672">}</span>
 
+</code></pre></div><h6 id="查询单条记录-queryrow">查询单条记录 QueryRow</h6>
 <p>查询列表需要使用迭代rows对象，查询单个记录，就没这么麻烦了。虽然也可以迭代一条记录的结果集。因为查询单个记录的操作实在太常用了，因此golang的database/sql也专门提供了查询方法</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"> <span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">GET</span>(<span style="color:#e6db74">&#34;/person/:id&#34;</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">Context</span>) {
   <span style="color:#a6e22e">id</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Param</span>(<span style="color:#e6db74">&#34;id&#34;</span>)
@@ -357,8 +350,9 @@
    <span style="color:#e6db74">&#34;person&#34;</span>: <span style="color:#a6e22e">person</span>,
   })
 
- })</code></pre></div>
-<p>查询结果为：</p>
+ })
+
+</code></pre></div><p>查询结果为：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">☁  ~  curl  http://127.0.0.1:8000/person/1 | python -m json.tool
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
@@ -366,14 +360,13 @@
 <span style="color:#f92672">{</span>
     <span style="color:#e6db74">&#34;person&#34;</span>: <span style="color:#f92672">{</span>
         <span style="color:#e6db74">&#34;first_name&#34;</span>: <span style="color:#e6db74">&#34;hello&#34;</span>,
-        <span style="color:#e6db74">&#34;id&#34;</span>: <span style="color:#ae81ff">1</span>,
+        <span style="color:#e6db74">&#34;id&#34;</span>: 1,
         <span style="color:#e6db74">&#34;first_name&#34;</span>: <span style="color:#e6db74">&#34;world&#34;</span>
     <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span></code></pre></div>
-<p>查询单个记录有一个小问题，当数据不存在的时候，同样也会抛出一个错误。粗暴的使用log退出有点不妥。返回一个nil的时候，万一真的是因为错误，比如sql错误。这种情况如何解决。还需要具体场景设计程序。</p>
+<span style="color:#f92672">}</span>
 
+</code></pre></div><p>查询单个记录有一个小问题，当数据不存在的时候，同样也会抛出一个错误。粗暴的使用log退出有点不妥。返回一个nil的时候，万一真的是因为错误，比如sql错误。这种情况如何解决。还需要具体场景设计程序。</p>
 <h5 id="改">改</h5>
-
 <p>增删改查，下面进行更新的操作。前面增加记录我们使用了urlencode的方式提交，更新的api我们自动匹配绑定content-type</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"> <span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">PUT</span>(<span style="color:#e6db74">&#34;/person/:id&#34;</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">Context</span>) {
   <span style="color:#a6e22e">cid</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Param</span>(<span style="color:#e6db74">&#34;id&#34;</span>)
@@ -401,25 +394,28 @@
   <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">JSON</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusOK</span>, <span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">H</span>{
    <span style="color:#e6db74">&#34;msg&#34;</span>: <span style="color:#a6e22e">msg</span>,
   })
- })</code></pre></div>
-<p>使用 urlencode的方式更新：</p>
+ })
+
+
+</code></pre></div><p>使用 urlencode的方式更新：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">☁  ~  curl -X PUT http://127.0.0.1:8000/person/2 -d <span style="color:#e6db74">&#34;first_name=noldor&amp;last_name=elves&#34;</span> | python -m json.tool
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 <span style="color:#ae81ff">100</span>    <span style="color:#ae81ff">72</span>  <span style="color:#ae81ff">100</span>    <span style="color:#ae81ff">39</span>  <span style="color:#ae81ff">100</span>    <span style="color:#ae81ff">33</span>   <span style="color:#ae81ff">3921</span>   <span style="color:#ae81ff">3317</span> --:--:-- --:--:-- --:--:--  <span style="color:#ae81ff">4333</span>
 <span style="color:#f92672">{</span>
     <span style="color:#e6db74">&#34;msg&#34;</span>: <span style="color:#e6db74">&#34;Update person 2 successful 1&#34;</span>
-<span style="color:#f92672">}</span></code></pre></div>
-<p>使用json的方式更新：</p>
+<span style="color:#f92672">}</span>
+
+</code></pre></div><p>使用json的方式更新：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">☁  ~  curl -X PUT http://127.0.0.1:8000/person/2 -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span>  -d <span style="color:#e6db74">&#39;{&#34;first_name&#34;: &#34;vanyar&#34;, &#34;last_name&#34;: &#34;elves&#34;}&#39;</span> | python -m json.tool
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 <span style="color:#ae81ff">100</span>    <span style="color:#ae81ff">85</span>  <span style="color:#ae81ff">100</span>    <span style="color:#ae81ff">39</span>  <span style="color:#ae81ff">100</span>    <span style="color:#ae81ff">46</span>   <span style="color:#ae81ff">4306</span>   <span style="color:#ae81ff">5079</span> --:--:-- --:--:-- --:--:--  <span style="color:#ae81ff">5750</span>
 <span style="color:#f92672">{</span>
     <span style="color:#e6db74">&#34;msg&#34;</span>: <span style="color:#e6db74">&#34;Update person 2 successful 1&#34;</span>
-<span style="color:#f92672">}</span></code></pre></div>
-<h5 id="删">删</h5>
+<span style="color:#f92672">}</span>
 
+</code></pre></div><h5 id="删">删</h5>
 <p>最后一个操作就是删除了，删除所需要的功能特性，上面的例子都覆盖了。实现删除也就特别简单了：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"> <span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">DELETE</span>(<span style="color:#e6db74">&#34;/person/:id&#34;</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">Context</span>) {
   <span style="color:#a6e22e">cid</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Param</span>(<span style="color:#e6db74">&#34;id&#34;</span>)
@@ -439,33 +435,31 @@
   <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">JSON</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusOK</span>, <span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">H</span>{
    <span style="color:#e6db74">&#34;msg&#34;</span>: <span style="color:#a6e22e">msg</span>,
   })
- })</code></pre></div>
-<p>我们可以使用删除接口，把数据都删除了，再来验证上面post接口获取列表的时候，当记录没有的时候，切片被json序列化<code>[]</code>还是<code>null</code></p>
+ })
+
+</code></pre></div><p>我们可以使用删除接口，把数据都删除了，再来验证上面post接口获取列表的时候，当记录没有的时候，切片被json序列化<code>[]</code>还是<code>null</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">☁  ~  curl  http://127.0.0.1:8000/persons | python -m json.tool
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 <span style="color:#ae81ff">100</span>    <span style="color:#ae81ff">15</span>  <span style="color:#ae81ff">100</span>    <span style="color:#ae81ff">15</span>    <span style="color:#ae81ff">0</span>     <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">11363</span>      <span style="color:#ae81ff">0</span> --:--:-- --:--:-- --:--:-- <span style="color:#ae81ff">15000</span>
 <span style="color:#f92672">{</span>
     <span style="color:#e6db74">&#34;persons&#34;</span>: <span style="color:#f92672">[]</span>
-<span style="color:#f92672">}</span></code></pre></div>
-<p>把<code>persons := make([]Person, 0)</code>改成<code>persons []Person</code>。编译运行：</p>
+<span style="color:#f92672">}</span>
+
+</code></pre></div><p>把<code>persons := make([]Person, 0)</code>改成<code>persons []Person</code>。编译运行：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">☁  ~  curl  http://127.0.0.1:8000/persons | python -m json.tool
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 <span style="color:#ae81ff">100</span>    <span style="color:#ae81ff">17</span>  <span style="color:#ae81ff">100</span>    <span style="color:#ae81ff">17</span>    <span style="color:#ae81ff">0</span>     <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">13086</span>      <span style="color:#ae81ff">0</span> --:--:-- --:--:-- --:--:-- <span style="color:#ae81ff">17000</span>
 <span style="color:#f92672">{</span>
     <span style="color:#e6db74">&#34;persons&#34;</span>: null
-<span style="color:#f92672">}</span></code></pre></div>
-<p>至此，基本的CURD操作的restful风格的API已经完成。内容其实不复杂，甚至相当简单。完整的代码可以通过<a href="https://link.jianshu.com?t=https://gist.github.com/rsj217/26492af115a083876570f003c64df118#file-golang-gin-mysql-restful-gp">GIST</a>获取。</p>
+<span style="color:#f92672">}</span>
 
+</code></pre></div><p>至此，基本的CURD操作的restful风格的API已经完成。内容其实不复杂，甚至相当简单。完整的代码可以通过<a href="https://link.jianshu.com?t=https://gist.github.com/rsj217/26492af115a083876570f003c64df118#file-golang-gin-mysql-restful-gp">GIST</a>获取。</p>
 <h4 id="组织代码">组织代码</h4>
-
 <p>实现了一个基本点restful服务，可惜我们的代码都在一个文件中。对于一个库，单文件或许很好，对于稍微大一点的项目，单文件总是有点非主流。当然，更多原因是为了程序的可读和维护，我们也需要重新组织代码，拆分模块和包。</p>
-
 <h4 id="封装模型方法">封装模型方法</h4>
-
 <p>我们的handler出来函数中，对请求的出来和数据库的交互，都糅合在一起。首先我们基于创建的Person结构创建数据模型，以及模型的方法。把数据库交互拆分出来。</p>
-
 <p>创建一个单例的数据库连接池对象：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">db</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">sql</span>.<span style="color:#a6e22e">DB</span>
 
@@ -482,9 +476,9 @@
   <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatalln</span>(<span style="color:#a6e22e">err</span>)
  }
  <span style="color:#f92672">...</span>
-}</code></pre></div>
-<p>这样在main包中，db就能随意使用了。</p>
+}
 
+</code></pre></div><p>这样在main包中，db就能随意使用了。</p>
 <p>接下来，再把增加记录的的函数封装成Person结构的方法：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">p</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Person</span>) <span style="color:#a6e22e">AddPerson</span>() (<span style="color:#a6e22e">id</span> <span style="color:#66d9ef">int64</span>, <span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>) {
  <span style="color:#a6e22e">rs</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">Exec</span>(<span style="color:#e6db74">&#34;INSERTs INTO person(first_name, last_name) VALUES (?, ?)&#34;</span>, <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">FirstName</span>, <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">LastName</span>)
@@ -493,8 +487,9 @@
  }
  <span style="color:#a6e22e">id</span>, <span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">rs</span>.<span style="color:#a6e22e">LastInsertId</span>()
  <span style="color:#66d9ef">return</span>
-}</code></pre></div>
-<p>然后handler函数也跟着修改，先创建一个Person结构的实例，然后调用其方法即可：</p>
+}
+
+</code></pre></div><p>然后handler函数也跟着修改，先创建一个Person结构的实例，然后调用其方法即可：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"> <span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">POST</span>(<span style="color:#e6db74">&#34;/person&#34;</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">Context</span>) {
   <span style="color:#a6e22e">firstName</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Request</span>.<span style="color:#a6e22e">FormValue</span>(<span style="color:#e6db74">&#34;first_name&#34;</span>)
   <span style="color:#a6e22e">lastName</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Request</span>.<span style="color:#a6e22e">FormValue</span>(<span style="color:#e6db74">&#34;last_name&#34;</span>)
@@ -509,8 +504,9 @@
   <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">JSON</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusOK</span>, <span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">H</span>{
    <span style="color:#e6db74">&#34;msg&#34;</span>: <span style="color:#a6e22e">msg</span>,
   })
- })</code></pre></div>
-<p>对于获取列表的模型方法和handler函数也很好改：</p>
+ })
+
+</code></pre></div><p>对于获取列表的模型方法和handler函数也很好改：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">p</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Person</span>) <span style="color:#a6e22e">GetPersons</span>() (<span style="color:#a6e22e">persons</span> []<span style="color:#a6e22e">Person</span>, <span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>) {
  <span style="color:#a6e22e">persons</span> = make([]<span style="color:#a6e22e">Person</span>, <span style="color:#ae81ff">0</span>)
  <span style="color:#a6e22e">rows</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">Query</span>(<span style="color:#e6db74">&#34;SELECT id, first_name, last_name FROM person&#34;</span>)
@@ -529,8 +525,9 @@
   <span style="color:#66d9ef">return</span>
  }
  <span style="color:#66d9ef">return</span>
-}</code></pre></div>
-<p>和</p>
+}
+
+</code></pre></div><p>和</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"> <span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">POST</span>(<span style="color:#e6db74">&#34;/person&#34;</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">Context</span>) {
   <span style="color:#a6e22e">firstName</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Request</span>.<span style="color:#a6e22e">FormValue</span>(<span style="color:#e6db74">&#34;first_name&#34;</span>)
   <span style="color:#a6e22e">lastName</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Request</span>.<span style="color:#a6e22e">FormValue</span>(<span style="color:#e6db74">&#34;last_name&#34;</span>)
@@ -545,17 +542,14 @@
   <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">JSON</span>(<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">StatusOK</span>, <span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">H</span>{
    <span style="color:#e6db74">&#34;msg&#34;</span>: <span style="color:#a6e22e">msg</span>,
   })
- })</code></pre></div>
-<p>剩下的函数和方法就不再一一举例了。</p>
+ })
 
+</code></pre></div><p>剩下的函数和方法就不再一一举例了。</p>
 <blockquote>
 <p>增加记录的接口中，我们使用了客户端参数和Person创建实例，然后再调用其方法。而获取列表的接口中，我们直接声明了Person对象。两种方式都可以。</p>
 </blockquote>
-
 <h4 id="handler函数">Handler函数</h4>
-
 <p>gin提供了<code>router.Get(url, handler func)</code>的格式。首先我们可以把所有的handler函数从router中提取出来。</p>
-
 <p>例如把增加记录和获取列表的handle提取出来</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">AddPersonApi</span>(<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">Context</span>) {
  <span style="color:#a6e22e">firstName</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Request</span>.<span style="color:#a6e22e">FormValue</span>(<span style="color:#e6db74">&#34;first_name&#34;</span>)
@@ -577,15 +571,12 @@
  <span style="color:#f92672">...</span>
  <span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">POST</span>(<span style="color:#e6db74">&#34;/person&#34;</span>, <span style="color:#a6e22e">AddPersonApi</span>)
  <span style="color:#f92672">...</span> 
-}</code></pre></div>
-<p>把modle和handler抽出来之后，我们的代码结构变得更加清晰，具体可以参考这个<a href="https://link.jianshu.com?t=https://gist.github.com/rsj217/26492af115a083876570f003c64df118#file-golang-gin-mysql-restful-1-go">GIST</a></p>
+}
 
+</code></pre></div><p>把modle和handler抽出来之后，我们的代码结构变得更加清晰，具体可以参考这个<a href="https://link.jianshu.com?t=https://gist.github.com/rsj217/26492af115a083876570f003c64df118#file-golang-gin-mysql-restful-1-go">GIST</a></p>
 <h3 id="组织项目">组织项目</h3>
-
 <p>经过上面的model和handler的分离，代码结构变得更加清晰，可是我们还是单文件。下一步将进行封装不同的包。</p>
-
 <h4 id="数据库处理">数据库处理</h4>
-
 <p>在项目根目录创建下面三个文件夹，<code>apis</code>，<code>databases</code>和<code>models</code>，并在文件夹内创建文件。此时我们的目录结果如下：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">☁  newland  tree
 .
@@ -596,9 +587,9 @@
 ├── main.go
 ├── models
 │   └── person.go
-└── router.go</code></pre></div>
-<p>apis文件夹存放我们的handler函数，models文件夹用来存放我们的数据模型。</p>
+└── router.go
 
+</code></pre></div><p>apis文件夹存放我们的handler函数，models文件夹用来存放我们的数据模型。</p>
 <p>myql.go的包代码如下：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">database</span>
 
@@ -620,11 +611,10 @@
  <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
   <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatal</span>(<span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">Error</span>())
  }
-}</code></pre></div>
-<p>因为我们需要在别的地方使用SqlDB这个变量，因此依照golang的习惯，变量名必须大写开头。</p>
+}
 
+</code></pre></div><p>因为我们需要在别的地方使用SqlDB这个变量，因此依照golang的习惯，变量名必须大写开头。</p>
 <h4 id="数据model封装">数据model封装</h4>
-
 <p>修改models文件夹下的person.go，把对应的Person结构及其方法移到这里：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">models</span>
 
@@ -668,9 +658,10 @@
  <span style="color:#66d9ef">return</span>
 }
 
-<span style="color:#f92672">...</span>.</code></pre></div>
-<h4 id="handler">handler</h4>
+<span style="color:#f92672">...</span>.
 
+
+</code></pre></div><h4 id="handler">handler</h4>
 <p>然后把具体的handler函数封装到api包中，因为handler函数要操作数据库，所以会引用model包</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">apis</span>
 
@@ -703,9 +694,9 @@
  })
 }
 
-<span style="color:#f92672">...</span></code></pre></div>
-<h4 id="路由">路由</h4>
+<span style="color:#f92672">...</span>
 
+</code></pre></div><h4 id="路由">路由</h4>
 <p>最后就是把路由抽离出来，修改router.go，我们在路由文件中封装路由函数</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 
@@ -730,11 +721,11 @@
  <span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">DELETE</span>(<span style="color:#e6db74">&#34;/person/:id&#34;</span>, <span style="color:#a6e22e">DelPersonApi</span>)
 
  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">router</span>
-}</code></pre></div>
-<h4 id="app入口">app入口</h4>
+}
 
+
+</code></pre></div><h4 id="app入口">app入口</h4>
 <p>最后就是main函数的app入口，将路由导入，同时我们要在main函数结束的时候，关闭全局的数据库连接池：</p>
-
 <p>main.go</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 
@@ -746,20 +737,15 @@
  <span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">SqlDB</span>.<span style="color:#a6e22e">Close</span>()
  <span style="color:#a6e22e">router</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">initRouter</span>()
  <span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">Run</span>(<span style="color:#e6db74">&#34;:8000&#34;</span>)
-}</code></pre></div>
-<p>至此，我们就把简单程序进行了更好的组织。当然，golang的程序组织依包为基础，不拘泥，根据具体的应用场景可以组织。</p>
-
+}
+</code></pre></div><p>至此，我们就把简单程序进行了更好的组织。当然，golang的程序组织依包为基础，不拘泥，根据具体的应用场景可以组织。</p>
 <blockquote>
 <p>此时运行项目，不能像之前简单的使用<code>go run main.go</code>，因为包main包含main.go和router.go的文件，因此需要运行<code>go run *.go</code>命令编译运行。如果是最终编译二进制项目，则运行<code>go build -o app</code></p>
 </blockquote>
-
 <h3 id="总结">总结</h3>
-
 <p>通过上述的实践，我们了解了Gin框架创建基本的的restful服务。并且了解了如何组织golang的代码包。我们讨论了很多内容，但是唯独缺少测试。测试很重要，考察一个框架或者三方包的时候，是否有测试文件以及测试覆盖率是一个重要的参考。因为测试的内容很多，我们这里就不做单独的测试介绍。后面会结合gofight给gin的api增加测试代码。</p>
-
 <p>此外，更多的内容，可以阅读别人优秀的开源项目，学习并实践，以提升自己的编码能力。</p>
-
-<p>转自：<a href="https://www.jianshu.com/p/a3f63b5da74c">https://www.jianshu.com/p/a3f63b5da74c</a></p>
+<p>转自：https://www.jianshu.com/p/a3f63b5da74c</p>
 </article>
     <footer class="post-footer">
       
@@ -773,7 +759,7 @@
       
       <p class="post-copyright">
         Link:<a rel='license' href='https://imxcz.com/post/2018/gin-shizhan-restful/'>https://imxcz.com/post/2018/gin-shizhan-restful/ </a><br>
-          © 本文采用 <a rel='license' href='http://creativecommons.org/licenses/by-nc/4.0/' target=''>知识共享署名-非商业性使用 4.0 国际许可协议</a> 进行许可。文章发表于 <strong>499</strong> 天前, 文章内容可能不准确，请酌情参考。
+          © 本文采用 <a rel='license' href='http://creativecommons.org/licenses/by-nc/4.0/' target=''>知识共享署名-非商业性使用 4.0 国际许可协议</a> 进行许可。文章发表于 <strong>1090</strong> 天前, 文章内容可能不准确，请酌情参考。
       </p>
       <div class="post-nav">
           
@@ -811,7 +797,7 @@
             </li>
             
             <li>
-                <a href="https://imxcz.com/categories/%E6%8A%80%E6%9C%AF/">技术(18)</a>
+                <a href="https://imxcz.com/categories/%E6%8A%80%E6%9C%AF/">技术(19)</a>
             </li>
             
             <li>
@@ -819,7 +805,7 @@
             </li>
             
             <li>
-                <a href="https://imxcz.com/categories/%E7%AC%94%E8%AE%B0/">笔记(3)</a>
+                <a href="https://imxcz.com/categories/%E7%AC%94%E8%AE%B0/">笔记(5)</a>
             </li>
             
             <li>
@@ -870,6 +856,8 @@
             
             <a href="https://imxcz.com/tags/htaccess/">htaccess</a>
             
+            <a href="https://imxcz.com/tags/hugo/">hugo</a>
+            
             <a href="https://imxcz.com/tags/iis/">iis</a>
             
             <a href="https://imxcz.com/tags/javascript/">javascript</a>
@@ -880,11 +868,17 @@
             
             <a href="https://imxcz.com/tags/mac/">mac</a>
             
+            <a href="https://imxcz.com/tags/macos/">macos</a>
+            
+            <a href="https://imxcz.com/tags/markdown/">markdown</a>
+            
             <a href="https://imxcz.com/tags/msysgit/">msysgit</a>
             
             <a href="https://imxcz.com/tags/mysql/">mysql</a>
             
             <a href="https://imxcz.com/tags/php/">php</a>
+            
+            <a href="https://imxcz.com/tags/timemachine/">timemachine</a>
             
             <a href="https://imxcz.com/tags/tortoisegit/">tortoisegit</a>
             
@@ -912,11 +906,15 @@
             
             <a href="https://imxcz.com/tags/%E6%8B%8D%E7%85%A7/">拍照</a>
             
+            <a href="https://imxcz.com/tags/%E6%97%B6%E5%85%89%E6%9C%BA%E5%99%A8/">时光机器</a>
+            
             <a href="https://imxcz.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
             
             <a href="https://imxcz.com/tags/%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C/">用户体验</a>
             
             <a href="https://imxcz.com/tags/%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1/">界面设计</a>
+            
+            <a href="https://imxcz.com/tags/%E7%9B%91%E5%90%AC%E6%96%87%E4%BB%B6/">监听文件</a>
             
             <a href="https://imxcz.com/tags/%E7%A0%81%E5%86%9C/">码农</a>
             
@@ -947,11 +945,11 @@
     </section>
     
     <section class="widget-box">
-            <h3 class="widget-title">其他</h3>
-            <ul class="widget-links">
-                    <li><a href="https://imxcz.com/index.xml">文章 RSS</a></li>
-                </ul>
-        </section>
+        <h3 class="widget-title">其他</h3>
+        <ul class="widget-links">
+            <li><a href="https://imxcz.com/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
 </div>
       </sidebar>
   </section>
@@ -959,10 +957,10 @@
 
 
 <footer class="site-footer">
-  <p>© 2012-2019 幸存者IMxcz.Com</p>
+  <p>© 2012-2021 幸存者IMxcz.Com</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="http://www.imxcz.com" target="_blank" rel="noopener">Imxcz</a>.</p>
   
-    <p><a href="http://www.miitbeian.gov.cn" title="Check ICP info" target="_blank" rel="noopener">豫ICP备12022851号-2</a></p>
+    <p><a href="http://beian.miit.gov.cn/" title="Check ICP info" target="_blank" rel="noopener">豫ICP备12022851号-2</a></p>
   
 </footer>
 

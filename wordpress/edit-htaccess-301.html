@@ -19,7 +19,7 @@
 <meta name="description" content="很多时候，我们需要对网站进行301永久重定向或302临时重定向。 例如网站整个更换了域名，网站结构或目录发生了变化，或者需要将某个域名上的文件迁移到另外的域上等等。 都需要对域名进行重"> 
 
 
-<meta name="generator" content="Hugo 0.54.0">
+<meta name="generator" content="Hugo 0.80.0">
 
 
 <link rel="canonical" href="https://imxcz.com/wordpress/edit-htaccess-301.html"> 
@@ -153,61 +153,38 @@
               
           </p>
     </header>
-    <article class="post-content">
-
-<p>很多时候，我们需要对网站进行301永久重定向或302临时重定向。</p>
-
+    <article class="post-content"><p>很多时候，我们需要对网站进行301永久重定向或302临时重定向。</p>
 <p>例如网站整个更换了域名，网站结构或目录发生了变化，或者需要将某个域名上的文件迁移到另外的域上等等。</p>
-
 <p>都需要对域名进行重定向，重定向有很多办法，可以在解析域名时候直接URL跳转到新域名，建立虚拟空间重定向，修改htaccess规则等等，重定向对SEO和PR值的传递是非常有效的。</p>
-
 <h4 id="修改htaccess规则实现301重定向">修改htaccess规则实现301重定向</h4>
-
-<p><strong>注意：在修改之前请备份好原来的htaccess文件，去掉前面的&rdquo;.&ldquo;或者重命名，以免造成损失。</strong></p>
-
+<p><strong>注意：在修改之前请备份好原来的htaccess文件，去掉前面的&quot;.&ldquo;或者重命名，以免造成损失。</strong></p>
 <p>出于SEO考虑，将imxcz.com重定向至www.imxcz.com，避免页面权重分散。一旦选择了带www的为主域名，今后就不要随意更改。</p>
-
 <p>代码如下：</p>
-
 <pre><code>RewriteEngine On
 RewriteCond %{HTTP_HOST} !^www.imxcz.com$ [NC]
 RewriteRule ^(.*)$ http://www.imxcz.com/$1 [L,R=301]
-</code></pre>
-
-<p>以上代码实现了：只要不是 <a href="http://www.imxcz.com">www.imxcz.com</a> （第2行中的 <a href="http://www.imxcz.com">www.imxcz.com</a> ）访问过来的域名，均会跳转到 <a href="http://www.imxcz.com">www.imxcz.com</a> （第3行中的 <a href="http://www.imxcz.com">www.imxcz.com</a>）这个域名</p>
-
+</code></pre><p>以上代码实现了：只要不是 <a href="http://www.imxcz.com">www.imxcz.com</a> （第2行中的 <a href="http://www.imxcz.com">www.imxcz.com</a> ）访问过来的域名，均会跳转到 <a href="http://www.imxcz.com">www.imxcz.com</a> （第3行中的 <a href="http://www.imxcz.com">www.imxcz.com</a>）这个域名</p>
 <pre><code>其中第2行中的 !^www.imxcz.com$ ：
 ! 叹号表示域名的开始；
 ^ 尖号表示非，即不是以 xxx 开头的；
 $ 符号表示域名的结尾。
 由此可以看出 !^www.imxcz.com$ 表达的意思就是访问到你服务器的域名不是完全与 www.imxcz.com 相同的域名，就会满足判断的条件，进而触发跳转的操作。
-</code></pre>
-
-<p>或者指向想把不带www的域名跳转到带www的域名而不影响其他的二级域名，可以这样：</p>
-
+</code></pre><p>或者指向想把不带www的域名跳转到带www的域名而不影响其他的二级域名，可以这样：</p>
 <pre><code>RewriteEngine On
 RewriteCond %{HTTP_HOST} ^imxcz.com$ [NC]
 RewriteRule ^(.*)$ http://www.imxcz.com/$1 [L,R=301]
-</code></pre>
-
-<p>还有一些其他用法：</p>
-
-<p>如果需要变更域名，即将老域名 www.xcz.com 换成全新的域名 www.imxcz.com 就可以这样写</p>
-
+</code></pre><p>还有一些其他用法：</p>
+<p>如果需要变更域名，即将老域名 <a href="http://www.xcz.com">www.xcz.com</a> 换成全新的域名 <a href="http://www.imxcz.com">www.imxcz.com</a> 就可以这样写</p>
 <pre><code>RewriteEngine On
 
 RewriteBase / RewriteCond %{HTTP_HOST} !www.xcz.com$ [NC]
 RewriteRule ^(.*)$ http://www.imxcz.com$1 [L,R=301]
-</code></pre>
-
-<p>如果我们想 imxcz.com 全部跳转到 www.imxcz.com 就可以这样写</p>
-
+</code></pre><p>如果我们想 imxcz.com 全部跳转到 <a href="http://www.imxcz.com">www.imxcz.com</a> 就可以这样写</p>
 <pre><code>RewriteEngine On
 
 RewriteBase / RewriteCond %{HTTP_HOST} !imxcz.com$ [NC]
 RewriteRule ^(.*)$ http://www.imxcz.com$1 [L,R=301]
-</code></pre>
-</article>
+</code></pre></article>
     <footer class="post-footer">
       
       <ul class="post-tags">
@@ -220,7 +197,7 @@ RewriteRule ^(.*)$ http://www.imxcz.com$1 [L,R=301]
       
       <p class="post-copyright">
         Link:<a rel='license' href='https://imxcz.com/wordpress/edit-htaccess-301.html'>https://imxcz.com/wordpress/edit-htaccess-301.html </a><br>
-          © 本文采用 <a rel='license' href='http://creativecommons.org/licenses/by-nc/4.0/' target=''>知识共享署名-非商业性使用 4.0 国际许可协议</a> 进行许可。文章发表于 <strong>1596</strong> 天前, 文章内容可能不准确，请酌情参考。
+          © 本文采用 <a rel='license' href='http://creativecommons.org/licenses/by-nc/4.0/' target=''>知识共享署名-非商业性使用 4.0 国际许可协议</a> 进行许可。文章发表于 <strong>2187</strong> 天前, 文章内容可能不准确，请酌情参考。
       </p>
       <div class="post-nav">
           
@@ -258,7 +235,7 @@ RewriteRule ^(.*)$ http://www.imxcz.com$1 [L,R=301]
             </li>
             
             <li>
-                <a href="https://imxcz.com/categories/%E6%8A%80%E6%9C%AF/">技术(18)</a>
+                <a href="https://imxcz.com/categories/%E6%8A%80%E6%9C%AF/">技术(19)</a>
             </li>
             
             <li>
@@ -266,7 +243,7 @@ RewriteRule ^(.*)$ http://www.imxcz.com$1 [L,R=301]
             </li>
             
             <li>
-                <a href="https://imxcz.com/categories/%E7%AC%94%E8%AE%B0/">笔记(3)</a>
+                <a href="https://imxcz.com/categories/%E7%AC%94%E8%AE%B0/">笔记(5)</a>
             </li>
             
             <li>
@@ -317,6 +294,8 @@ RewriteRule ^(.*)$ http://www.imxcz.com$1 [L,R=301]
             
             <a href="https://imxcz.com/tags/htaccess/">htaccess</a>
             
+            <a href="https://imxcz.com/tags/hugo/">hugo</a>
+            
             <a href="https://imxcz.com/tags/iis/">iis</a>
             
             <a href="https://imxcz.com/tags/javascript/">javascript</a>
@@ -327,11 +306,17 @@ RewriteRule ^(.*)$ http://www.imxcz.com$1 [L,R=301]
             
             <a href="https://imxcz.com/tags/mac/">mac</a>
             
+            <a href="https://imxcz.com/tags/macos/">macos</a>
+            
+            <a href="https://imxcz.com/tags/markdown/">markdown</a>
+            
             <a href="https://imxcz.com/tags/msysgit/">msysgit</a>
             
             <a href="https://imxcz.com/tags/mysql/">mysql</a>
             
             <a href="https://imxcz.com/tags/php/">php</a>
+            
+            <a href="https://imxcz.com/tags/timemachine/">timemachine</a>
             
             <a href="https://imxcz.com/tags/tortoisegit/">tortoisegit</a>
             
@@ -359,11 +344,15 @@ RewriteRule ^(.*)$ http://www.imxcz.com$1 [L,R=301]
             
             <a href="https://imxcz.com/tags/%E6%8B%8D%E7%85%A7/">拍照</a>
             
+            <a href="https://imxcz.com/tags/%E6%97%B6%E5%85%89%E6%9C%BA%E5%99%A8/">时光机器</a>
+            
             <a href="https://imxcz.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
             
             <a href="https://imxcz.com/tags/%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C/">用户体验</a>
             
             <a href="https://imxcz.com/tags/%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1/">界面设计</a>
+            
+            <a href="https://imxcz.com/tags/%E7%9B%91%E5%90%AC%E6%96%87%E4%BB%B6/">监听文件</a>
             
             <a href="https://imxcz.com/tags/%E7%A0%81%E5%86%9C/">码农</a>
             
@@ -394,11 +383,11 @@ RewriteRule ^(.*)$ http://www.imxcz.com$1 [L,R=301]
     </section>
     
     <section class="widget-box">
-            <h3 class="widget-title">其他</h3>
-            <ul class="widget-links">
-                    <li><a href="https://imxcz.com/index.xml">文章 RSS</a></li>
-                </ul>
-        </section>
+        <h3 class="widget-title">其他</h3>
+        <ul class="widget-links">
+            <li><a href="https://imxcz.com/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
 </div>
       </sidebar>
   </section>
@@ -406,10 +395,10 @@ RewriteRule ^(.*)$ http://www.imxcz.com$1 [L,R=301]
 
 
 <footer class="site-footer">
-  <p>© 2012-2019 幸存者IMxcz.Com</p>
+  <p>© 2012-2021 幸存者IMxcz.Com</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="http://www.imxcz.com" target="_blank" rel="noopener">Imxcz</a>.</p>
   
-    <p><a href="http://www.miitbeian.gov.cn" title="Check ICP info" target="_blank" rel="noopener">豫ICP备12022851号-2</a></p>
+    <p><a href="http://beian.miit.gov.cn/" title="Check ICP info" target="_blank" rel="noopener">豫ICP备12022851号-2</a></p>
   
 </footer>
 

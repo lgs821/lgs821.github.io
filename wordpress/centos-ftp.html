@@ -19,7 +19,7 @@
 <meta name="description" content="1.安装vsftpd yum install vsftpd 2.启动/重启/关闭vsftpd服务器 [root@localhost ftp]# /sbin/service vsftpd restart Shutting down vsftpd: [ OK ] Starting vsftpd for vsftpd: [ OK ] OK表示重启成功了. 启动和关闭分别把restart改为start/stop即可."> 
 
 
-<meta name="generator" content="Hugo 0.54.0">
+<meta name="generator" content="Hugo 0.80.0">
 
 
 <link rel="canonical" href="https://imxcz.com/wordpress/centos-ftp.html"> 
@@ -153,183 +153,150 @@
               
           </p>
     </header>
-    <article class="post-content">
-
-<h4 id="1-安装vsftpd">1.安装vsftpd</h4>
-
+    <article class="post-content"><h4 id="1安装vsftpd">1.安装vsftpd</h4>
 <p><code>yum install vsftpd</code></p>
-
-<h4 id="2-启动-重启-关闭vsftpd服务器">2.启动/重启/关闭vsftpd服务器</h4>
-
+<h4 id="2启动重启关闭vsftpd服务器">2.启动/重启/关闭vsftpd服务器</h4>
 <p><code>[root@localhost ftp]# /sbin/service vsftpd restart</code></p>
-
 <p><code>Shutting down vsftpd: [ OK ]</code></p>
-
 <p><code>Starting vsftpd for vsftpd: [ OK ]</code></p>
-
 <p>OK表示重启成功了.</p>
-
 <p>启动和关闭分别把restart改为start/stop即可.</p>
-
 <p>如果是源码安装的,到安装文件夹下找到start.sh和shutdown.sh文件,执行它们就可以了.</p>
-
-<h4 id="3-与vsftpd服务器有关的文件和文件夹">3.与vsftpd服务器有关的文件和文件夹</h4>
-
+<h4 id="3与vsftpd服务器有关的文件和文件夹">3.与vsftpd服务器有关的文件和文件夹</h4>
 <p>vsftpd服务器的配置文件的是: <code>/etc/vsftpd/vsftpd.conf</code></p>
-
 <p>vsftpd服务器的根目录,即FTP服务器的主目录:</p>
-
 <p><code>[root@localhost ftp]# more /etc/passwd|grep ftp</code></p>
-
 <p><code>ftp​:x:​14:50:FTP User:/var/ftp:/sbin/nologin</code></p>
-
 <p>这样你就能看到FTP的服务器的目录在/var/ftp处</p>
-
 <p>如果你想修改服务器目录的路径,那么你只要修改/var/ftp到别处就行了</p>
-
-<h4 id="4-添加ftp本地用户">4.添加FTP本地用户</h4>
-
+<h4 id="4添加ftp本地用户">4.添加FTP本地用户</h4>
 <p>有的FTP服务器需要用户名和密码才能登录,就是因为设置了FTP用户和权限.</p>
-
 <p>FTP用户一般是不能登录系统的,只能进入FTP服务器自己的目录中,这是为了安全.这样的用户就叫做虚拟用户了.实际上并不是真正的虚拟用户,只是不能登录SHELL了而已,没能力登录系统.</p>
-
 <p><code>/usr/sbin/adduser -d /opt/ftp -g ftp -s /sbin/nologin ftpuser</code></p>
-
 <p>这个命令的意思是:</p>
-
 <p>使用命令(adduser)添加ftpuser用户,不能登录系统(-s /sbin/nologin),自己的文件夹在(-d /opt/ftp)),属于组ftp(-g ftp)</p>
-
 <p>然后你需要为它设置密码 passwd ftp</p>
-
 <p>这样就添加了一个FTP用户了.下面的示例可以帮助你进入FTP服务器了.</p>
-
 <p>要保证自己能读写自己的目录,就要在配置文件vsftpd.conf里设置一下就可以读写了.</p>
-
 <pre><code>local_enable=yes
 write_enable=yes
 local_umask=022
-</code></pre>
-
-<h4 id="5-匿名上传下载">5.匿名上传下载</h4>
-
+</code></pre><h4 id="5匿名上传下载">5.匿名上传下载</h4>
 <p>修改配置文件即可vsftpd.conf,确定有以下几行,没有自己添加进去就可以了.</p>
-
 <pre><code>anonymous_enable=yes
 anon_upload_enable=yes
 anon_mkdir_write_enable=yes
 anon_umask=022
-</code></pre>
-
-<p>然后你可以新建一个文件夹,修改它的权限为完全开放,任何用户就可以登录这个文件夹,并上传下载文件:</p>
-
+</code></pre><p>然后你可以新建一个文件夹,修改它的权限为完全开放,任何用户就可以登录这个文件夹,并上传下载文件:</p>
 <pre><code>mkdir /var/ftp/guest
 chmod 777 /var/ftp/guest
-</code></pre>
-
-<h4 id="6-定制进入ftp服务器的欢迎信息">6.定制进入FTP服务器的欢迎信息</h4>
-
+</code></pre><h4 id="6定制进入ftp服务器的欢迎信息">6.定制进入FTP服务器的欢迎信息</h4>
 <p>在vsftpd.conf文件中设置:</p>
-
 <p><code>dirmessage_enable=yes</code></p>
-
 <p>然后进入用户目录建立一个.message文件,输入欢迎信息即可。</p>
-
-<h4 id="7-实现虚拟路径">7.实现虚拟路径</h4>
-
+<h4 id="7实现虚拟路径">7.实现虚拟路径</h4>
 <p>将某个目录挂载到FTP服务器下供用户使用,这就叫做虚拟路径.</p>
-
 <p>比如将gxl用户的目录挂载到FTP服务器中,供FTP服务器的用户使用,使用如下命令即可:</p>
-
 <pre><code>[root@localhost opt]# mount –bind /home/gxl /var/ftp/pub #使用挂载命令
 [root@localhost opt]# ls /var/ftp/pub
-</code></pre>
-
-<h4 id="8-打开vsftpd的日志功能">8.打开vsFTPd的日志功能</h4>
-
+</code></pre><h4 id="8打开vsftpd的日志功能">8.打开vsFTPd的日志功能</h4>
 <p>添加下面一行到vsftpd.conf文件中,一般情况下该文件中有这一行,只要把前面的注释符号#去掉即可,没有的话就添加,或者修改:</p>
-
 <p><code>xferlog_file=/var/log/vsftpd.log</code></p>
-
-<h4 id="9-限制链接数-以及每个ip最大的链接数">9.限制链接数,以及每个IP最大的链接数</h4>
-
+<h4 id="9限制链接数以及每个ip最大的链接数">9.限制链接数,以及每个IP最大的链接数</h4>
 <p>修改配置文件中,例如vsftp最大支持链接数100个,每个IP能支持5个链接:</p>
-
 <pre><code>max_client=100
 max_per=5
-</code></pre>
-
-<h4 id="10-限制传输速度">10.限制传输速度</h4>
-
+</code></pre><h4 id="10限制传输速度">10.限制传输速度</h4>
 <pre><code>anon_max_rate=81920
 local_max_rate=81920
-</code></pre>
-
-<p>修改配置文件中,例如让匿名用户和vsftd上的用户(即虚拟用户)都以80KB=1024*80=81920的速度下载</p>
-
-<h4 id="11-将用户-一般指虚拟用户-限制在自家目录">11.将用户(一般指虚拟用户)限制在自家目录</h4>
-
+</code></pre><p>修改配置文件中,例如让匿名用户和vsftd上的用户(即虚拟用户)都以80KB=1024*80=81920的速度下载</p>
+<h4 id="11将用户一般指虚拟用户限制在自家目录">11.将用户(一般指虚拟用户)限制在自家目录</h4>
 <p>修改配置文件中,这样用户就只能访问自己家的目录了:</p>
-
 <p><code>chroot_local_user=yes</code></p>
-
 <p>如果只想某些用户仅能访问自己的目录,其它用户不做这个限制,那么就需要在chroot_list文件(此文件一般是在/etc/vsftpd/中)中添加此用户.</p>
-
 <p>编辑此文件,比如将test用户添加到此文件中,那么将其写入即可.一般的话,一个用户占一行.</p>
-
 <pre><code>[root@localhost vsftpd]# cat chroot_list
 ftpuser
-</code></pre>
-
-<h4 id="12-绑定某个ip到vsftpd">12.绑定某个IP到vsFTPd</h4>
-
+</code></pre><h4 id="12绑定某个ip到vsftpd">12.绑定某个IP到vsFTPd</h4>
 <p>有时候要限制某些IP访问服务器,只允许某些IP访问,例如只允许192.168.0.33访问这个FTP,同样修改配置文件:</p>
-
 <p><code>listen_address=192.168.0.33</code></p>
-
-<h4 id="13-配置vsftpd-conf">13.配置vsftpd.conf</h4>
-
+<h4 id="13配置vsftpdconf">13.配置vsftpd.conf</h4>
 <ul>
-<li>anonymous_enable=NO            #禁止匿名</li>
-<li>local_enable=YES                       #允许本地登录</li>
-<li>write_enable=YES                        #允许写，如需上传，则必须</li>
-<li>local_umask=027                        #将上传文件的权限设置为：777-local_umask</li>
-<li>anon_upload_enable=YES          # 允许虚拟用户和匿名用户上传</li>
-<li>anon_other_write_enable=YES #允许虚拟用户和匿名用户修改文件名和删除文件</li>
-<li>dirmessage_enable=YES</li>
-<li>xferlog_enable=YES                      #打开日志记录</li>
-<li>connect_from_port_20=YES</li>
-<li>xferlog_file=/var/log/vsftpd.log     #日志存放位置</li>
-<li>xferlog_std_format=YES              #标准日志格式</li>
-<li>idle_session_timeout=600        #空闲连接超时</li>
-<li>data_connection_timeout=120</li>
-<li>ftpd_banner=Welcome to ChinaRise FTP service       #欢迎信息</li>
-<li>guest_enable=yes                       #允许虚拟用户</li>
-<li>guest_username=vsftpdguest #虚拟用户使用的系统账号</li>
-
-<li><p>virtual_use_local_privs=YES     #虚拟用户拥有本地系统权限</p></li>
-
-<li><p>chroot_local_user=NO</p></li>
-
-<li><p>chroot_list_enable=YES  #以上两行将虚拟用户限制在其目录下，不能访问其他目录，或者直接用
-chroot_local_user=YES</p></li>
-
-<li><p>listen=yes                #监听/被动模式</p></li>
-
-<li><p>listen_port=21        #监听端口</p></li>
-
-<li><p>chroot_list_file=/etc/vsftpd/vsftpd.chroot_list        #虚拟用户名单保存在文件/etc/vsftpd/vsftpd.chroot_list 中</p></li>
-
-<li><p>user_config_dir=/etc/vsftpd/vsftpd_user_conf    #每个虚拟用户名的更加详细的培植保存在/etc/vsftpd/vsftpd_user_conf 中</p></li>
+<li>
+<p>anonymous_enable=NO            #禁止匿名</p>
+</li>
+<li>
+<p>local_enable=YES                       #允许本地登录</p>
+</li>
+<li>
+<p>write_enable=YES                        #允许写，如需上传，则必须</p>
+</li>
+<li>
+<p>local_umask=027                        #将上传文件的权限设置为：777-local_umask</p>
+</li>
+<li>
+<p>anon_upload_enable=YES          # 允许虚拟用户和匿名用户上传</p>
+</li>
+<li>
+<p>anon_other_write_enable=YES #允许虚拟用户和匿名用户修改文件名和删除文件</p>
+</li>
+<li>
+<p>dirmessage_enable=YES</p>
+</li>
+<li>
+<p>xferlog_enable=YES                      #打开日志记录</p>
+</li>
+<li>
+<p>connect_from_port_20=YES</p>
+</li>
+<li>
+<p>xferlog_file=/var/log/vsftpd.log     #日志存放位置</p>
+</li>
+<li>
+<p>xferlog_std_format=YES              #标准日志格式</p>
+</li>
+<li>
+<p>idle_session_timeout=600        #空闲连接超时</p>
+</li>
+<li>
+<p>data_connection_timeout=120</p>
+</li>
+<li>
+<p>ftpd_banner=Welcome to ChinaRise FTP service       #欢迎信息</p>
+</li>
+<li>
+<p>guest_enable=yes                       #允许虚拟用户</p>
+</li>
+<li>
+<p>guest_username=vsftpdguest #虚拟用户使用的系统账号</p>
+</li>
+<li>
+<p>virtual_use_local_privs=YES     #虚拟用户拥有本地系统权限</p>
+</li>
+<li>
+<p>chroot_local_user=NO</p>
+</li>
+<li>
+<p>chroot_list_enable=YES  #以上两行将虚拟用户限制在其目录下，不能访问其他目录，或者直接用
+chroot_local_user=YES</p>
+</li>
+<li>
+<p>listen=yes                #监听/被动模式</p>
+</li>
+<li>
+<p>listen_port=21        #监听端口</p>
+</li>
+<li>
+<p>chroot_list_file=/etc/vsftpd/vsftpd.chroot_list        #虚拟用户名单保存在文件/etc/vsftpd/vsftpd.chroot_list 中</p>
+</li>
+<li>
+<p>user_config_dir=/etc/vsftpd/vsftpd_user_conf    #每个虚拟用户名的更加详细的培植保存在/etc/vsftpd/vsftpd_user_conf 中</p>
+</li>
 </ul>
-
 <h4 id="虚拟用户其他设置">虚拟用户其他设置</h4>
-
 <p>在/etc/vsftpd/vsftpd.chroot_list 文件中写入允许登陆的虚拟用户名称，每行一个</p>
-
 <p>在/etc/vsftpd/vsftpd_user_conf 文件夹中创建一个以虚拟用户用户名命名的文件</p>
-
 <p>写入： local_root = /var/FTP/子目录名</p>
-
 <p>然后在/var/FTP下创建一个对应的目录即可</p>
 </article>
     <footer class="post-footer">
@@ -344,7 +311,7 @@ chroot_local_user=YES</p></li>
       
       <p class="post-copyright">
         Link:<a rel='license' href='https://imxcz.com/wordpress/centos-ftp.html'>https://imxcz.com/wordpress/centos-ftp.html </a><br>
-          © 本文采用 <a rel='license' href='http://creativecommons.org/licenses/by-nc/4.0/' target=''>知识共享署名-非商业性使用 4.0 国际许可协议</a> 进行许可。文章发表于 <strong>1736</strong> 天前, 文章内容可能不准确，请酌情参考。
+          © 本文采用 <a rel='license' href='http://creativecommons.org/licenses/by-nc/4.0/' target=''>知识共享署名-非商业性使用 4.0 国际许可协议</a> 进行许可。文章发表于 <strong>2327</strong> 天前, 文章内容可能不准确，请酌情参考。
       </p>
       <div class="post-nav">
           
@@ -382,7 +349,7 @@ chroot_local_user=YES</p></li>
             </li>
             
             <li>
-                <a href="https://imxcz.com/categories/%E6%8A%80%E6%9C%AF/">技术(18)</a>
+                <a href="https://imxcz.com/categories/%E6%8A%80%E6%9C%AF/">技术(19)</a>
             </li>
             
             <li>
@@ -390,7 +357,7 @@ chroot_local_user=YES</p></li>
             </li>
             
             <li>
-                <a href="https://imxcz.com/categories/%E7%AC%94%E8%AE%B0/">笔记(3)</a>
+                <a href="https://imxcz.com/categories/%E7%AC%94%E8%AE%B0/">笔记(5)</a>
             </li>
             
             <li>
@@ -441,6 +408,8 @@ chroot_local_user=YES</p></li>
             
             <a href="https://imxcz.com/tags/htaccess/">htaccess</a>
             
+            <a href="https://imxcz.com/tags/hugo/">hugo</a>
+            
             <a href="https://imxcz.com/tags/iis/">iis</a>
             
             <a href="https://imxcz.com/tags/javascript/">javascript</a>
@@ -451,11 +420,17 @@ chroot_local_user=YES</p></li>
             
             <a href="https://imxcz.com/tags/mac/">mac</a>
             
+            <a href="https://imxcz.com/tags/macos/">macos</a>
+            
+            <a href="https://imxcz.com/tags/markdown/">markdown</a>
+            
             <a href="https://imxcz.com/tags/msysgit/">msysgit</a>
             
             <a href="https://imxcz.com/tags/mysql/">mysql</a>
             
             <a href="https://imxcz.com/tags/php/">php</a>
+            
+            <a href="https://imxcz.com/tags/timemachine/">timemachine</a>
             
             <a href="https://imxcz.com/tags/tortoisegit/">tortoisegit</a>
             
@@ -483,11 +458,15 @@ chroot_local_user=YES</p></li>
             
             <a href="https://imxcz.com/tags/%E6%8B%8D%E7%85%A7/">拍照</a>
             
+            <a href="https://imxcz.com/tags/%E6%97%B6%E5%85%89%E6%9C%BA%E5%99%A8/">时光机器</a>
+            
             <a href="https://imxcz.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
             
             <a href="https://imxcz.com/tags/%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C/">用户体验</a>
             
             <a href="https://imxcz.com/tags/%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1/">界面设计</a>
+            
+            <a href="https://imxcz.com/tags/%E7%9B%91%E5%90%AC%E6%96%87%E4%BB%B6/">监听文件</a>
             
             <a href="https://imxcz.com/tags/%E7%A0%81%E5%86%9C/">码农</a>
             
@@ -518,11 +497,11 @@ chroot_local_user=YES</p></li>
     </section>
     
     <section class="widget-box">
-            <h3 class="widget-title">其他</h3>
-            <ul class="widget-links">
-                    <li><a href="https://imxcz.com/index.xml">文章 RSS</a></li>
-                </ul>
-        </section>
+        <h3 class="widget-title">其他</h3>
+        <ul class="widget-links">
+            <li><a href="https://imxcz.com/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
 </div>
       </sidebar>
   </section>
@@ -530,10 +509,10 @@ chroot_local_user=YES</p></li>
 
 
 <footer class="site-footer">
-  <p>© 2012-2019 幸存者IMxcz.Com</p>
+  <p>© 2012-2021 幸存者IMxcz.Com</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="http://www.imxcz.com" target="_blank" rel="noopener">Imxcz</a>.</p>
   
-    <p><a href="http://www.miitbeian.gov.cn" title="Check ICP info" target="_blank" rel="noopener">豫ICP备12022851号-2</a></p>
+    <p><a href="http://beian.miit.gov.cn/" title="Check ICP info" target="_blank" rel="noopener">豫ICP备12022851号-2</a></p>
   
 </footer>
 

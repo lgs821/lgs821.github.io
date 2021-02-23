@@ -19,7 +19,7 @@
 <meta name="description" content="在做小程序开发的时候，我们经常会需要获取用户的一些权限。比如获取用户信息用于直接登录，获取地理位置用于定位等。但要是用户拒绝授权了，该怎么处理呢？ 问题分析 在小程序里面，获取到用户权"> 
 
 
-<meta name="generator" content="Hugo 0.54.0">
+<meta name="generator" content="Hugo 0.80.0">
 
 
 <link rel="canonical" href="https://imxcz.com/wordpress/miniprogram-weishouquan.html"> 
@@ -153,28 +153,16 @@
               
           </p>
     </header>
-    <article class="post-content">
-
-<p>在做小程序开发的时候，我们经常会需要获取用户的一些权限。比如获取用户信息用于直接登录，获取地理位置用于定位等。但要是用户拒绝授权了，该怎么处理呢？</p>
-
+    <article class="post-content"><p>在做小程序开发的时候，我们经常会需要获取用户的一些权限。比如获取用户信息用于直接登录，获取地理位置用于定位等。但要是用户拒绝授权了，该怎么处理呢？</p>
 <h3 id="问题分析">问题分析</h3>
-
 <p>在小程序里面，获取到用户权限是进行某些操作的必要前提。比如在进入小程序的时候，获取到用户信息，拿到 unionId 对应到自己平台的账号进行登录，免去用户自己输入账号密码，这就是一个不错的体验。</p>
-
 <p>当我们调用 <code>wx.getUserInfo</code> 或者 <code>wx.getLocation</code> 这种需要用户授权的 API 时，小程序会弹框让用户选择授权：</p>
-
-<p><img src="http://imgs.liguangshuai.cn/markdown/2019-03-17-153238.jpg" alt="img" /></p>
-
+<p><img src="http://imgs.liguangshuai.cn/markdown/2019-03-17-153238.jpg" alt="img"></p>
 <p>当用户选择允许后，下次再进入小程序就不会再询问了，直接获得用户授权（除非将小程序删了再进入）。这里的问题在于，当用户点了拒绝之后，就拿不到相关授权了，并且在一段时间内，进入小程序都不会再出现这个弹框。</p>
-
 <p>从用户体验及保护隐私的角度考虑，小程序最好是不用授权也可以使用（或者体验）。但有些类型的小程序确实是需要拿到用户信息才能使用的。这里提供一个简单的解决方案。</p>
-
 <h3 id="解决方案">解决方案</h3>
-
 <p>以获取用户信息直接登录为例。增加一个授权页面，作为进入小程序的第一个页面，在这里获取用户数据和登录。默认可以什么都不显示，也可以当做引导页来使用。</p>
-
 <p>获取用户信息需要用到 wx.login 和 wx.getUserInfo 两个 API，关于这两个 API 的具体信息大家可以到官方文档去查看。</p>
-
 <p>增加一个登陆方法，代码如下：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//登录
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">login</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> () {
@@ -198,23 +186,14 @@
     }
   })
 }
-</code></pre></div>
-<p>当上面代码走到了 fail 里面，就可以认为在获取授权的时候，用户点了拒绝。当 getUserInfoFail 为 true 的时候，可以展示一个获取授权的按钮，比如像这样：</p>
-
-<p><img src="http://imgs.liguangshuai.cn/markdown/2019-03-17-153237.jpg" alt="img" /></p>
-
+</code></pre></div><p>当上面代码走到了 fail 里面，就可以认为在获取授权的时候，用户点了拒绝。当 getUserInfoFail 为 true 的时候，可以展示一个获取授权的按钮，比如像这样：</p>
+<p><img src="http://imgs.liguangshuai.cn/markdown/2019-03-17-153237.jpg" alt="img"></p>
 <p>接下来介绍另一个 API : wx.openSetting，使用 wx.openSetting 可以跳转到小程序的授权设置界面，在安卓里面它长这样：</p>
-
-<p><img src="http://imgs.liguangshuai.cn/markdown/2019-03-17-153239.jpg" alt="img" /></p>
-
+<p><img src="http://imgs.liguangshuai.cn/markdown/2019-03-17-153239.jpg" alt="img"></p>
 <p>在点击授权按钮后跳转到这里，让用户授权了才给进入首页，否则就停留在授权页面。</p>
-
 <p>但还有个小问题，这个 API 是基础库 1.1.0 才有的，所以需要做兼容处理：</p>
-
-<p><img src="http://imgs.liguangshuai.cn/markdown/2019-03-17-153241.jpg" alt="img" /></p>
-
+<p><img src="http://imgs.liguangshuai.cn/markdown/2019-03-17-153241.jpg" alt="img"></p>
 <p>所以，最终跳转授权的代码如下：</p>
-
 <pre><code>//跳转设置页面授权
 openSetting: function () {
   var that = this
@@ -232,14 +211,9 @@ openSetting: function () {
     })
   }
 }
-</code></pre>
-
-<p>还好 1.1.0 已结算是比较早的版本了，现在都出到 1.3.0 了。</p>
-
+</code></pre><p>还好 1.1.0 已结算是比较早的版本了，现在都出到 1.3.0 了。</p>
 <p>最终效果如下：</p>
-
-<p><img src="http://imgs.liguangshuai.cn/markdown/2019-03-17-153240.jpg" alt="img" /></p>
-
+<p><img src="http://imgs.liguangshuai.cn/markdown/2019-03-17-153240.jpg" alt="img"></p>
 <p>同样的处理方式也可以用在获取别的权限上，妥妥的。</p>
 </article>
     <footer class="post-footer">
@@ -252,7 +226,7 @@ openSetting: function () {
       
       <p class="post-copyright">
         Link:<a rel='license' href='https://imxcz.com/wordpress/miniprogram-weishouquan.html'>https://imxcz.com/wordpress/miniprogram-weishouquan.html </a><br>
-          © 本文采用 <a rel='license' href='http://creativecommons.org/licenses/by-nc/4.0/' target=''>知识共享署名-非商业性使用 4.0 国际许可协议</a> 进行许可。文章发表于 <strong>672</strong> 天前, 文章内容可能不准确，请酌情参考。
+          © 本文采用 <a rel='license' href='http://creativecommons.org/licenses/by-nc/4.0/' target=''>知识共享署名-非商业性使用 4.0 国际许可协议</a> 进行许可。文章发表于 <strong>1263</strong> 天前, 文章内容可能不准确，请酌情参考。
       </p>
       <div class="post-nav">
           
@@ -288,7 +262,7 @@ openSetting: function () {
             </li>
             
             <li>
-                <a href="https://imxcz.com/categories/%E6%8A%80%E6%9C%AF/">技术(18)</a>
+                <a href="https://imxcz.com/categories/%E6%8A%80%E6%9C%AF/">技术(19)</a>
             </li>
             
             <li>
@@ -296,7 +270,7 @@ openSetting: function () {
             </li>
             
             <li>
-                <a href="https://imxcz.com/categories/%E7%AC%94%E8%AE%B0/">笔记(3)</a>
+                <a href="https://imxcz.com/categories/%E7%AC%94%E8%AE%B0/">笔记(5)</a>
             </li>
             
             <li>
@@ -347,6 +321,8 @@ openSetting: function () {
             
             <a href="https://imxcz.com/tags/htaccess/">htaccess</a>
             
+            <a href="https://imxcz.com/tags/hugo/">hugo</a>
+            
             <a href="https://imxcz.com/tags/iis/">iis</a>
             
             <a href="https://imxcz.com/tags/javascript/">javascript</a>
@@ -357,11 +333,17 @@ openSetting: function () {
             
             <a href="https://imxcz.com/tags/mac/">mac</a>
             
+            <a href="https://imxcz.com/tags/macos/">macos</a>
+            
+            <a href="https://imxcz.com/tags/markdown/">markdown</a>
+            
             <a href="https://imxcz.com/tags/msysgit/">msysgit</a>
             
             <a href="https://imxcz.com/tags/mysql/">mysql</a>
             
             <a href="https://imxcz.com/tags/php/">php</a>
+            
+            <a href="https://imxcz.com/tags/timemachine/">timemachine</a>
             
             <a href="https://imxcz.com/tags/tortoisegit/">tortoisegit</a>
             
@@ -389,11 +371,15 @@ openSetting: function () {
             
             <a href="https://imxcz.com/tags/%E6%8B%8D%E7%85%A7/">拍照</a>
             
+            <a href="https://imxcz.com/tags/%E6%97%B6%E5%85%89%E6%9C%BA%E5%99%A8/">时光机器</a>
+            
             <a href="https://imxcz.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
             
             <a href="https://imxcz.com/tags/%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C/">用户体验</a>
             
             <a href="https://imxcz.com/tags/%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1/">界面设计</a>
+            
+            <a href="https://imxcz.com/tags/%E7%9B%91%E5%90%AC%E6%96%87%E4%BB%B6/">监听文件</a>
             
             <a href="https://imxcz.com/tags/%E7%A0%81%E5%86%9C/">码农</a>
             
@@ -424,11 +410,11 @@ openSetting: function () {
     </section>
     
     <section class="widget-box">
-            <h3 class="widget-title">其他</h3>
-            <ul class="widget-links">
-                    <li><a href="https://imxcz.com/index.xml">文章 RSS</a></li>
-                </ul>
-        </section>
+        <h3 class="widget-title">其他</h3>
+        <ul class="widget-links">
+            <li><a href="https://imxcz.com/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
 </div>
       </sidebar>
   </section>
@@ -436,10 +422,10 @@ openSetting: function () {
 
 
 <footer class="site-footer">
-  <p>© 2012-2019 幸存者IMxcz.Com</p>
+  <p>© 2012-2021 幸存者IMxcz.Com</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="http://www.imxcz.com" target="_blank" rel="noopener">Imxcz</a>.</p>
   
-    <p><a href="http://www.miitbeian.gov.cn" title="Check ICP info" target="_blank" rel="noopener">豫ICP备12022851号-2</a></p>
+    <p><a href="http://beian.miit.gov.cn/" title="Check ICP info" target="_blank" rel="noopener">豫ICP备12022851号-2</a></p>
   
 </footer>
 

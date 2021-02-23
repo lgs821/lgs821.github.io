@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ecshop on 幸存者IMxcz.Com</title>
+    <title>ecshop on 幸存者IMxcz.Com</title>
     <link>https://imxcz.com/tags/ecshop/</link>
-    <description>Recent content in Ecshop on 幸存者IMxcz.Com</description>
+    <description>Recent content in ecshop on 幸存者IMxcz.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 22 Aug 2012 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://imxcz.com/tags/ecshop/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 22 Aug 2012 00:00:00 +0000</lastBuildDate><atom:link href="https://imxcz.com/tags/ecshop/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>手把手教你ECSHOP-2.7.3去版权与标志方法</title>
       <link>https://imxcz.com/wordpress/ecshop-2-7-3-qubanquan.html</link>

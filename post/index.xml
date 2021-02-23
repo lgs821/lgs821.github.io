@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>博客文章 on 幸存者IMxcz.Com</title>
@@ -6,10 +6,33 @@
     <description>Recent content in 博客文章 on 幸存者IMxcz.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 19 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 22 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://imxcz.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang 监听文件变化(非轮询)</title>
+      <link>https://imxcz.com/post/2021/golang-jiantingwenjian/</link>
+      <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://imxcz.com/post/2021/golang-jiantingwenjian/</guid>
+      <description>Golang 监听文件变化(非轮询) 最近研究openresty(nginx+lua)，由于这货热更有点麻烦，所以就写就用golang写了一个文件监听的程序，监听到配置文件或lua文件更改就重启</description>
+    </item>
     
-	<atom:link href="https://imxcz.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hugo markdown文章新窗口打开超链接</title>
+      <link>https://imxcz.com/post/2021/hugo-markdown-target/</link>
+      <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://imxcz.com/post/2021/hugo-markdown-target/</guid>
+      <description>一、通过js修改链接a标签 target &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; function addaTarget(id) { var aTags = document.getElementById(id).getElementsByTagName(&amp;#34;a&amp;#34;); for (i = 0; i &amp;lt; aTags.length; i++) { var aTags_item = aTags[i]; aTags_item.target = &amp;#34;_blank&amp;#34;; } } addaTarget(&amp;#34;post-content-id&amp;#34;); &amp;lt;/script&amp;gt; 二、通过Hugo Markdown Render Hooks 可在超链接添加title标签 [Text](https://www.gohugo.io &amp;quot;Title&amp;quot;) 增加下面模板文件 layouts/_default/_markup/render-link.html &amp;lt;a href=&amp;#34;{{ .Destination | safeURL }}&amp;#34;{{ with .Title}} title=&amp;#34;{{ . }}&amp;#34;{{</description>
+    </item>
     
+    <item>
+      <title>MacOS 系统实用命令记录</title>
+      <link>https://imxcz.com/post/2019/macos-mingling/</link>
+      <pubDate>Sat, 09 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://imxcz.com/post/2019/macos-mingling/</guid>
+      <description>强制关闭系统对时光机器的限流，俗称“解除封印” sudo sysctl debug.lowpri_throttle_enabled=0 恢复时光机器限流状态 sudo sysctl debug.lowpri_throttle_enabled=1</description>
+    </item>
     
     <item>
       <title>javascript中date详细介绍</title>
@@ -99,6 +122,15 @@
       
       <guid>https://imxcz.com/post/1/</guid>
       <description>看过awesome-go项目， 汇总了很多go开源项目。 但是awesome-go收集了太全了， 而且每个项目没有详细描述。 因此我自己根据go语言中文社区提供的资料，还有互联网企业架构设</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://imxcz.com/post/1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://imxcz.com/post/1/</guid>
+      <description>Golang 正则表达式 Golang中的正则表达式 ------------------------------------------------------------ 用法： ------------------------------ 单一： . 匹配任意一个字符，如果设置 s = true，则可以匹配换行符 [字符类] 匹配“字符类”中的一个字符，“字符类”见后面的说明 [^字符</description>
     </item>
     
     <item>

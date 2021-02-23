@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tortoisegit on 幸存者IMxcz.Com</title>
+    <title>TortoiseGit on 幸存者IMxcz.Com</title>
     <link>https://imxcz.com/tags/tortoisegit/</link>
-    <description>Recent content in Tortoisegit on 幸存者IMxcz.Com</description>
+    <description>Recent content in TortoiseGit on 幸存者IMxcz.Com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 25 Dec 2014 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://imxcz.com/tags/tortoisegit/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 25 Dec 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://imxcz.com/tags/tortoisegit/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TortoiseGit&#43;MsysGit详细安装教程-代码托管工具不二之选</title>
       <link>https://imxcz.com/wordpress/tortoisegit-msysgit.html</link>

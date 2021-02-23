@@ -19,7 +19,7 @@
 <meta name="description" content="CSS面试题 1、position的值， relative和absolute分别是相对于谁进行定位的？ absolute :生成绝对定位的元素， 相对于最近一级的 定位不是 static 的父元素来进行定位。 fixed （老IE不"> 
 
 
-<meta name="generator" content="Hugo 0.54.0">
+<meta name="generator" content="Hugo 0.80.0">
 
 
 <link rel="canonical" href="https://imxcz.com/post/2018/css-mianshiti/"> 
@@ -153,59 +153,48 @@
               
           </p>
     </header>
-    <article class="post-content">
-
-<h3 id="css面试题">CSS面试题</h3>
-
+    <article class="post-content"><h3 id="css面试题">CSS面试题</h3>
 <p><strong>1、position的值， relative和absolute分别是相对于谁进行定位的？</strong></p>
-
 <ul>
-<li><p>absolute :生成绝对定位的元素， 相对于最近一级的 定位不是 static 的父元素来进行定位。</p></li>
-
-<li><p>fixed （老IE不支持）生成绝对定位的元素，通常相对于浏览器窗口或 frame 进行定位。</p></li>
-
-<li><p>relative 生成相对定位的元素，相对于其在普通流中的位置进行定位。</p></li>
-
-<li><p>static 默认值。没有定位，元素出现在正常的流中</p></li>
-
-<li><p>sticky 生成粘性定位的元素，容器的位置根据正常文档流计算得出</p></li>
+<li>
+<p>absolute :生成绝对定位的元素， 相对于最近一级的 定位不是 static 的父元素来进行定位。</p>
+</li>
+<li>
+<p>fixed （老IE不支持）生成绝对定位的元素，通常相对于浏览器窗口或 frame 进行定位。</p>
+</li>
+<li>
+<p>relative 生成相对定位的元素，相对于其在普通流中的位置进行定位。</p>
+</li>
+<li>
+<p>static 默认值。没有定位，元素出现在正常的流中</p>
+</li>
+<li>
+<p>sticky 生成粘性定位的元素，容器的位置根据正常文档流计算得出</p>
+</li>
 </ul>
-
 <p><strong>2、display:none和visibility:hidden的区别？</strong></p>
-
 <ul>
 <li>display:none  隐藏对应的元素，在文档布局中不再给它分配空间，它各边的元素会合拢，就当他从来不存在。</li>
 <li>visibility:hidden  隐藏对应的元素，但是在文档布局中仍保留原来的空间。</li>
 </ul>
-
 <p><strong>3、CSS中link 和@import的区别是？</strong></p>
-
 <ol>
 <li>link属于HTML标签，而@import是CSS提供的;</li>
 <li>页面被加载的时，link会同时被加载，而@import被引用的CSS会等到引用它的CSS文件被加载完再加载;</li>
 <li>import只在IE5以上才能识别，而link是HTML标签，无兼容问题;</li>
 <li>link方式的样式的权重 高于@import的权重.</li>
 </ol>
-
 <p><strong>4、position:absolute和float属性的异同</strong></p>
-
 <ul>
 <li>共同点：对内联元素设置float和absolute属性，可以让元素脱离文档流，并且可以设置其宽高。</li>
 <li>不同点：float仍会占据位置，absolute会覆盖文档流中的其他元素。</li>
 </ul>
-
 <p><strong>5、介绍一下box-sizing属性？</strong></p>
-
 <p>box-sizing属性主要用来控制元素的盒模型的解析模式。默认值是content-box。</p>
-
 <p>content-box：让元素维持W3C的标准盒模型。元素的宽度/高度由border + padding + content的宽度/高度决定，设置width/height属性指的是content部分的宽/高</p>
-
 <p>border-box：让元素维持IE传统盒模型（IE6以下版本和IE6~7的怪异模式）。设置width/height属性指的是border + padding + content</p>
-
 <p>标准浏览器下，按照W3C规范对盒模型解析，一旦修改了元素的边框或内距，就会影响元素的盒子尺寸，就不得不重新计算元素的盒子尺寸，从而影响整个页面的布局。</p>
-
 <p><strong>6、CSS 选择符有哪些？哪些属性可以继承？优先级算法如何计算？ CSS3新增伪类有那些？</strong></p>
-
 <ol>
 <li>id选择器（ # myid）</li>
 <li>类选择器（.myclassname）</li>
@@ -219,9 +208,7 @@
 优先级为：!important &gt; id &gt; class &gt; tag
 important 比 内联优先级高,但内联比 id 要高</li>
 </ol>
-
 <p><strong>7、CSS3新增伪类举例：</strong></p>
-
 <pre><code>p:first-of-type 选择属于其父元素的首个 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。
 	p:last-of-type  选择属于其父元素的最后 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。
 	p:only-of-type  选择属于其父元素唯一的 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。
@@ -229,10 +216,7 @@ important 比 内联优先级高,但内联比 id 要高</li>
 	p:nth-child(2)  选择属于其父元素的第二个子元素的每个 &lt;p&gt; 元素。
 	:enabled  :disabled 控制表单控件的禁用状态。
 	:checked        单选框或复选框被选中。
-</code></pre>
-
-<p><strong>8、CSS3有哪些新特性？</strong></p>
-
+</code></pre><p><strong>8、CSS3有哪些新特性？</strong></p>
 <ol>
 <li>CSS3实现圆角（border-radius）</li>
 <li>阴影（box-shadow）</li>
@@ -244,7 +228,6 @@ important 比 内联优先级高,但内联比 id 要高</li>
 <li>媒体查询，多栏布局</li>
 <li>border-image</li>
 <li>CSS3中新增了一种盒模型计算方式：box-sizing。盒模型默认的值是content-box, 新增的值是padding-box和border-box，几种盒模型计算元素宽高的区别如下：
-
 <ol>
 <li>content-box（默认）
 布局所占宽度Width：
@@ -261,55 +244,39 @@ Height = height(包含padding-top + padding-bottom) + border-top + border-bottom
 Width = width(包含padding-left + padding-right + border-left + border-right)
 布局所占高度Height:
 Height = height(包含padding-top + padding-bottom + border-top + border-bottom)</li>
-</ol></li>
 </ol>
-
+</li>
+</ol>
 <p><strong>9、对BFC规范的理解？</strong></p>
-
 <ul>
 <li>BFC，块级格式化上下文，一个创建了新的BFC的盒子是独立布局的，盒子里面的子元素的样式不会影响到外面的元素。在同一个BFC中的两个毗邻的块级盒在垂直方向（和布局方向有关系）的margin会发生折叠。</li>
 <li>（W3C CSS 2.1 规范中的一个概念，它决定了元素如何对其内容进行布局，以及与其他元素的关系和相互作用。</li>
 </ul>
-
 <p><strong>10、上下margin重合问题</strong>
 ie和ff都存在，相邻的两个div的margin-left和margin-right不会重合，但是margin-top和margin-bottom却会发生重合。
 解决方法，养成良好的代码编写习惯，同时采用margin-top或者同时采用margin-bottom。</p>
-
 <p><strong>11、解释下浮动和它的工作原理？清除浮动的技巧</strong>
 浮动元素脱离文档流，不占据空间。浮动元素碰到包含它的边框或者浮动元素的边框停留。</p>
-
 <ol>
 <li>使用空标签清除浮动。
-  这种方法是在所有浮动标签后面添加一个空标签 定义css clear:both. 弊端就是增加了无意义标签。</li>
+这种方法是在所有浮动标签后面添加一个空标签 定义css clear:both. 弊端就是增加了无意义标签。</li>
 <li>使用overflow。
-  给包含浮动元素的父标签添加css属性 overflow:auto; zoom:1; zoom:1用于兼容IE6。</li>
+给包含浮动元素的父标签添加css属性 overflow:auto; zoom:1; zoom:1用于兼容IE6。</li>
 <li>使用after伪对象清除浮动。
-  该方法只适用于非IE浏览器。具体写法可参照以下示例。使用中需注意以下几点。一、该方法中必须为需要清除浮动元素的伪对象中设置 height:0，否则该元素会比实际高出若干像素；</li>
+该方法只适用于非IE浏览器。具体写法可参照以下示例。使用中需注意以下几点。一、该方法中必须为需要清除浮动元素的伪对象中设置 height:0，否则该元素会比实际高出若干像素；</li>
 </ol>
-
-<h4 id="前端面试题-非技术类">前端面试题（非技术类）</h4>
-
+<h4 id="前端面试题非技术类">前端面试题（非技术类）</h4>
 <p>1.一些开放性题目</p>
-
 <p>1.自我介绍：除了基本个人信息以外，面试官更想听的是你与众不同的地方和你的优势。</p>
-
 <p>2.项目介绍</p>
-
 <p>3.如何看待前端开发？</p>
-
 <p>4.平时是如何学习前端开发的？</p>
-
 <p>5.未来三到五年的规划是怎样的？</p>
-
 <p><strong>1、如何解决跨域问题？</strong></p>
-
 <p><strong>JSONP：</strong></p>
-
 <p>原理是：动态插入script标签，通过script标签引入一个js文件，这个js文件载入成功后会执行我们在url参数中指定的函数，并且会把我们需要的json数据作为参数传入。</p>
-
 <p>由于同源策略的限制，XmlHttpRequest只允许请求当前源（域名、协议、端口）的资源，为了实现跨域请求，可以通过script标签实现跨域请求，然后在服务端输出JSON数据并执行回调函数，从而解决了跨域的数据请求。
 优点是兼容性好，简单易用，支持浏览器与服务器双向通信。缺点是只支持GET请求。</p>
-
 <p>JSONP：json+padding（内填充），顾名思义，就是把JSON填充到一个盒子里</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span><span style="color:#f92672">&gt;</span>
     <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">createJs</span>(<span style="color:#a6e22e">sUrl</span>){
@@ -327,110 +294,58 @@ ie和ff都存在，相邻的两个div的margin-left和margin-right不会重合�
         <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">name</span>);
     }
 <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
-</code></pre></div>
-<p><strong>CORS</strong></p>
-
+</code></pre></div><p><strong>CORS</strong></p>
 <p>服务器端对于CORS的支持，主要就是通过设置Access-Control-Allow-Origin来进行的。如果浏览器检测到相应的设置，就可以允许Ajax进行跨域的访问。</p>
-
 <p>通过修改document.domain来跨子域</p>
-
 <p>将子域和主域的document.domain设为同一个主域.前提条件：这两个域名必须属于同一个基础域名!而且所用的协议，端口都要一致，否则无法利用document.domain进行跨域</p>
-
 <p>主域相同的使用document.domain</p>
-
 <p>使用window.name来进行跨域</p>
-
 <p>window对象有个name属性，该属性有个特征：即在一个窗口(window)的生命周期内,窗口载入的所有的页面都是共享一个window.name的，每个页面对window.name都有读写的权限，window.name是持久存在一个窗口载入过的所有页面中的</p>
-
 <p>使用HTML5中新引进的window.postMessage方法来跨域传送数据</p>
-
 <p>还有flash、在服务器上设置代理页面等跨域方式。个人认为window.name的方法既不复杂，也能兼容到几乎所有浏览器，这真是极好的一种跨域方法。</p>
-
 <p><strong>2、null和undefined的区别？</strong></p>
-
 <p>null是一个表示”无”的对象，转为数值时为0；undefined是一个表示”无”的原始值，转为数值时为NaN。</p>
-
 <p>当声明的变量还未被初始化时，变量的默认值为undefined。</p>
-
 <p>null用来表示尚未存在的对象，常用来表示函数企图返回一个不存在的对象。</p>
-
 <p>undefined表示”缺少值”，就是此处应该有一个值，但是还没有定义。典型用法是：</p>
-
 <p>（1）变量被声明了，但没有赋值时，就等于undefined。</p>
-
 <p>（2) 调用函数时，应该提供的参数没有提供，该参数等于undefined。</p>
-
 <p>（3）对象没有赋值的属性，该属性的值为undefined。</p>
-
 <p>（4）函数没有返回值时，默认返回undefined。</p>
-
 <p>null表示”没有对象”，即该处不应该有值。典型用法是：</p>
-
 <p>（1） 作为函数的参数，表示该函数的参数不是对象。</p>
-
 <p>（2） 作为对象原型链的终点。</p>
-
 <p><strong>3、new操作符具体干了什么呢?</strong></p>
-
 <p>1、创建一个空对象，并且 this 变量引用该对象，同时还继承了该函数的原型。</p>
-
 <p>2、属性和方法被加入到 this 引用的对象中。</p>
-
 <p>3、新创建的对象由 this 所引用，并且最后隐式的返回 this 。</p>
-
 <pre><code>var obj  = {};
 obj.\_\_proto\_\_ = Base.prototype;
 Base.call(obj);
-</code></pre>
-
-<p><strong>4、js延迟加载的方式有哪些？</strong></p>
-
+</code></pre><p><strong>4、js延迟加载的方式有哪些？</strong></p>
 <p>defer和async、动态创建DOM方式（创建script，插入到DOM中，加载完毕后callBack）、按需异步载入js</p>
-
 <p>call() 和 apply() 的区别和作用？</p>
-
 <p>作用：动态改变某个类的某个方法的运行环境（执行上下文）。</p>
-
 <p>区别参见：[JavaScript学习总结（四）function函数部分][3]</p>
-
 <p><strong>5、哪些操作会造成内存泄漏？</strong></p>
-
 <p>内存泄漏指任何对象在您不再拥有或需要它之后仍然存在。</p>
-
 <p>垃圾回收器定期扫描对象，并计算引用了每个对象的其他对象的数量。如果一个对象的引用数量为 0（没有其他对象引用过该对象），或对该对象的惟一引用是循环的，那么该对象的内存即可回收。</p>
-
 <p>setTimeout 的第一个参数使用字符串而非函数的话，会引发内存泄漏。</p>
-
 <p>闭包、控制台日志、循环（在两个对象彼此引用且彼此保留时，就会产生一个循环）</p>
-
 <p><strong>6、WEB应用从服务器主动推送Data到客户端有那些方式？</strong></p>
-
 <p>Javascript数据推送</p>
-
 <p>Commet：基于HTTP长连接的服务器推送技术</p>
-
 <p>基于WebSocket的推送方案</p>
-
 <p>SSE（Server-Send Event）：服务器推送数据新方式</p>
-
 <p><strong>7、一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么？</strong></p>
-
 <p>分为4个步骤：</p>
-
-<p>​   （1），当发送一个URL请求时，不管这个URL是Web页面的URL还是Web页面上每个资源的URL，浏览器都会开启一个线程来处理这个请求，同时在远程DNS服务器上启动一个DNS查询。这能使浏览器获得请求对应的IP地址。</p>
-
-<p>​   （2）， 浏览器与远程<code>Web</code>服务器通过<code>TCP</code>三次握手协商来建立一个<code>TCP/IP</code>连接。该握手包括一个同步报文，一个同步-应答报文和一个应答报文，这三个报文在 浏览器和服务器之间传递。该握手首先由客户端尝试建立起通信，而后服务器应答并接受客户端的请求，最后由客户端发出该请求已经被接受的报文。</p>
-
-<p>​   （3），一旦<code>TCP/IP</code>连接建立，浏览器会通过该连接向远程服务器发送<code>HTTP</code>的<code>GET</code>请求。远程服务器找到资源并使用HTTP响应返回该资源，值为200的HTTP响应状态表示一个正确的响应。</p>
-
-<p>​   （4），此时，<code>Web</code>服务器提供资源服务，客户端开始下载资源。</p>
-
+<p>​	（1），当发送一个URL请求时，不管这个URL是Web页面的URL还是Web页面上每个资源的URL，浏览器都会开启一个线程来处理这个请求，同时在远程DNS服务器上启动一个DNS查询。这能使浏览器获得请求对应的IP地址。</p>
+<p>​	（2）， 浏览器与远程<code>Web</code>服务器通过<code>TCP</code>三次握手协商来建立一个<code>TCP/IP</code>连接。该握手包括一个同步报文，一个同步-应答报文和一个应答报文，这三个报文在 浏览器和服务器之间传递。该握手首先由客户端尝试建立起通信，而后服务器应答并接受客户端的请求，最后由客户端发出该请求已经被接受的报文。</p>
+<p>​	（3），一旦<code>TCP/IP</code>连接建立，浏览器会通过该连接向远程服务器发送<code>HTTP</code>的<code>GET</code>请求。远程服务器找到资源并使用HTTP响应返回该资源，值为200的HTTP响应状态表示一个正确的响应。</p>
+<p>​	（4），此时，<code>Web</code>服务器提供资源服务，客户端开始下载资源。</p>
 <p>请求返回后，便进入了我们关注的前端模块</p>
-
 <p>简单来说，浏览器会解析<code>HTML</code>生成<code>DOM Tree</code>，其次会根据CSS生成CSS Rule Tree，而<code>javascript</code>又可以根据<code>DOM API</code>操作<code>DOM</code></p>
-
 <p><strong>8、javascript对象的几种创建方式</strong></p>
-
 <ul>
 <li>1，工厂模式</li>
 <li>2，构造函数模式</li>
@@ -440,9 +355,7 @@ Base.call(obj);
 <li>6，寄生构造函数模式</li>
 <li>7，稳妥构造函数模式</li>
 </ul>
-
 <p><strong>//9、javascript继承的6种方法</strong></p>
-
 <ul>
 <li>1，原型链继承</li>
 <li>2，借用构造函数继承</li>
@@ -451,21 +364,26 @@ Base.call(obj);
 <li>5，寄生式继承</li>
 <li>6，寄生组合式继承</li>
 </ul>
-
 <p><strong>10、创建ajax的过程</strong></p>
-
 <ul>
-<li><p>(1)创建<code>XMLHttpRequest</code>对象,也就是创建一个异步调用对象.</p></li>
-
-<li><p>(2)创建一个新的<code>HTTP</code>请求,并指定该<code>HTTP</code>请求的方法、<code>URL</code>及验证信息.</p></li>
-
-<li><p>(3)设置响应<code>HTTP</code>请求状态变化的函数.</p></li>
-
-<li><p>(4)发送<code>HTTP</code>请求.</p></li>
-
-<li><p>(5)获取异步调用返回的数据.</p></li>
-
-<li><p>(6)使用JavaScript和DOM实现局部刷新.</p></li>
+<li>
+<p>(1)创建<code>XMLHttpRequest</code>对象,也就是创建一个异步调用对象.</p>
+</li>
+<li>
+<p>(2)创建一个新的<code>HTTP</code>请求,并指定该<code>HTTP</code>请求的方法、<code>URL</code>及验证信息.</p>
+</li>
+<li>
+<p>(3)设置响应<code>HTTP</code>请求状态变化的函数.</p>
+</li>
+<li>
+<p>(4)发送<code>HTTP</code>请求.</p>
+</li>
+<li>
+<p>(5)获取异步调用返回的数据.</p>
+</li>
+<li>
+<p>(6)使用JavaScript和DOM实现局部刷新.</p>
+</li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">  <span style="color:#f92672">-</span> <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">xmlHttp</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();
     	<span style="color:#a6e22e">xmlHttp</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#39;GET&#39;</span>,<span style="color:#e6db74">&#39;demo.php&#39;</span>,<span style="color:#e6db74">&#39;true&#39;</span>);
@@ -474,9 +392,7 @@ Base.call(obj);
     	    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">xmlHttp</span>.<span style="color:#a6e22e">readyState</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">xmlHttp</span>.<span style="color:#a6e22e">status</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">200</span>){
     	    }
     	}
-</code></pre></div>
-<p><strong>11、异步加载和延迟加载</strong></p>
-
+</code></pre></div><p><strong>11、异步加载和延迟加载</strong></p>
 <ul>
 <li>1.异步加载的方案： 动态插入script标签</li>
 <li>2.通过ajax去获取js代码，然后通过eval执行</li>
@@ -484,56 +400,31 @@ Base.call(obj);
 <li>4.创建并插入iframe，让它异步执行js</li>
 <li>5.延迟加载：有些 js 代码并不是页面初始化的时候就立刻需要的，而稍后的某些情况才需要的。</li>
 </ul>
-
 <p><strong>12、ie各版本和chrome可以并行下载多少个资源</strong></p>
-
 <p>IE6 两个并发，iE7升级之后的6个并发，之后版本也是6个</p>
-
 <p>Firefox，chrome也是6个</p>
-
 <p>Flash、Ajax各自的优缺点，在使用中如何取舍？</p>
-
 <p>Flash适合处理多媒体、矢量图形、访问机器；对CSS、处理文本上不足，不容易被搜索。</p>
-
 <p>-Ajax对CSS、文本支持很好，支持搜索；多媒体、矢量图形、机器访问不足。</p>
-
 <p>共同点：与服务器的无刷新传递消息、用户离线和在线状态、操作DOM</p>
-
 <p><strong>13、请解释一下 JavaScript 的同源策略。</strong></p>
-
 <p>概念:同源策略是客户端脚本（尤其是Javascript）的重要的安全度量标准。它最早出自Netscape Navigator2.0，其目的是防止某个文档或脚本从多个不同源装载。</p>
-
 <p>这里的同源策略指的是：协议，域名，端口相同，同源策略是一种安全协议。</p>
-
 <p>指一段脚本只能读取来自同一来源的窗口和文档的属性。</p>
-
 <p><strong>14、为什么要有同源限制？</strong></p>
-
 <p>我们举例说明：比如一个黑客程序，他利用Iframe把真正的银行登录页面嵌到他的页面上，当你使用真实的用户名，密码登录时，他的页面就可以通过Javascript读取到你的表单中input中的内容，这样用户名，密码就轻松到手了。</p>
-
 <p>缺点：</p>
-
 <p>现在网站的JS 都会进行压缩，一些文件用了严格模式，而另一些没有。这时这些本来是严格模式的文件，被 merge 后，这个串就到了文件的中间，不仅没有指示严格模式，反而在压缩后浪费了字节。</p>
-
 <p><strong>15、GET和POST的区别，何时使用POST？</strong></p>
-
-<p>​   GET：一般用于信息获取，使用URL传递参数，对所发送信息的数量也有限制，一般在2000个字符</p>
-
-<p>​   POST：一般用于修改服务器上的资源，对所发送的信息没有限制。</p>
-
-<p>​   GET方式需要使用Request.QueryString来取得变量的值，而POST方式通过Request.Form来获取变量的值，
-​   也就是说Get是通过地址栏来传值，而Post是通过提交表单来传值。</p>
-
+<p>​	GET：一般用于信息获取，使用URL传递参数，对所发送信息的数量也有限制，一般在2000个字符</p>
+<p>​	POST：一般用于修改服务器上的资源，对所发送的信息没有限制。</p>
+<p>​	GET方式需要使用Request.QueryString来取得变量的值，而POST方式通过Request.Form来获取变量的值，
+​	也就是说Get是通过地址栏来传值，而Post是通过提交表单来传值。</p>
 <p>然而，在以下情况中，请使用 POST 请求：</p>
-
 <p>无法使用缓存文件（更新服务器上的文件或数据库）</p>
-
 <p>向服务器发送大量数据（POST 没有数据量限制）</p>
-
 <p>发送包含未知字符的用户输入时，POST 比 GET 更稳定也更可靠</p>
-
 <p><strong>16、ajax的缺点</strong></p>
-
 <ul>
 <li>1、ajax不支持浏览器back按钮。</li>
 <li>2、安全问题 AJAX暴露了与服务器交互的细节。</li>
@@ -541,9 +432,7 @@ Base.call(obj);
 <li>4、破坏了程序的异常机制。</li>
 <li>5、不容易调试。</li>
 </ul>
-
 <p><strong>17、HTTP状态码</strong></p>
-
 <ul>
 <li>100  Continue  继续，一般在发送post请求时，已发送了http header之后服务端将返回此信息，表示确认，之后发送具体参数信息</li>
 <li>200  OK   正常返回信息</li>
@@ -560,11 +449,8 @@ Base.call(obj);
 <li>500 Internal Server Error  最常见的服务器端错误。</li>
 <li>503 Service Unavailable 服务器端暂时无法处理请求（可能是过载或维护）。</li>
 </ul>
-
 <p><strong>18、说说你对Promise的理解</strong></p>
-
 <p>依照 Promise/A+ 的定义，Promise 有四种状态：</p>
-
 <ul>
 <li>pending: 初始状态, 非 fulfilled 或 rejected.</li>
 <li>fulfilled: 成功的操作.</li>
@@ -573,9 +459,7 @@ Base.call(obj);
 <li>另外， fulfilled 与 rejected 一起合称 settled。</li>
 <li>Promise 对象用来进行延迟(deferred) 和异步(asynchronous ) 计算。</li>
 </ul>
-
 <p><strong>19、Promise 的构造函数</strong></p>
-
 <p>构造一个 Promise，最基本的用法如下：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">promise</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Promise(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>) {
 	    <span style="color:#66d9ef">if</span> (...) {  <span style="color:#75715e">// succeed
@@ -584,27 +468,16 @@ Base.call(obj);
 </span><span style="color:#75715e"></span>	        <span style="color:#a6e22e">reject</span>(Error(<span style="color:#a6e22e">errMessage</span>));
 	    }
 	});
-</code></pre></div>
-<p>Promise 实例拥有 then 方法（具有 then 方法的对象，通常被称为 thenable）。它的使用方法如下：</p>
-
+</code></pre></div><p>Promise 实例拥有 then 方法（具有 then 方法的对象，通常被称为 thenable）。它的使用方法如下：</p>
 <p>promise.then(onFulfilled, onRejected)</p>
-
 <p>接收两个函数作为参数，一个在 fulfilled 的时候被调用，一个在 rejected 的时候被调用，接收参数就是 future，onFulfilled对应 resolve, onRejected 对应 reject。</p>
-
 <p><strong>20、说说你对前端架构师的理解</strong></p>
-
 <p>负责前端团队的管理及与其他团队的协调工作，提升团队成员能力和整体效率；</p>
-
 <p>带领团队完成研发工具及平台前端部分的设计、研发和维护；</p>
-
 <p>带领团队进行前端领域前沿技术研究及新技术调研，保证团队的技术领先</p>
-
 <p>负责前端开发规范制定、功能模块化设计、公共组件搭建等工作，并组织培训。</p>
-
 <p><strong>21、说说严格模式的限制</strong></p>
-
 <p>严格模式主要有以下限制：</p>
-
 <ul>
 <li>变量必须声明后再使用</li>
 <li>函数的参数不能有同名属性，否则报错</li>
@@ -622,9 +495,7 @@ Base.call(obj);
 <li>不能使用fn.caller和fn.arguments获取函数调用的堆栈</li>
 <li>增加了保留字（比如protected、static和interface）</li>
 </ul>
-
 <p>设立”严格模式”的目的，主要有以下几个：</p>
-
 <ul>
 <li>消除Javascript语法的一些不合理、不严谨之处，减少一些怪异行为;</li>
 <li>消除代码运行的一些不安全之处，保证代码运行的安全；</li>
@@ -632,21 +503,13 @@ Base.call(obj);
 <li>为未来新版本的Javascript做好铺垫。</li>
 <li>注：经过测试IE6,7,8,9均不支持严格模式。</li>
 </ul>
-
 <p><strong>22、说说你对AMD和Commonjs的理解</strong></p>
-
 <p>CommonJS是服务器端模块的规范，Node.js采用了这个规范。CommonJS规范加载模块是同步的，也就是说，只有加载完成，才能执行后面的操作。AMD规范则是非同步加载模块，允许指定回调函数。</p>
-
 <p>AMD推荐的风格通过返回一个对象做为模块对象，CommonJS的风格通过对module.exports或exports的属性赋值来达到暴露模块对象的目的。</p>
-
 <p>document.write()的用法</p>
-
 <p>document.write()方法可以用在两个方面：页面载入过程中用实时脚本创建页面内容，以及用延时脚本创建本窗口或新窗口的内容。</p>
-
 <p>document.write只能重绘整个页面。innerHTML可以重绘页面的一部分</p>
-
 <p><strong>23、编写一个方法 求一个字符串的字节长度</strong></p>
-
 <p>假设：一个英文字符占用一个字节，一个中文字符占用两个字节</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">GetBytes</span>(<span style="color:#a6e22e">str</span>){
 	    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">len</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">length</span>;
@@ -657,56 +520,36 @@ Base.call(obj);
 	    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">bytes</span>;
 	}
 <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">GetBytes</span>(<span style="color:#e6db74">&#34;你好,as&#34;</span>));
-</code></pre></div>
-<p><strong>24、git fetch和git pull的区别</strong></p>
-
+</code></pre></div><p><strong>24、git fetch和git pull的区别</strong></p>
 <ul>
 <li>git pull：相当于是从远程获取最新版本并merge到本地</li>
 <li>git fetch：相当于是从远程获取最新版本到本地，不会自动merge</li>
 </ul>
-
 <p><strong>25、说说你对MVC和MVVM的理解</strong></p>
-
 <p>MVC</p>
-
 <p>View 传送指令到 Controller</p>
-
 <p>Controller 完成业务逻辑后，要求 Model 改变状态</p>
-
 <p>Model 将新的数据发送到 View，用户得到反馈</p>
-
 <p>所有通信都是单向的。</p>
-
 <p>Angular它采用双向绑定（data-binding）：View的变动，自动反映在 ViewModel，反之亦然。</p>
-
 <p>组成部分Model、View、ViewModel</p>
-
 <p>View：UI界面</p>
-
 <p>ViewModel：它是View的抽象，负责View与Model之间信息转换，将View的Command传送到Model；</p>
-
 <p>Model：数据访问层</p>
-
 <p><strong>26、请解释什么是事件代理</strong></p>
-
 <p>事件代理（Event Delegation），又称之为事件委托。是 JavaScript 中常用绑定事件的常用技巧。顾名思义，“事件代理”即是把原本需要绑定的事件委托给父元素，让父元素担当事件监听的职务。事件代理的原理是DOM元素的事件冒泡。使用事件代理的好处是可以提高性能。</p>
-
 <p><strong>27、attribute和property的区别是什么？</strong></p>
-
 <ul>
 <li>attribute是dom元素在文档中作为html标签拥有的属性；</li>
 <li>property就是dom元素在js中作为对象拥有的属性。</li>
 </ul>
-
 <p><strong>28、说说网络分层里七层模型是哪七层</strong></p>
-
 <ul>
 <li>应用层：应用层、表示层、会话层（从上往下）（HTTP、FTP、SMTP、DNS）</li>
 <li>传输层（TCP和UDP）</li>
 <li>网络层（IP）</li>
 <li>物理和数据链路层（以太网）</li>
 <li>每一层的作用如下：
-
 <ul>
 <li>物理层：通过媒介传输比特,确定机械及电气规范（比特Bit）</li>
 <li>数据链路层：将比特组装成帧和点到点的传递（帧Frame）</li>
@@ -715,11 +558,10 @@ Base.call(obj);
 <li>会话层：建立、管理和终止会话（会话协议数据单元SPDU）</li>
 <li>表示层：对数据进行翻译、加密和压缩（表示协议数据单元PPDU）</li>
 <li>应用层：允许访问OSI环境的手段（应用协议数据单元APDU）</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <p><strong>html5有哪些新特性、移除了那些元素？如何处理HTML5新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？</strong></p>
-
 <ul>
 <li>HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。</li>
 <li>拖拽释放(Drag and drop) API</li>
@@ -732,9 +574,7 @@ Base.call(obj);
 <li>表单控件，calendar、date、time、email、url、search</li>
 <li>新的技术webworker, websocket, Geolocation</li>
 </ul>
-
 <p>移除纯表现的元素：basefont，big，center，font, s，strike，tt，u；</p>
-
 <p>对可用性产生负面影响的元素：frame，frameset，noframes；</p>
 </article>
     <footer class="post-footer">
@@ -747,7 +587,7 @@ Base.call(obj);
       
       <p class="post-copyright">
         Link:<a rel='license' href='https://imxcz.com/post/2018/css-mianshiti/'>https://imxcz.com/post/2018/css-mianshiti/ </a><br>
-          © 本文采用 <a rel='license' href='http://creativecommons.org/licenses/by-nc/4.0/' target=''>知识共享署名-非商业性使用 4.0 国际许可协议</a> 进行许可。文章发表于 <strong>346</strong> 天前, 文章内容可能不准确，请酌情参考。
+          © 本文采用 <a rel='license' href='http://creativecommons.org/licenses/by-nc/4.0/' target=''>知识共享署名-非商业性使用 4.0 国际许可协议</a> 进行许可。文章发表于 <strong>937</strong> 天前, 文章内容可能不准确，请酌情参考。
       </p>
       <div class="post-nav">
           
@@ -785,7 +625,7 @@ Base.call(obj);
             </li>
             
             <li>
-                <a href="https://imxcz.com/categories/%E6%8A%80%E6%9C%AF/">技术(18)</a>
+                <a href="https://imxcz.com/categories/%E6%8A%80%E6%9C%AF/">技术(19)</a>
             </li>
             
             <li>
@@ -793,7 +633,7 @@ Base.call(obj);
             </li>
             
             <li>
-                <a href="https://imxcz.com/categories/%E7%AC%94%E8%AE%B0/">笔记(3)</a>
+                <a href="https://imxcz.com/categories/%E7%AC%94%E8%AE%B0/">笔记(5)</a>
             </li>
             
             <li>
@@ -844,6 +684,8 @@ Base.call(obj);
             
             <a href="https://imxcz.com/tags/htaccess/">htaccess</a>
             
+            <a href="https://imxcz.com/tags/hugo/">hugo</a>
+            
             <a href="https://imxcz.com/tags/iis/">iis</a>
             
             <a href="https://imxcz.com/tags/javascript/">javascript</a>
@@ -854,11 +696,17 @@ Base.call(obj);
             
             <a href="https://imxcz.com/tags/mac/">mac</a>
             
+            <a href="https://imxcz.com/tags/macos/">macos</a>
+            
+            <a href="https://imxcz.com/tags/markdown/">markdown</a>
+            
             <a href="https://imxcz.com/tags/msysgit/">msysgit</a>
             
             <a href="https://imxcz.com/tags/mysql/">mysql</a>
             
             <a href="https://imxcz.com/tags/php/">php</a>
+            
+            <a href="https://imxcz.com/tags/timemachine/">timemachine</a>
             
             <a href="https://imxcz.com/tags/tortoisegit/">tortoisegit</a>
             
@@ -886,11 +734,15 @@ Base.call(obj);
             
             <a href="https://imxcz.com/tags/%E6%8B%8D%E7%85%A7/">拍照</a>
             
+            <a href="https://imxcz.com/tags/%E6%97%B6%E5%85%89%E6%9C%BA%E5%99%A8/">时光机器</a>
+            
             <a href="https://imxcz.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
             
             <a href="https://imxcz.com/tags/%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C/">用户体验</a>
             
             <a href="https://imxcz.com/tags/%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1/">界面设计</a>
+            
+            <a href="https://imxcz.com/tags/%E7%9B%91%E5%90%AC%E6%96%87%E4%BB%B6/">监听文件</a>
             
             <a href="https://imxcz.com/tags/%E7%A0%81%E5%86%9C/">码农</a>
             
@@ -921,11 +773,11 @@ Base.call(obj);
     </section>
     
     <section class="widget-box">
-            <h3 class="widget-title">其他</h3>
-            <ul class="widget-links">
-                    <li><a href="https://imxcz.com/index.xml">文章 RSS</a></li>
-                </ul>
-        </section>
+        <h3 class="widget-title">其他</h3>
+        <ul class="widget-links">
+            <li><a href="https://imxcz.com/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
 </div>
       </sidebar>
   </section>
@@ -933,10 +785,10 @@ Base.call(obj);
 
 
 <footer class="site-footer">
-  <p>© 2012-2019 幸存者IMxcz.Com</p>
+  <p>© 2012-2021 幸存者IMxcz.Com</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> with theme <a href="http://www.imxcz.com" target="_blank" rel="noopener">Imxcz</a>.</p>
   
-    <p><a href="http://www.miitbeian.gov.cn" title="Check ICP info" target="_blank" rel="noopener">豫ICP备12022851号-2</a></p>
+    <p><a href="http://beian.miit.gov.cn/" title="Check ICP info" target="_blank" rel="noopener">豫ICP备12022851号-2</a></p>
   
 </footer>
 
